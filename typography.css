@@ -1,0 +1,229 @@
+/* ============================================================
+   XIAOMI BASECAMP — typography.css
+   Font imports, scale, utility classes.
+   Import AFTER variables.css and reset.css.
+   ============================================================ */
+
+/* ── 1. GOOGLE FONTS IMPORT ──────────────────────────────── */
+/* Preconnect for performance */
+/* NOTE: Add these two <link> tags in <head> BEFORE this stylesheet:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+/* ── 2. FONT FAMILY UTILITIES ────────────────────────────── */
+.font-display { font-family: var(--f-display); }
+.font-ui      { font-family: var(--f-ui); }
+.font-mono    { font-family: var(--f-mono); }
+
+/* ── 3. HEADING SCALE ────────────────────────────────────── */
+/* Hero — page titles, brand name */
+.text-hero {
+  font-family: var(--f-display);
+  font-size: var(--fs-hero);        /* clamp(2.5rem, 6vw, 5rem) */
+  font-weight: 900;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* Section — major section headings */
+.text-section {
+  font-family: var(--f-display);
+  font-size: var(--fs-section);    /* clamp(1.5rem, 3vw, 2.25rem) */
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* Card title */
+.text-card {
+  font-family: var(--f-display);
+  font-size: var(--fs-card);       /* 1.25rem */
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-normal);
+}
+
+/* Body text */
+.text-body {
+  font-family: var(--f-ui);
+  font-size: var(--fs-body);       /* 1rem */
+  font-weight: 400;
+  line-height: var(--lh-normal);
+}
+
+/* Label / small UI text */
+.text-label {
+  font-family: var(--f-ui);
+  font-size: var(--fs-label);      /* 0.875rem */
+  font-weight: 500;
+  line-height: var(--lh-snug);
+}
+
+/* Badge / micro text */
+.text-badge {
+  font-family: var(--f-ui);
+  font-size: var(--fs-badge);      /* 0.75rem */
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* Mono — codenames, versions, commands */
+.text-mono {
+  font-family: var(--f-mono);
+  font-size: var(--fs-label);      /* 0.875rem */
+  font-weight: 400;
+  line-height: var(--lh-normal);
+  letter-spacing: 0.02em;
+}
+
+/* ── 4. FONT WEIGHT UTILITIES ────────────────────────────── */
+.fw-light    { font-weight: 300; }
+.fw-regular  { font-weight: 400; }
+.fw-medium   { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+.fw-bold     { font-weight: 700; }
+.fw-black    { font-weight: 900; }
+
+/* ── 5. COLOR UTILITIES ───────────────────────────────────── */
+.text-primary   { color: var(--t1); }
+.text-secondary { color: var(--t2); }
+.text-muted     { color: var(--t3); }
+.text-disabled  { color: var(--t4); }
+.text-acid      { color: var(--acid); }
+.text-volt      { color: var(--volt); }
+.text-blaze     { color: var(--blaze); }
+.text-amber     { color: var(--amber); }
+.text-lime      { color: var(--lime); }
+
+/* ── 6. GLOW TEXT EFFECTS ────────────────────────────────── */
+.text-glow {
+  text-shadow: var(--text-glow-acid);
+}
+.text-glow-volt {
+  text-shadow: var(--text-glow-volt);
+}
+.text-glow-blaze {
+  text-shadow: var(--text-glow-blaze);
+}
+/* Pulsing glow animation */
+.text-glow-pulse {
+  text-shadow: var(--text-glow-acid);
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* ── 7. ALIGNMENT UTILITIES ──────────────────────────────── */
+.text-left    { text-align: left; }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+
+/* ── 8. TRANSFORM UTILITIES ──────────────────────────────── */
+.text-upper  { text-transform: uppercase; }
+.text-lower  { text-transform: lowercase; }
+.text-normal { text-transform: none; }
+
+/* ── 9. LINE CLAMP UTILITIES ─────────────────────────────── */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── 10. SEMANTIC HEADING DEFAULTS ───────────────────────── */
+/* Applied globally so all h1-h6 have sensible defaults */
+h1 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--t1);
+}
+
+h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--t1);
+}
+
+h3 {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--t1);
+}
+
+h4 {
+  font-family: var(--f-ui);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--t1);
+}
+
+h5, h6 {
+  font-family: var(--f-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--t2);
+}
+
+p {
+  color: var(--t2);
+  line-height: var(--lh-normal);
+}
+
+strong, b {
+  font-weight: 700;
+  color: var(--t1);
+}
+
+em, i {
+  font-style: italic;
+}
+
+code, kbd, samp {
+  font-family: var(--f-mono);
+  font-size: 0.875em;
+  color: var(--acid);
+  background: rgba(0, 255, 224, 0.08);
+  padding: 1px 6px;
+  border-radius: var(--r-xs);
+  border: 1px solid rgba(0, 255, 224, 0.15);
+}
+
+pre {
+  font-family: var(--f-mono);
+  overflow-x: auto;
+}
+
+small {
+  font-size: var(--fs-badge);
+  color: var(--t3);
+}
+
+/* ── 11. RESPONSIVE FONT ADJUSTMENTS ─────────────────────── */
+@media (max-width: 640px) {
+  h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+  h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+}

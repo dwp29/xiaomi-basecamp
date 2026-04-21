@@ -1,0 +1,218 @@
+/* ============================================================
+   XIAOMI BASECAMP — reset.css
+   Modern CSS reset. Import AFTER variables.css.
+   ============================================================ */
+
+/* ── 1. BOX MODEL ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 2. ROOT ──────────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hanging-punctuation: first last;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+/* ── 3. BODY ──────────────────────────────────────────────── */
+body {
+  font-family: var(--f-ui, 'Syne', sans-serif);
+  background-color: var(--ink-0, #03060f);
+  color: var(--t1, #eef4ff);
+  min-height: 100svh;
+  line-height: var(--lh-normal, 1.6);
+  overflow-x: hidden;
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* ── 4. TYPOGRAPHY RESET ─────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: var(--lh-tight, 1.2);
+}
+
+p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ── 5. LINKS ─────────────────────────────────────────────── */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ── 6. LISTS ─────────────────────────────────────────────── */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── 7. MEDIA ─────────────────────────────────────────────── */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+/* ── 8. FORM ELEMENTS ────────────────────────────────────── */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* ── 9. TABLE ─────────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ── 10. MISC ─────────────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-base, rgba(0, 255, 224, 0.08));
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+/* Remove default fieldset border */
+fieldset {
+  border: none;
+}
+
+/* Remove default summary arrow */
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Make hidden truly hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* Pointer for interactive non-button elements */
+[role="button"],
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+/* Avoid text overflow on long words */
+address,
+blockquote,
+dt,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend,
+li,
+p,
+pre,
+th,
+td {
+  overflow-wrap: break-word;
+}
+
+/* Smooth resize for textarea */
+textarea {
+  resize: vertical;
+}
+
+/* ── 11. SKIP LINK (Accessibility) ───────────────────────── */
+/* Visually hidden but accessible to screen readers + keyboard */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--s4, 16px);
+  z-index: calc(var(--z-cursor, 9999) + 1);
+  padding: var(--s2, 8px) var(--s4, 16px);
+  background: var(--acid, #00ffe0);
+  color: var(--ink-0, #03060f);
+  font-family: var(--f-ui, sans-serif);
+  font-weight: 600;
+  font-size: var(--fs-label, 0.875rem);
+  border-radius: var(--r-sm, 6px);
+  transition: top 0.2s;
+}
+.skip-link:focus-visible {
+  top: var(--s4, 16px);
+  outline: 2px solid var(--ink-0, #03060f);
+  outline-offset: 2px;
+}
+
+/* ── 12. REDUCED MOTION ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
