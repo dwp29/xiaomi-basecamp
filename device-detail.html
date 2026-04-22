@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Dynamic title/meta injected by deviceDetail.js -->
+  <title>Device Detail — Xiaomi Basecamp</title>
+  <meta name="description" content="Spesifikasi lengkap, firmware, custom ROM, dan tools root untuk device Xiaomi.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/device-detail.html">
+
+  <!-- OG tags (updated dynamically by JS) -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" id="og-title" content="Device Detail — Xiaomi Basecamp">
+  <meta property="og:description" id="og-desc" content="Spesifikasi lengkap, firmware, dan tools.">
+  <meta property="og:image" content="/assets/img/ui/og-image.webp">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    /* ── HERO SECTION ─────────────────────────────────────── */
+    .dd-hero {
+      position: relative; overflow: hidden;
+      padding: 40px 0 0; min-height: 420px;
+    }
+    .dd-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 60% 80% at 70% 50%,
+        rgba(0,255,224,.06), transparent 70%);
+    }
+    .dd-hero-inner {
+      max-width: 1440px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 380px; gap: 40px;
+      align-items: start; position: relative; z-index: 1;
+    }
+    .dd-hero-content { padding-bottom: 40px; }
+
+    /* Breadcrumb */
+    .dd-breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3);
+      margin-bottom: 20px;
+    }
+    .dd-breadcrumb a { color: var(--t3); transition: color .2s; }
+    .dd-breadcrumb a:hover { color: var(--acid); }
+    .dd-breadcrumb .sep { opacity: .4; }
+    .dd-breadcrumb .cur { color: var(--t2); }
+
+    /* Device name */
+    .dd-series-label {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--acid); margin-bottom: 8px;
+    }
+    .dd-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900; letter-spacing: -1px; line-height: .95;
+      color: var(--t1); text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* Badges row */
+    .dd-badges {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+      margin-bottom: 20px;
+    }
+    .dd-codename {
+      font-family: 'DM Mono', monospace; font-size: .75rem;
+      color: var(--acid); background: rgba(0,255,224,.07);
+      border: 1px solid rgba(0,255,224,.2); border-radius: 6px;
+      padding: 3px 10px;
+    }
+
+    /* Quick spec pills */
+    .dd-quick-specs {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+    }
+    .dd-spec-pill {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 14px;
+      background: rgba(7,12,26,.8); border: 1px solid rgba(0,255,224,.1);
+      border-radius: 8px;
+      font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--t2);
+    }
+    .dd-spec-pill span { color: var(--t1); font-weight: 500; }
+
+    /* Action buttons */
+    .dd-actions {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .dd-btn-primary {
+      padding: 10px 22px;
+      background: var(--acid); color: var(--ink-0);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; border: none; border-radius: 8px;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+      transition: background .2s, box-shadow .2s, transform .15s;
+    }
+    .dd-btn-primary:hover { background: #33ffed; box-shadow: 0 0 20px rgba(0,255,224,.4); transform: translateY(-2px); }
+    .dd-btn-ghost {
+      padding: 10px 18px;
+      background: transparent; color: var(--t2);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; border: 1px solid rgba(122,153,194,.25);
+      border-radius: 8px; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .dd-btn-ghost:hover { color: var(--t1); border-color: rgba(122,153,194,.5); background: rgba(122,153,194,.05); }
+
+    /* Device image side */
+    .dd-hero-image {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      padding-top: 20px;
+    }
+    .dd-img-frame {
+      width: 100%; aspect-ratio: 3/4; max-height: 320px;
+      background: rgba(12,20,40,.6); border: 1px solid rgba(0,255,224,.08);
+      border-radius: 20px; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .dd-img-frame::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(0,255,224,.05), transparent 60%);
+    }
+    .dd-img-frame img {
+      width: 85%; height: 85%; object-fit: contain; position: relative; z-index: 1;
+      animation: float 5s ease-in-out infinite;
+    }
+    .dd-img-placeholder { font-size: 6rem; opacity: .3; }
+
+    /* Modding score badge */
+    .dd-score-wrap {
+      width: 100%; background: rgba(7,12,26,.8);
+      border: 1px solid rgba(0,255,224,.1); border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .dd-score-label {
+      font-family: 'DM Mono', monospace; font-size: .6rem;
+      color: var(--t3); letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .dd-score-bar-track {
+      height: 6px; background: var(--ink-3); border-radius: 3px; overflow: hidden;
+    }
+    .dd-score-bar-fill {
+      height: 100%; border-radius: 3px;
+      transition: width .8s cubic-bezier(.22,1,.36,1);
+    }
+    .dd-score-value {
+      font-family: 'Barlow Condensed', monospace; font-size: 1.2rem; font-weight: 700;
+      margin-top: 4px;
+    }
+
+    /* ── MAIN CONTENT AREA ──────────────────────────────────── */
+    .dd-main {
+      max-width: 1440px; margin: 0 auto; padding: 0 24px 80px;
+    }
+    .dd-section {
+      margin-bottom: 40px; padding-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .dd-section-title {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--acid); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .dd-section-title::before { content: '//'; opacity: .5; }
+
+    /* ── SPECS TABLE ─────────────────────────────────────────── */
+    .spec-table {
+      width: 100%; border-radius: 14px;
+      overflow: hidden; border: 1px solid rgba(0,255,224,.08);
+    }
+    .spec-group-header {
+      padding: 8px 18px;
+      background: rgba(0,255,224,.04); border-top: 1px solid rgba(0,255,224,.08);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--acid);
+    }
+    .spec-group-header:first-child { border-top: none; }
+    .spec-row {
+      display: grid; grid-template-columns: 160px 1fr;
+      padding: 10px 18px; border-top: 1px solid rgba(255,255,255,.03);
+      background: rgba(7,12,26,.72);
+      transition: background .15s;
+    }
+    .spec-row:hover { background: rgba(0,255,224,.03); }
+    .spec-key {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      color: var(--t3); text-transform: uppercase; letter-spacing: .05em;
+      padding-right: 16px; line-height: 1.5;
+    }
+    .spec-val {
+      font-family: 'Syne', sans-serif; font-size: .82rem;
+      color: var(--t1); line-height: 1.5;
+    }
+    .spec-val.highlight { color: var(--acid); }
+
+    /* ── MODDING SECTION ─────────────────────────────────────── */
+    .modding-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;
+    }
+    .modding-card {
+      background: rgba(7,12,26,.8); border: 1px solid rgba(0,255,224,.08);
+      border-radius: 12px; padding: 16px;
+      transition: border-color .2s;
+    }
+    .modding-card:hover { border-color: rgba(0,255,224,.2); }
+    .modding-card-title {
+      font-family: 'DM Mono', monospace; font-size: .6rem;
+      color: var(--t3); text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .modding-card-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--t1);
+    }
+    .modding-card-value.good { color: var(--lime); }
+    .modding-card-value.warn { color: var(--amber); }
+    .modding-card-value.bad  { color: var(--blaze); }
+    .modding-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+    .modding-tag {
+      padding: 3px 8px; border-radius: 6px;
+      font-family: 'DM Mono', monospace; font-size: .62rem;
+    }
+    .modding-tag-acid { background: rgba(0,255,224,.08); color: var(--acid); border: 1px solid rgba(0,255,224,.2); }
+    .modding-tag-volt { background: rgba(184,0,255,.08); color: var(--volt); border: 1px solid rgba(184,0,255,.2); }
+
+    /* ── ROM MINI GRID ──────────────────────────────────────── */
+    #device-roms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    /* ── COMMUNITY SECTION ──────────────────────────────────── */
+    .community-grid {
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .community-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 10px;
+      border: 1px solid rgba(0,255,224,.15);
+      background: rgba(7,12,26,.8);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--t2); text-decoration: none;
+      transition: all .2s;
+    }
+    .community-btn:hover { color: var(--acid); border-color: rgba(0,255,224,.4); background: rgba(0,255,224,.05); }
+    .community-btn.disabled { opacity: .35; pointer-events: none; }
+
+    /* ── NOT FOUND STATE ────────────────────────────────────── */
+    .dd-not-found {
+      min-height: 60vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 16px; text-align: center; padding: 40px;
+    }
+    .dd-not-found-icon { font-size: 4rem; opacity: .4; }
+    .dd-not-found-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem; font-weight: 900; color: var(--t2);
+      text-transform: uppercase; letter-spacing: 2px;
+    }
+
+    /* ── LOADING STATE ──────────────────────────────────────── */
+    .dd-loading {
+      min-height: 60vh; display: flex;
+      align-items: center; justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .dd-hero-inner { grid-template-columns: 1fr; }
+      .dd-hero-image { flex-direction: row; padding-top: 0; }
+      .dd-img-frame { max-height: 200px; max-width: 200px; }
+    }
+    @media (max-width: 640px) {
+      .dd-name { font-size: 2.2rem; }
+      .spec-row { grid-template-columns: 120px 1fr; }
+      .dd-actions { flex-direction: column; }
+      .dd-btn-primary, .dd-btn-ghost { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <div id="nav-root"></div>
+
+  <!-- Loading state -->
+  <div class="dd-loading" id="dd-loading" aria-live="polite" aria-label="Loading device data">
+    <div class="spinner spinner-lg"></div>
+  </div>
+
+  <!-- Main content (hidden until data loaded) -->
+  <div id="dd-content" hidden>
+
+    <!-- Hero -->
+    <section class="dd-hero" aria-labelledby="device-name">
+      <div class="dd-hero-inner">
+        <div class="dd-hero-content">
+
+          <!-- Breadcrumb -->
+          <nav class="dd-breadcrumb" aria-label="Breadcrumb">
+            <a href="/index.html">Home</a>
+            <span class="sep" aria-hidden="true">›</span>
+            <a href="/devices.html">Devices</a>
+            <span class="sep" aria-hidden="true">›</span>
+            <span class="cur" id="bc-device-name" aria-current="page">—</span>
+          </nav>
+
+          <p class="dd-series-label" id="device-series">—</p>
+          <h1 class="dd-name" id="device-name">—</h1>
+
+          <!-- Badges -->
+          <div class="dd-badges" id="device-badges"></div>
+
+          <!-- Quick specs -->
+          <div class="dd-quick-specs" id="device-quick-specs"></div>
+
+          <!-- Action buttons -->
+          <div class="dd-actions" id="device-actions"></div>
+
+        </div>
+
+        <!-- Device image + score -->
+        <div class="dd-hero-image">
+          <div class="dd-img-frame">
+            <img id="device-img" src="" alt="" loading="lazy">
+          </div>
+          <div class="dd-score-wrap">
+            <p class="dd-score-label">Modding Score</p>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div class="dd-score-bar-track" style="flex:1">
+                <div class="dd-score-bar-fill" id="score-fill" style="width:0%"></div>
+              </div>
+              <span class="dd-score-value" id="score-value">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="dd-main" id="main-content">
+
+      <!-- AD PLACEHOLDER — BANNER TOP -->
+      <div class="ad-container" aria-hidden="true"><!-- Banner ad here --></div>
+
+      <!-- Specs Table -->
+      <section class="dd-section" aria-labelledby="section-specs">
+        <h2 class="dd-section-title" id="section-specs">Spesifikasi Lengkap</h2>
+        <div class="spec-table" id="specs-table" role="table" aria-label="Device specifications"></div>
+      </section>
+
+      <!-- Modding Status -->
+      <section class="dd-section" aria-labelledby="section-modding">
+        <h2 class="dd-section-title" id="section-modding">Modding Status</h2>
+        <div class="modding-grid" id="modding-grid"></div>
+      </section>
+
+      <!-- Available ROMs -->
+      <section class="dd-section" aria-labelledby="section-roms">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <h2 class="dd-section-title" id="section-roms" style="margin-bottom:0">Custom ROM Tersedia</h2>
+          <a href="/roms.html" class="dd-btn-ghost" style="padding:6px 14px;font-size:.75rem">
+            Lihat Semua →
+          </a>
+        </div>
+        <div id="device-roms-grid">
+          <p style="color:var(--t3);font-family:'DM Mono',monospace;font-size:.78rem">
+            Menghubungkan ke ROM database...
+          </p>
+        </div>
+      </section>
+
+      <!-- Community -->
+      <section class="dd-section" aria-labelledby="section-community">
+        <h2 class="dd-section-title" id="section-community">Community & Links</h2>
+        <div class="community-grid" id="community-grid"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Not found state -->
+  <div id="dd-not-found" hidden>
+    <div class="dd-not-found">
+      <div class="dd-not-found-icon">📱</div>
+      <h1 class="dd-not-found-title">Device Tidak Ditemukan</h1>
+      <p style="color:var(--t3);font-size:.88rem">Device yang kamu cari tidak ada di database kami.</p>
+      <a href="/devices.html" class="dd-btn-primary" style="margin-top:8px">← Kembali ke Device Center</a>
+    </div>
+  </div>
+
+  <!-- Vendor JS -->
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+
+  <!-- Core JS -->
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components -->
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/deviceCard.js"></script>
+  <script src="/assets/js/components/romCard.js"></script>
+
+  <!-- Page logic -->
+  <script src="/assets/js/pages/deviceDetail.js"></script>
+
+  <!-- Cursor -->
+  <script>
+    (function(){
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return;
+      let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{
+        dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+        rx+=(e.clientX-rx)*.12;ry+=(e.clientY-ry)*.12;
+        ring.style.left=rx+'px';ring.style.top=ry+'px';
+      });
+      document.querySelectorAll('a,button,[role=button]').forEach(el=>{
+        el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+      });
+    })();
+  </script>
+</body>
+</html>

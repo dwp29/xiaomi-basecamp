@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Center — Xiaomi Basecamp | 207+ Device Xiaomi</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Database 207+ device Xiaomi, Redmi, POCO lengkap dengan spesifikasi, firmware, custom ROM, root tools, dan tutorial. Filter by chipset, RAM, Android version.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Xiaomi Basecamp">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/devices.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Device Center — Xiaomi Basecamp">
+  <meta property="og:description" content="Database 207+ device Xiaomi dengan spesifikasi lengkap, firmware, custom ROM, dan root tools.">
+  <meta property="og:image" content="/assets/img/ui/og-image.webp">
+  <meta property="og:url" content="https://xiaomi-basecamp.github.io/devices.html">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Device Center — Xiaomi Basecamp">
+  <meta name="twitter:description" content="Database 207+ device Xiaomi, Redmi, POCO lengkap.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    /* ── PAGE-SPECIFIC STYLES ─────────────────────────────── */
+
+    /* Custom cursor */
+    body { cursor: none; }
+    button, a { cursor: none; }
+
+    /* Page header */
+    .ph {
+      padding: 48px 0 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ph::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 100% at 50% 0, rgba(0,255,224,.055), transparent 70%);
+      pointer-events: none;
+    }
+    .ph::after {
+      content: 'DEVICES';
+      position: absolute; right: -20px; bottom: -30px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11rem; font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0,255,224,.032);
+      pointer-events: none; user-select: none;
+      line-height: 1; letter-spacing: -4px;
+    }
+    .ph-inner {
+      max-width: 1440px; margin: 0 auto; padding: 0 24px;
+      position: relative; z-index: 1;
+    }
+    .ph-kicker {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--acid); display: flex; align-items: center; gap: 8px;
+      margin-bottom: 12px;
+    }
+    .ph-kicker::before { content: '//'; opacity: .4; }
+    .ph-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -1px;
+      line-height: .95; margin-bottom: 10px;
+      color: var(--t1);
+    }
+    .ph-sub { font-size: .88rem; color: var(--t3); max-width: 480px; line-height: 1.6; }
+
+    /* Layout grid */
+    .layout {
+      max-width: 1440px; margin: 0 auto; padding: 0 24px 80px;
+      display: grid; grid-template-columns: 260px 1fr; gap: 24px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .sidebar { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 10px; }
+
+    .filter-panel {
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      border-radius: 16px; overflow: hidden;
+    }
+    .fp-head {
+      padding: 12px 16px; display: flex; align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0,255,224,.06);
+      background: rgba(0,255,224,.02);
+    }
+    .fp-title {
+      font-family: 'DM Mono', monospace; font-size: .66rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--acid); display: flex; align-items: center; gap: 6px;
+    }
+    .fp-reset {
+      font-family: 'DM Mono', monospace; font-size: .6rem;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--t3); padding: 3px 8px; border-radius: 4px;
+      border: 1px solid var(--t4); background: none;
+      transition: color .2s, border-color .2s;
+    }
+    .fp-reset:hover { color: var(--blaze); border-color: rgba(255,45,107,.3); }
+
+    /* Filter group */
+    .fg { border-bottom: 1px solid rgba(255,255,255,.03); }
+    .fg:last-child { border-bottom: none; }
+    .fg-toggle {
+      width: 100%; padding: 11px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'DM Mono', monospace; font-size: .67rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--t2); background: none; border: none;
+      transition: color .2s;
+    }
+    .fg-toggle:hover { color: var(--t1); }
+    .fg-arrow { font-size: .58rem; transition: transform .25s; color: var(--t3); }
+    .fg-arrow.open { transform: rotate(180deg); }
+    .fg-body {
+      padding: 0 12px; max-height: 0; overflow: hidden;
+      transition: max-height .35s cubic-bezier(.22,1,.36,1), padding .35s;
+    }
+    .fg-body.open { max-height: 420px; padding: 4px 12px 12px; }
+
+    /* Filter option */
+    .fo {
+      display: flex; align-items: center; gap: 9px;
+      padding: 7px 8px; border-radius: 8px;
+      cursor: none; transition: all .18s;
+      border: 1px solid transparent;
+    }
+    .fo:hover { background: rgba(255,255,255,.03); border-color: rgba(255,255,255,.05); }
+    .fo.active { background: rgba(0,255,224,.07); border-color: rgba(0,255,224,.2); }
+    .fo-box {
+      width: 15px; height: 15px; border-radius: 4px;
+      border: 1.5px solid var(--t4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all .18s;
+      font-size: .55rem; color: transparent;
+    }
+    .fo.active .fo-box { background: var(--acid); border-color: var(--acid); color: var(--ink-0); }
+    .fo-label { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--t2); flex: 1; transition: color .18s; }
+    .fo.active .fo-label { color: var(--acid); }
+    .fo-cnt {
+      font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--t4);
+      padding: 1px 6px; background: rgba(255,255,255,.03);
+      border-radius: 4px; border: 1px solid rgba(255,255,255,.05);
+    }
+    .fo.active .fo-cnt { color: var(--t3); border-color: rgba(0,255,224,.15); }
+
+    /* Toggle switch */
+    .fo-switch {
+      width: 28px; height: 16px; border-radius: 8px;
+      background: var(--t4); border: none; position: relative;
+      transition: background .2s; flex-shrink: 0;
+    }
+    .fo-switch::after {
+      content: ''; position: absolute; top: 2px; left: 2px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--t2); transition: transform .2s, background .2s;
+    }
+    .fo.active .fo-switch { background: var(--acid); }
+    .fo.active .fo-switch::after { transform: translateX(12px); background: var(--ink-0); }
+
+    /* Toolbar */
+    .toolbar {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1; min-width: 200px;
+      display: flex; align-items: center; gap: 10px;
+      height: 44px; padding: 0 14px;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      border-radius: 12px; transition: border-color .2s, box-shadow .2s;
+    }
+    .search-box:focus-within {
+      border-color: rgba(0,255,224,.4);
+      box-shadow: 0 0 20px rgba(0,255,224,.07);
+    }
+    .s-ico { color: var(--t3); font-size: .95rem; flex-shrink: 0; }
+    .search-box input {
+      flex: 1; background: none; border: none; outline: none;
+      font-family: 'DM Mono', monospace; font-size: .8rem; color: var(--t1);
+    }
+    .search-box input::placeholder { color: var(--t3); }
+    .s-clear {
+      color: var(--t3); font-size: .75rem; opacity: 0;
+      pointer-events: none; transition: opacity .2s; flex-shrink: 0;
+      padding: 2px 5px; background: none; border: none;
+    }
+    .s-clear.visible { opacity: 1; pointer-events: all; }
+
+    /* Sort dropdown */
+    .sort-wrap { position: relative; }
+    .sort-btn {
+      height: 44px; padding: 0 14px;
+      display: flex; align-items: center; gap: 7px;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      border-radius: 12px;
+      font-family: 'DM Mono', monospace; font-size: .68rem;
+      letter-spacing: .5px; color: var(--t2);
+      transition: all .2s; white-space: nowrap;
+    }
+    .sort-btn:hover { border-color: rgba(0,255,224,.25); color: var(--t1); }
+    .sort-dd {
+      position: absolute; top: calc(100% + 6px); right: 0; width: 200px;
+      background: var(--ink-2); border: 1px solid rgba(0,255,224,.09);
+      border-radius: 12px; overflow: hidden; z-index: 50;
+      opacity: 0; pointer-events: none; transform: translateY(-6px);
+      transition: opacity .2s, transform .2s cubic-bezier(.22,1,.36,1);
+    }
+    .sort-dd.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .sort-opt {
+      width: 100%; padding: 9px 14px; text-align: left;
+      font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--t2);
+      background: none; border: none;
+      display: flex; align-items: center; gap: 8px; letter-spacing: .5px;
+      transition: all .15s;
+    }
+    .sort-opt:hover { background: rgba(0,255,224,.05); color: var(--t1); }
+    .sort-opt.active { color: var(--acid); }
+    .sort-opt.active::after { content: '✓'; margin-left: auto; font-size: .6rem; }
+
+    /* View toggle */
+    .vt { display: flex; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,255,224,.09); }
+    .vt-btn {
+      width: 44px; height: 44px; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; color: var(--t3);
+      background: var(--ink-1); border: none; transition: all .18s;
+    }
+    .vt-btn.active { background: rgba(0,255,224,.1); color: var(--acid); }
+    .vt-btn:first-child { border-right: 1px solid rgba(0,255,224,.09); }
+
+    /* Active filter tags */
+    .af-row {
+      display: flex; align-items: center; gap: 6px;
+      flex-wrap: wrap; margin-bottom: 14px; min-height: 0;
+    }
+    .af-tag {
+      display: flex; align-items: center; gap: 5px; padding: 4px 10px;
+      border-radius: 99px;
+      background: rgba(0,255,224,.08); border: 1px solid rgba(0,255,224,.2);
+      font-family: 'DM Mono', monospace; font-size: .62rem;
+      color: var(--acid); letter-spacing: .5px;
+      animation: tagPop .2s cubic-bezier(.22,1,.36,1);
+    }
+    @keyframes tagPop { from { transform: scale(.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .af-tag button { color: rgba(0,255,224,.5); font-size: .6rem; line-height: 1; background: none; border: none; transition: color .15s; }
+    .af-tag button:hover { color: var(--blaze); }
+    .af-clear {
+      font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--blaze);
+      padding: 4px 10px; border: 1px solid rgba(255,45,107,.2);
+      border-radius: 99px; background: none;
+      transition: all .2s; letter-spacing: .5px;
+    }
+    .af-clear:hover { background: rgba(255,45,107,.08); }
+
+    /* Results bar */
+    .results-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px; flex-wrap: wrap; gap: 8px;
+    }
+    .results-count { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--t3); }
+    .results-count strong { color: var(--acid); }
+    .results-ms { font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--t4); }
+
+    /* Device grid */
+    #device-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 12px; position: relative; z-index: 1;
+    }
+    #device-grid.list-view { grid-template-columns: 1fr; gap: 8px; }
+
+    /* Paginator card enter animation */
+    .pg-card {
+      opacity: 0; transform: translateY(14px) scale(.98);
+      transition: opacity .4s cubic-bezier(.22,1,.36,1),
+                  transform .4s cubic-bezier(.22,1,.36,1);
+      transition-delay: var(--pg-delay, 0ms);
+    }
+    .pg-card.pg-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* Load more */
+    .load-wrap { text-align: center; margin-top: 24px; }
+    .load-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      font-family: 'DM Mono', monospace; font-size: .72rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--t2); transition: all .25s cubic-bezier(.22,1,.36,1);
+    }
+    .load-btn:hover { border-color: rgba(0,255,224,.3); color: var(--acid); box-shadow: 0 0 24px rgba(0,255,224,.12); }
+    .lp { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
+    .lp-bar { width: 160px; height: 2px; background: var(--t4); border-radius: 2px; overflow: hidden; }
+    .lp-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--acid), var(--volt));
+      border-radius: 2px; transition: width .4s cubic-bezier(.22,1,.36,1);
+      box-shadow: 0 0 6px var(--acid);
+    }
+    .lp-txt { font-family: 'DM Mono', monospace; font-size: .62rem; color: var(--t3); }
+
+    /* Compare floating bar */
+    .compare-bar {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+      z-index: 500;
+      background: rgba(7,12,26,.95); border: 1px solid rgba(0,255,224,.25);
+      border-radius: 16px; padding: 12px 20px;
+      display: flex; align-items: center; gap: 16px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.5), 0 0 24px rgba(0,255,224,.12);
+      transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+      white-space: nowrap;
+    }
+    .compare-bar.visible { transform: translateX(-50%) translateY(0); }
+    .compare-bar-label { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--t2); }
+    .compare-bar-label strong { color: var(--acid); }
+    .compare-bar-btn {
+      padding: 7px 16px; border-radius: 8px;
+      background: var(--acid); color: var(--ink-0);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; border: none;
+      transition: background .2s, box-shadow .2s;
+    }
+    .compare-bar-btn:hover { background: #33ffed; box-shadow: 0 0 16px rgba(0,255,224,.4); }
+    .compare-bar-clear {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      color: var(--blaze); background: none; border: none;
+    }
+    .compare-bar-clear:hover { text-decoration: underline; }
+
+    /* Mobile filter overlay */
+    .filter-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(3,6,15,.7); z-index: 400;
+      backdrop-filter: blur(4px);
+    }
+    .filter-overlay.open { display: block; }
+    .mobile-filter-btn {
+      display: none; align-items: center; gap: 8px;
+      height: 44px; padding: 0 16px;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      border-radius: 12px;
+      font-family: 'DM Mono', monospace; font-size: .72rem;
+      color: var(--t2); white-space: nowrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar {
+        position: fixed; top: 0; left: 0; bottom: 0;
+        width: 290px; z-index: 450;
+        background: var(--ink-1); border-right: 1px solid rgba(0,255,224,.12);
+        transform: translateX(-100%); transition: transform .28s cubic-bezier(.22,1,.36,1);
+        overflow-y: auto; padding-top: 16px;
+      }
+      .sidebar.open { transform: translateX(0); box-shadow: 4px 0 24px rgba(0,0,0,.5); }
+      .mobile-filter-btn { display: flex; }
+    }
+    @media (max-width: 640px) {
+      .ph { padding: 32px 0 24px; }
+      .ph::after { display: none; }
+      #device-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Xiaomi Device Database",
+    "description": "Database 207+ device Xiaomi, Redmi, POCO dengan spesifikasi lengkap",
+    "url": "https://xiaomi-basecamp.github.io/devices.html"
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <div id="nav-root"></div>
+
+  <!-- Page header -->
+  <header class="ph" role="banner">
+    <div class="ph-inner">
+      <p class="ph-kicker">Xiaomi Basecamp</p>
+      <h1 class="ph-title">Device Center</h1>
+      <p class="ph-sub">Database <strong id="total-count" style="color:var(--acid)">207</strong> device Xiaomi, Redmi &amp; POCO. Lengkap dengan spesifikasi, firmware, dan tools modding.</p>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div class="layout">
+
+    <!-- ─ SIDEBAR FILTER ─ -->
+    <aside class="sidebar" id="filter-sidebar" aria-label="Filter devices">
+      <div class="filter-panel">
+        <div class="fp-head">
+          <span class="fp-title">⚙ Filter</span>
+          <button class="fp-reset" id="btn-reset-filter" aria-label="Reset semua filter">Reset</button>
+        </div>
+
+        <!-- Series -->
+        <div class="fg" id="fg-series">
+          <button class="fg-toggle" aria-expanded="true" aria-controls="fb-series">
+            Series <span class="fg-arrow open">▾</span>
+          </button>
+          <div class="fg-body open" id="fb-series">
+            <div class="fo" data-filter="series" data-value="Redmi" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Redmi</span><span class="fo-cnt" data-count="series-Redmi">-</span>
+            </div>
+            <div class="fo" data-filter="series" data-value="POCO" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">POCO</span><span class="fo-cnt" data-count="series-POCO">-</span>
+            </div>
+            <div class="fo" data-filter="series" data-value="Xiaomi" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Xiaomi</span><span class="fo-cnt" data-count="series-Xiaomi">-</span>
+            </div>
+            <div class="fo" data-filter="series" data-value="Mi" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Mi</span><span class="fo-cnt" data-count="series-Mi">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chipset -->
+        <div class="fg" id="fg-chipset">
+          <button class="fg-toggle" aria-expanded="true" aria-controls="fb-chipset">
+            Chipset <span class="fg-arrow open">▾</span>
+          </button>
+          <div class="fg-body open" id="fb-chipset">
+            <div class="fo" data-filter="chipset_brand" data-value="Qualcomm" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Qualcomm</span><span class="fo-cnt" data-count="chipset-Qualcomm">-</span>
+            </div>
+            <div class="fo" data-filter="chipset_brand" data-value="MediaTek" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">MediaTek</span><span class="fo-cnt" data-count="chipset-MediaTek">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android Version -->
+        <div class="fg" id="fg-android">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-android">
+            Android Version <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-android">
+            <div class="fo" data-filter="android_version" data-value="12" data-type="range_min" role="radio" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 12+</span>
+            </div>
+            <div class="fo" data-filter="android_version" data-value="13" data-type="range_min" role="radio" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 13+</span>
+            </div>
+            <div class="fo" data-filter="android_version" data-value="14" data-type="range_min" role="radio" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 14+</span>
+            </div>
+            <div class="fo" data-filter="android_version" data-value="15" data-type="range_min" role="radio" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 15+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAM -->
+        <div class="fg" id="fg-ram">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-ram">
+            RAM <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-ram">
+            <div class="fo" data-filter="ram" data-value="4" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">4 GB</span>
+            </div>
+            <div class="fo" data-filter="ram" data-value="6" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">6 GB</span>
+            </div>
+            <div class="fo" data-filter="ram" data-value="8" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">8 GB</span>
+            </div>
+            <div class="fo" data-filter="ram" data-value="12" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">12 GB</span>
+            </div>
+            <div class="fo" data-filter="ram" data-value="16" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">16 GB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="fg" id="fg-features">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-features">
+            Features <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-features">
+            <div class="fo" data-filter="fiveg" data-value="true" data-type="boolean" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-switch"></div><span class="fo-label">5G Support</span>
+            </div>
+            <div class="fo" data-filter="nfc" data-value="true" data-type="boolean" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-switch"></div><span class="fo-label">NFC</span>
+            </div>
+            <div class="fo" data-filter="has_hyperos" data-value="true" data-type="boolean" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-switch"></div><span class="fo-label">HyperOS</span>
+            </div>
+            <div class="fo" data-filter="bootloader_unlockable" data-value="true" data-type="boolean" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-switch"></div><span class="fo-label">UBL Support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="fg" id="fg-status">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-status">
+            Status <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-status">
+            <div class="fo" data-filter="status" data-value="active" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Active</span>
+            </div>
+            <div class="fo" data-filter="status" data-value="legacy" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Legacy</span>
+            </div>
+            <div class="fo" data-filter="status" data-value="discontinued" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Discontinued</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /filter-panel -->
+    </aside>
+
+    <!-- ─ MAIN CONTENT ─ -->
+    <main id="main-content">
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <!-- Mobile filter button -->
+        <button class="mobile-filter-btn" id="btn-open-filter" aria-label="Buka filter" aria-controls="filter-sidebar">
+          ⚙ Filter <span id="filter-active-count" style="display:none;color:var(--acid)"></span>
+        </button>
+
+        <!-- Search -->
+        <div class="search-box" role="search">
+          <span class="s-ico" aria-hidden="true">🔍</span>
+          <input type="search" id="search-input"
+                 placeholder="Cari device, codename, chipset..."
+                 aria-label="Cari device">
+          <button class="s-clear" id="btn-clear-search" aria-label="Hapus pencarian">✕</button>
+        </div>
+
+        <!-- Sort -->
+        <div class="sort-wrap">
+          <button class="sort-btn" id="btn-sort" aria-haspopup="listbox" aria-expanded="false">
+            <span id="sort-label">Modding Score</span> ▾
+          </button>
+          <div class="sort-dd" id="sort-dd" role="listbox">
+            <button class="sort-opt" data-sort="modding_score" role="option" aria-selected="true">⚡ Modding Score</button>
+            <button class="sort-opt" data-sort="name_az" role="option" aria-selected="false">🔤 Name A–Z</button>
+            <button class="sort-opt" data-sort="year_new" role="option" aria-selected="false">📅 Year Newest</button>
+            <button class="sort-opt" data-sort="ram_high" role="option" aria-selected="false">💾 RAM Highest</button>
+            <button class="sort-opt" data-sort="camera_high" role="option" aria-selected="false">📷 Camera MP</button>
+          </div>
+        </div>
+
+        <!-- View toggle -->
+        <div class="vt" role="group" aria-label="View mode">
+          <button class="vt-btn active" id="btn-grid-view" aria-label="Grid view" aria-pressed="true">⊞</button>
+          <button class="vt-btn"       id="btn-list-view" aria-label="List view" aria-pressed="false">☰</button>
+        </div>
+      </div>
+
+      <!-- Active filter chips -->
+      <div class="af-row" id="af-row" aria-live="polite" aria-label="Active filters"></div>
+
+      <!-- Results bar -->
+      <div class="results-bar">
+        <span class="results-count" aria-live="polite">
+          Menampilkan <strong id="shown-count">—</strong> dari <strong id="total-count-bar" style="color:var(--t2)">207</strong> device
+        </span>
+        <span class="results-ms" id="search-time" aria-hidden="true"></span>
+      </div>
+
+      <!-- Device Grid -->
+      <div id="device-grid" role="list" aria-label="Daftar device"></div>
+
+      <!-- Load More -->
+      <div class="load-wrap">
+        <button class="load-btn" id="btn-load-more" aria-label="Load more devices" hidden>
+          <span data-pg-label>Load More</span>
+        </button>
+        <div class="lp" id="progress-wrap" aria-hidden="true">
+          <div class="lp-bar"><div class="lp-fill" id="progress-fill" style="width:0%"></div></div>
+          <span class="lp-txt" id="progress-txt"></span>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Compare floating bar -->
+  <div class="compare-bar" id="compare-bar" role="status" aria-label="Compare bar" aria-live="polite">
+    <span class="compare-bar-label"><strong id="compare-count">0</strong> device dipilih</span>
+    <button class="compare-bar-btn" id="btn-do-compare" aria-label="Bandingkan device">⇄ Compare</button>
+    <button class="compare-bar-clear" id="btn-clear-compare" aria-label="Hapus pilihan compare">✕ Clear</button>
+  </div>
+
+  <!-- Mobile filter overlay -->
+  <div class="filter-overlay" id="filter-overlay" aria-hidden="true"></div>
+
+  <!-- AD PLACEHOLDER — BANNER BOTTOM (728x90 desktop / 320x50 mobile) -->
+  <div class="ad-container ad-banner-bottom" aria-hidden="true" style="text-align:center;padding:16px 0">
+    <!-- Insert banner ad code here -->
+  </div>
+
+  <!-- Vendor JS -->
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+
+  <!-- Core JS -->
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components -->
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/deviceCard.js"></script>
+
+  <!-- Page Logic -->
+  <script src="/assets/js/pages/devices.js"></script>
+
+  <!-- Cursor script -->
+  <script>
+    (function() {
+      const dot  = document.getElementById('cursor-dot');
+      const ring = document.getElementById('cursor-ring');
+      if (!dot || !ring) return;
+      let rx = 0, ry = 0;
+      document.addEventListener('mousemove', e => {
+        dot.style.left  = e.clientX + 'px';
+        dot.style.top   = e.clientY + 'px';
+        rx += (e.clientX - rx) * 0.12;
+        ry += (e.clientY - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+      });
+      document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+      });
+    })();
+  </script>
+
+  <!-- AD PLACEHOLDER — CLICK-UNDER: Insert click-under script here before </body> -->
+</body>
+</html>
