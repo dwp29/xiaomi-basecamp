@@ -1,0 +1,7 @@
+{
+  "rom_types": [
+    { "id": "AOSP", "name": "AOSP Based", "description": "Berbasis Android Open Source Project murni. Biasanya lebih ringan, cepat, dan dapat update lebih cepat dari Google. Tidak ada MIUI/HyperOS. Contoh: Evolution X, LineageOS, crDroid.", "count": 17, "color": "#00ffe0", "icon": "🤖", "pros": ["Ringan & cepat", "Update cepat", "Privacy lebih baik", "Customizable"], "cons": ["Perlu GApps terpisah (beberapa)", "Fitur kamera MIUI tidak ada"] },
+    { "id": "HyperOS-based", "name": "HyperOS Based", "description": "Berbasis HyperOS (penerus MIUI) dengan modifikasi komunitas. Cocok untuk yang ingin fitur Xiaomi terbaru dengan bloatware dikurangi. Contoh: HyperOS EU, Xiaomi.eu.", "count": 5, "color": "#b800ff", "icon": "⚡", "pros": ["Fitur HyperOS lengkap", "Lebih bersih dari China ROM", "GMS terintegrasi"], "cons": ["Masih ada beberapa bloat", "Update ikut jadwal Xiaomi"] },
+    { "id": "MIUI-based", "name": "MIUI Based", "description": "Berbasis MIUI dengan modifikasi komunitas. Cocok untuk pengguna yang sudah familiar dengan MIUI dan tidak mau pindah ke AOSP. Contoh: MIUI EU, MIUI Taiwan.", "count": 3, "color": "#ffa500", "icon": "💿", "pros": ["Feel familiar seperti MIUI", "Stabil karena base solid", "GMS sudah ada"], "cons": ["Lebih berat dari AOSP", "Update tergantung Xiaomi"] }
+  ]
+}

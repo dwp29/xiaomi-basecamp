@@ -1,0 +1,450 @@
+/* ============================================================
+   XIAOMI BASECAMP — animations.css
+   Keyframes, animation utilities, transitions.
+   Import AFTER variables.css.
+   ============================================================ */
+
+/* ── 1. KEYFRAMES ─────────────────────────────────────────── */
+
+/* Fade in from below */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from above */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Simple fade */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Scale in from center */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scale in with spring */
+@keyframes scaleInSpring {
+  0%   { opacity: 0; transform: scale(0.88); }
+  60%  { opacity: 1; transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Neon glow pulse (for text/borders) */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 255, 224, 0.4),
+                 0 0 20px rgba(0, 255, 224, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 224, 0.8),
+                 0 0 40px rgba(0, 255, 224, 0.4),
+                 0 0 60px rgba(0, 255, 224, 0.2);
+  }
+}
+
+/* Glow pulse for box-shadow */
+@keyframes boxGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 224, 0.2),
+                0 0 0 1px rgba(0, 255, 224, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 224, 0.5),
+                0 0 0 1px rgba(0, 255, 224, 0.4);
+  }
+}
+
+/* Volt glow pulse */
+@keyframes voltGlowPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(184, 0, 255, 0.2); }
+  50%       { box-shadow: 0 0 30px rgba(184, 0, 255, 0.5); }
+}
+
+/* Scanline sweep */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Floating animation (device mockup, cards) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Floating with rotation */
+@keyframes floatRotate {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(1deg); }
+  66%       { transform: translateY(-4px) rotate(-1deg); }
+}
+
+/* Particle drift (hero particles) */
+@keyframes particleDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translate(var(--drift-x, 60px), var(--drift-y, -80px)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Grid shift (background grid subtle motion) */
+@keyframes gridShift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 44px 44px; }
+}
+
+/* Neon flicker (logo, hero text) */
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(0, 255, 224, 0.5),
+                 0 0 20px rgba(0, 255, 224, 0.3);
+  }
+  20%, 24%, 55% {
+    opacity: 0.85;
+    text-shadow: none;
+  }
+}
+
+/* LED blink (nav logo dot) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+/* Shimmer (skeleton loading) */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Spin (loading spinner) */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scroll indicator bounce */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50%       { transform: translateY(6px) rotate(45deg); }
+}
+
+/* Count up (used with JS) */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide in from right (mobile nav) */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* Slide out to right */
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+/* Toast slide in from bottom */
+@keyframes toastIn {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Modal appear */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Horizontal progress bar */
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: var(--progress-width, 100%); }
+}
+
+/* ── 2. PAGE TRANSITION ───────────────────────────────────── */
+.page-transition-enter {
+  animation: fadeInUp var(--dur-slow) var(--ease-out) both;
+}
+.page-transition-exit {
+  animation: fadeIn var(--dur-fast) var(--ease-in) reverse both;
+}
+
+/* ── 3. ANIMATION UTILITY CLASSES ────────────────────────── */
+
+/* Apply to elements — animates on page load */
+.animate-in {
+  animation: fadeInUp var(--dur-slow) cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.animate-in-down {
+  animation: fadeInDown var(--dur-slow) var(--ease-out) both;
+}
+.animate-fade {
+  animation: fadeIn var(--dur-slow) var(--ease-out) both;
+}
+.animate-scale {
+  animation: scaleIn var(--dur-slow) var(--ease-spring) both;
+}
+.animate-scale-spring {
+  animation: scaleInSpring var(--dur-slower) var(--ease-spring) both;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-glow-pulse {
+  animation: boxGlowPulse 2.5s ease-in-out infinite;
+}
+.animate-blink {
+  animation: blink 2s ease-in-out infinite;
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+.animate-neon-flicker {
+  animation: neonFlicker 3s ease-in-out infinite;
+}
+
+/* ── 4. STAGGER DELAY SYSTEM ─────────────────────────────── */
+/* Use with JS: el.style.setProperty('--stagger-delay', i * 60 + 'ms') */
+.stagger {
+  animation-delay: var(--stagger-delay, 0ms);
+}
+
+/* Predefined stagger delays for up to 10 items */
+.stagger-1  { animation-delay: 60ms;  }
+.stagger-2  { animation-delay: 120ms; }
+.stagger-3  { animation-delay: 180ms; }
+.stagger-4  { animation-delay: 240ms; }
+.stagger-5  { animation-delay: 300ms; }
+.stagger-6  { animation-delay: 360ms; }
+.stagger-7  { animation-delay: 420ms; }
+.stagger-8  { animation-delay: 480ms; }
+
+/* ── 5. REVEAL ON SCROLL ─────────────────────────────────── */
+/* JS sets .is-visible class via IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--stagger-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── 6. HOVER UTILITIES ───────────────────────────────────── */
+.hover-lift {
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.hover-glow {
+  transition: box-shadow var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out);
+}
+.hover-glow:hover {
+  box-shadow: var(--glow-acid);
+}
+
+/* ── 7. SKELETON LOADING ──────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--ink-1) 25%,
+    var(--ink-3) 50%,
+    var(--ink-1) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--r-sm);
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+.skeleton-text {
+  height: 1em;
+  border-radius: var(--r-xs);
+}
+.skeleton-text + .skeleton-text {
+  margin-top: var(--s2);
+}
+.skeleton-heading {
+  height: 1.5em;
+  width: 60%;
+}
+.skeleton-image {
+  aspect-ratio: 1;
+  width: 100%;
+}
+.skeleton-badge {
+  height: 1.5em;
+  width: 80px;
+  border-radius: var(--r-full);
+}
+.skeleton-btn {
+  height: 36px;
+  width: 100px;
+  border-radius: var(--r-sm);
+}
+
+/* ── 8. LOADING SPINNER ───────────────────────────────────── */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(0, 255, 224, 0.15);
+  border-top-color: var(--acid);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.spinner-lg {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}
+
+/* ── 9. SCROLL INDICATOR ──────────────────────────────────── */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+}
+.scroll-indicator__arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--acid);
+  border-bottom: 2px solid var(--acid);
+  animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+/* ── 10. TRANSITION UTILITIES ────────────────────────────── */
+.transition-base {
+  transition: all var(--dur-base) var(--ease-out);
+}
+.transition-fast {
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.transition-slow {
+  transition: all var(--dur-slow) var(--ease-out);
+}
+.transition-none {
+  transition: none !important;
+}
+
+/* ── 11. SCANLINE OVERLAY (decorative) ───────────────────── */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: var(--z-raised);
+}
+
+/* ── 12. RESPECT REDUCED MOTION ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-in,
+  .animate-in-down,
+  .animate-fade,
+  .animate-scale,
+  .animate-scale-spring,
+  .animate-float,
+  .animate-float-slow,
+  .animate-glow-pulse,
+  .animate-blink,
+  .animate-spin,
+  .animate-neon-flicker,
+  .reveal,
+  .reveal-left,
+  .skeleton {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}

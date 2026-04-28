@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial — Xiaomi Basecamp</title>
+  <meta name="description" content="Tutorial modding Xiaomi step-by-step.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/tutorial-detail.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" id="og-title" content="Tutorial — Xiaomi Basecamp">
+  <meta property="og:image" content="/assets/img/ui/og-image.webp">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    /* Reading progress bar */
+    #reading-progress {
+      position: fixed; top: 60px; left: 0; right: 0; height: 2px;
+      background: var(--ink-2); z-index: 700;
+    }
+    #progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--acid), var(--volt));
+      width: 0%; transition: width .1s linear;
+      box-shadow: 0 0 8px var(--acid);
+    }
+
+    /* Layout: sidebar TOC + main content */
+    .td-layout {
+      max-width: 1440px; margin: 0 auto; padding: 0 24px 80px;
+      display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: start;
+    }
+
+    /* Sticky TOC sidebar */
+    .td-toc {
+      position: sticky; top: 80px;
+      background: rgba(7,12,26,.8); border: 1px solid rgba(0,255,224,.08);
+      border-radius: 14px; padding: 16px; max-height: calc(100vh - 100px); overflow-y: auto;
+    }
+    .toc-title {
+      font-family: 'DM Mono', monospace; font-size: .6rem;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--acid);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+    }
+    .toc-title::before { content: '//'; opacity: .4; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .toc-item a {
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 6px 8px; border-radius: 6px;
+      font-family: 'Syne', sans-serif; font-size: .72rem; color: var(--t3);
+      text-decoration: none; transition: color .2s, background .2s;
+      line-height: 1.4;
+    }
+    .toc-item a:hover { color: var(--acid); background: rgba(0,255,224,.05); }
+    .toc-item.active a { color: var(--acid); background: rgba(0,255,224,.08); }
+    .toc-num { font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--acid); flex-shrink: 0; margin-top: 2px; }
+
+    /* Main content */
+    .td-main { min-width: 0; }
+
+    /* Breadcrumb */
+    .td-breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3);
+      margin-bottom: 20px; padding-top: 32px;
+    }
+    .td-breadcrumb a { color: var(--t3); transition: color .2s; }
+    .td-breadcrumb a:hover { color: var(--acid); }
+    .td-breadcrumb .sep { opacity: .4; }
+
+    /* Tutorial header */
+    .td-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -.5px; line-height: 1;
+      color: var(--t1); margin-bottom: 16px;
+    }
+    .td-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .td-badge {
+      padding: 3px 10px; border-radius: 6px; border: 1px solid;
+      font-family: 'DM Mono', monospace; font-size: .65rem; font-weight: 600;
+    }
+    .td-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 16px; }
+    .td-tag {
+      padding: 2px 8px; border-radius: 99px;
+      background: rgba(0,255,224,.06); border: 1px solid rgba(0,255,224,.13);
+      font-family: 'Syne', sans-serif; font-size: .62rem; color: var(--t3);
+    }
+    .td-compat {
+      padding: 12px 16px; border-radius: 10px;
+      background: rgba(7,12,26,.8); border: 1px solid rgba(0,255,224,.08);
+      font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--t2);
+      margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .td-compat-item { display: flex; align-items: center; gap: 6px; }
+    .td-compat-item span { color: var(--t3); }
+
+    /* Sections */
+    .td-section { margin-bottom: 36px; }
+    .td-section-title {
+      font-family: 'DM Mono', monospace; font-size: .62rem;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--acid);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .td-section-title::before { content: '//'; opacity: .4; }
+
+    /* Warning boxes */
+    .td-warning {
+      display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid;
+      font-family: 'Syne', sans-serif; font-size: .82rem; color: var(--t1); margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .td-warning-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .td-warning-danger  { background: rgba(255,45,107,.07); border-color: rgba(255,45,107,.25); }
+    .td-warning-warning { background: rgba(255,165,0,.07);  border-color: rgba(255,165,0,.25);  }
+    .td-warning-info    { background: rgba(0,255,224,.05);  border-color: rgba(0,255,224,.2);   }
+
+    /* Requirements checklist */
+    .td-checklist { display: flex; flex-direction: column; gap: 6px; }
+    .td-check-item {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      border-radius: 8px; background: rgba(7,12,26,.8); border: 1px solid rgba(255,255,255,.05);
+      font-family: 'Syne', sans-serif; font-size: .82rem; color: var(--t1);
+      cursor: pointer; transition: all .2s; user-select: none;
+    }
+    .td-check-item:hover { border-color: rgba(0,255,224,.15); background: rgba(0,255,224,.03); }
+    .td-check-item.checked { background: rgba(41,255,90,.06); border-color: rgba(41,255,90,.2); color: var(--t2); text-decoration: line-through; }
+    .td-check-box {
+      width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid var(--t4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all .2s; font-size: .65rem; color: transparent;
+    }
+    .td-check-item.checked .td-check-box { background: var(--lime); border-color: var(--lime); color: var(--ink-0); }
+    .td-dl-link {
+      display: inline-flex; align-items: center; gap: 6px; margin-left: auto; flex-shrink: 0;
+      padding: 3px 10px; border-radius: 6px;
+      background: rgba(0,255,224,.08); border: 1px solid rgba(0,255,224,.2);
+      font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--acid);
+      text-decoration: none; transition: all .2s;
+    }
+    .td-dl-link:hover { background: rgba(0,255,224,.15); }
+
+    /* Steps */
+    .td-steps { display: flex; flex-direction: column; gap: 24px; }
+    .td-step {
+      padding: 20px 24px; border-radius: 14px;
+      background: rgba(7,12,26,.7); border: 1px solid rgba(255,255,255,.05);
+      border-left: 3px solid var(--acid); transition: border-color .2s;
+      scroll-margin-top: 90px;
+    }
+    .td-step:hover { border-left-color: var(--acid); border-color: rgba(0,255,224,.15); }
+    .td-step-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+    .td-step-num {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; font-weight: 900;
+      color: var(--acid); line-height: .9; flex-shrink: 0; opacity: .5; min-width: 40px;
+    }
+    .td-step-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--t1); text-transform: uppercase; letter-spacing: .05em; line-height: 1.2;
+    }
+    .td-step-content { font-family: 'Syne', sans-serif; font-size: .85rem; color: var(--t2); line-height: 1.7; margin-bottom: 12px; }
+    .td-step-content strong { color: var(--t1); font-weight: 600; }
+
+    /* Code block */
+    .td-code-block {
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.15);
+      border-radius: 10px; overflow: hidden; margin: 12px 0;
+    }
+    .td-code-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 14px; background: var(--ink-2);
+      border-bottom: 1px solid rgba(0,255,224,.08);
+    }
+    .td-code-lang { font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--acid); letter-spacing: .05em; }
+    .td-code-copy {
+      font-family: 'Syne', sans-serif; font-size: .65rem; color: var(--t3);
+      padding: 2px 8px; border: 1px solid rgba(122,153,194,.2); border-radius: 4px;
+      background: none; transition: color .2s, border-color .2s;
+    }
+    .td-code-copy:hover { color: var(--acid); border-color: rgba(0,255,224,.3); }
+    .td-code-copy.copied { color: var(--lime); border-color: rgba(41,255,90,.3); }
+    .td-code-block pre { padding: 14px 16px; overflow-x: auto; }
+    .td-code-block code { font-family: 'DM Mono', monospace; font-size: .78rem; color: var(--t1); line-height: 1.7; display: block; }
+
+    /* Tip box */
+    .td-tip {
+      display: flex; gap: 10px; padding: 10px 14px; border-radius: 8px;
+      background: rgba(184,0,255,.05); border: 1px solid rgba(184,0,255,.15);
+      font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t2); margin-top: 10px; line-height: 1.5;
+    }
+    .td-tip-icon { flex-shrink: 0; font-size: .9rem; }
+
+    /* Download link in step */
+    .td-step-dl {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
+      padding: 8px 16px; border-radius: 8px;
+      background: var(--acid); color: var(--ink-0);
+      font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+      transition: background .2s, box-shadow .2s;
+    }
+    .td-step-dl:hover { background: #33ffed; box-shadow: 0 0 16px rgba(0,255,224,.4); }
+
+    /* FAQ accordion */
+    .td-faq-item { border: 1px solid rgba(0,255,224,.08); border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
+    .td-faq-q {
+      width: 100%; padding: 14px 16px; text-align: left; background: rgba(7,12,26,.8);
+      font-family: 'Syne', sans-serif; font-size: .85rem; font-weight: 600; color: var(--t1);
+      border: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      transition: background .2s;
+    }
+    .td-faq-q:hover { background: rgba(0,255,224,.03); }
+    .td-faq-arrow { font-size: .7rem; color: var(--acid); transition: transform .25s; flex-shrink: 0; }
+    .td-faq-item.open .td-faq-arrow { transform: rotate(180deg); }
+    .td-faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.22,1,.36,1), padding .3s;
+      background: rgba(7,12,26,.5);
+    }
+    .td-faq-item.open .td-faq-a { max-height: 300px; padding: 0 16px 14px; }
+    .td-faq-a p { font-family: 'Syne', sans-serif; font-size: .82rem; color: var(--t2); line-height: 1.7; }
+
+    /* Related tutorials */
+    #related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+    /* Not found / loading */
+    .td-loading { min-height: 60vh; display: flex; align-items: center; justify-content: center; }
+    .td-not-found { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; padding: 40px; }
+
+    @media (max-width: 1023px) {
+      .td-layout { grid-template-columns: 1fr; }
+      .td-toc { position: relative; top: 0; max-height: none; }
+    }
+    @media (max-width: 640px) {
+      #related-grid { grid-template-columns: 1fr; }
+      .td-step { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Reading progress bar -->
+  <div id="reading-progress" aria-hidden="true"><div id="progress-fill"></div></div>
+
+  <div id="nav-root"></div>
+
+  <!-- Loading -->
+  <div class="td-loading" id="td-loading"><div class="spinner spinner-lg"></div></div>
+
+  <!-- Content -->
+  <div id="td-content" hidden>
+    <div class="td-layout">
+
+      <!-- TOC Sidebar -->
+      <aside class="td-toc" id="toc-sidebar" aria-label="Table of contents">
+        <p class="toc-title">Table of Contents</p>
+        <ol class="toc-list" id="toc-list"></ol>
+      </aside>
+
+      <!-- Main content -->
+      <main class="td-main" id="main-content">
+
+        <!-- Breadcrumb -->
+        <nav class="td-breadcrumb" aria-label="Breadcrumb">
+          <a href="/index.html">Home</a>
+          <span class="sep">›</span>
+          <a href="/tutorials.html">Tutorial</a>
+          <span class="sep">›</span>
+          <span id="bc-title" aria-current="page">—</span>
+        </nav>
+
+        <!-- Title & Meta -->
+        <h1 class="td-title" id="tut-title">—</h1>
+        <div class="td-meta" id="tut-meta"></div>
+        <div class="td-tags" id="tut-tags"></div>
+        <div class="td-compat" id="tut-compat"></div>
+
+        <!-- AD PLACEHOLDER -->
+        <div class="ad-container" aria-hidden="true" style="margin-bottom:24px"><!-- Banner ad --></div>
+
+        <!-- Warnings -->
+        <section class="td-section" id="section-warnings">
+          <div id="warnings-container"></div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="td-section" aria-labelledby="req-title">
+          <h2 class="td-section-title" id="req-title">Requirements / Persiapan</h2>
+          <div class="td-checklist" id="requirements-list"></div>
+        </section>
+
+        <!-- Steps -->
+        <section class="td-section" aria-labelledby="steps-title">
+          <h2 class="td-section-title" id="steps-title">Langkah-langkah</h2>
+          <div class="td-steps" id="steps-container"></div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="td-section" id="section-faq" aria-labelledby="faq-title">
+          <h2 class="td-section-title" id="faq-title">FAQ — Pertanyaan Umum</h2>
+          <div id="faq-container"></div>
+        </section>
+
+        <!-- Related -->
+        <section class="td-section" aria-labelledby="related-title">
+          <h2 class="td-section-title" id="related-title">Tutorial Terkait</h2>
+          <div id="related-grid"></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Not found -->
+  <div id="td-not-found" hidden>
+    <div class="td-not-found">
+      <div style="font-size:4rem;opacity:.4">📖</div>
+      <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;color:var(--t2)">Tutorial Tidak Ditemukan</h1>
+      <a href="/tutorials.html" style="margin-top:8px;padding:10px 20px;background:var(--acid);color:var(--ink-0);font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:8px">← Kembali ke Tutorial</a>
+    </div>
+  </div>
+
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/tutorialCard.js"></script>
+  <script src="/assets/js/pages/tutorialDetail.js"></script>
+
+  <script>
+    (function(){
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return;let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{
+        dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+        rx+=(e.clientX-rx)*.12;ry+=(e.clientY-ry)*.12;
+        ring.style.left=rx+'px';ring.style.top=ry+'px';
+      });
+      document.querySelectorAll('a,button').forEach(el=>{
+        el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+      });
+    })();
+  </script>
+</body>
+</html>

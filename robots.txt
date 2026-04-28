@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/js/vendor/
+Disallow: /scripts/
+
+Sitemap: https://xiaomi-basecamp.github.io/sitemap.xml

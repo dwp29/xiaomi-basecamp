@@ -1,0 +1,367 @@
+{
+  "total": 19,
+  "items": [
+    {
+      "id": "cara-unlock-bootloader",
+      "title": "Cara Unlock Bootloader (UBL) Xiaomi 2026 — Panduan Lengkap",
+      "category": "bootloader",
+      "difficulty": "Pemula",
+      "estimated_time": "30 menit + 7 hari tunggu",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/ubl-thumbnail.webp",
+      "views": 18420,
+      "tags": [
+        "bootloader",
+        "ubl",
+        "pemula",
+        "wajib-pertama",
+        "xiaomi",
+        "official"
+      ],
+      "step_count": 8,
+      "updated_at": "2026-04-01"
+    },
+    {
+      "id": "cara-install-twrp",
+      "title": "Cara Install TWRP Recovery via Fastboot — Semua Device Xiaomi",
+      "category": "recovery",
+      "difficulty": "Pemula",
+      "estimated_time": "15 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/twrp-thumbnail.webp",
+      "views": 12350,
+      "tags": [
+        "recovery",
+        "twrp",
+        "fastboot",
+        "pemula"
+      ],
+      "step_count": 6,
+      "updated_at": "2026-03-15"
+    },
+    {
+      "id": "cara-install-orangefox",
+      "title": "Cara Install OrangeFox Recovery via Fastboot",
+      "category": "recovery",
+      "difficulty": "Pemula",
+      "estimated_time": "15 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/orangefox-thumbnail.webp",
+      "views": 9800,
+      "tags": [
+        "recovery",
+        "orangefox",
+        "fastboot",
+        "pemula",
+        "modern"
+      ],
+      "step_count": 4,
+      "updated_at": "2026-03-01"
+    },
+    {
+      "id": "cara-root-magisk-recovery",
+      "title": "Cara Root Xiaomi dengan Magisk via Recovery (TWRP/OrangeFox)",
+      "category": "root",
+      "difficulty": "Pemula",
+      "estimated_time": "20 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/magisk-root-thumbnail.webp",
+      "views": 21500,
+      "tags": [
+        "root",
+        "magisk",
+        "recovery",
+        "pemula",
+        "popular"
+      ],
+      "step_count": 6,
+      "updated_at": "2026-04-10"
+    },
+    {
+      "id": "cara-root-magisk-patch-boot",
+      "title": "Cara Root dengan Magisk — Patch Boot Image (Tanpa Custom Recovery)",
+      "category": "root",
+      "difficulty": "Menengah",
+      "estimated_time": "30 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/magisk-patch-thumbnail.webp",
+      "views": 14200,
+      "tags": [
+        "root",
+        "magisk",
+        "boot-patch",
+        "menengah",
+        "no-recovery"
+      ],
+      "step_count": 6,
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "cara-install-kernelsu",
+      "title": "Cara Install KernelSU di Xiaomi — Panduan Lengkap 2026",
+      "category": "root",
+      "difficulty": "Menengah",
+      "estimated_time": "25 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/kernelsu-thumbnail.webp",
+      "views": 9800,
+      "tags": [
+        "root",
+        "kernelsu",
+        "kernel",
+        "menengah",
+        "advanced"
+      ],
+      "step_count": 6,
+      "updated_at": "2026-04-12"
+    },
+    {
+      "id": "cara-install-custom-rom",
+      "title": "Cara Install Custom ROM di Xiaomi via Recovery — Panduan Lengkap",
+      "category": "flashing",
+      "difficulty": "Menengah",
+      "estimated_time": "45 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/custom-rom-thumbnail.webp",
+      "views": 19800,
+      "tags": [
+        "flashing",
+        "custom-rom",
+        "recovery",
+        "menengah",
+        "popular"
+      ],
+      "step_count": 7,
+      "updated_at": "2026-04-08"
+    },
+    {
+      "id": "cara-flash-firmware-miflash",
+      "title": "Cara Flash Firmware Fastboot Xiaomi via MiFlash Tool",
+      "category": "flashing",
+      "difficulty": "Menengah",
+      "estimated_time": "20 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/miflash-thumbnail.webp",
+      "views": 11200,
+      "tags": [
+        "flashing",
+        "firmware",
+        "miflash",
+        "menengah",
+        "windows"
+      ],
+      "step_count": 6,
+      "updated_at": "2026-03-20"
+    },
+    {
+      "id": "cara-setup-adb-fastboot",
+      "title": "Cara Setup ADB & Fastboot di Windows — Panduan Pemula",
+      "category": "flashing",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/adb-thumbnail.webp",
+      "views": 8900,
+      "tags": [
+        "tools",
+        "adb",
+        "fastboot",
+        "pemula",
+        "setup",
+        "windows"
+      ],
+      "step_count": 5,
+      "updated_at": "2026-02-10"
+    },
+    {
+      "id": "cara-unbrick-xiaomi",
+      "title": "Cara Unbrick Xiaomi — EDL Mode 9008 & MiFlash",
+      "category": "recovery",
+      "difficulty": "Mahir",
+      "estimated_time": "30-60 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/unbrick-thumbnail.webp",
+      "views": 7600,
+      "tags": [
+        "unbrick",
+        "edl",
+        "mahir",
+        "emergency",
+        "miflash"
+      ],
+      "step_count": 5,
+      "updated_at": "2026-03-10"
+    },
+    {
+      "id": "cara-fix-bootloop",
+      "title": "Cara Fix Bootloop Xiaomi setelah Flash ROM — Semua Solusi",
+      "category": "recovery",
+      "difficulty": "Menengah",
+      "estimated_time": "20-60 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/bootloop-thumbnail.webp",
+      "views": 13400,
+      "tags": [
+        "fix",
+        "bootloop",
+        "menengah",
+        "troubleshoot",
+        "emergency"
+      ],
+      "step_count": 6,
+      "updated_at": "2026-04-02"
+    },
+    {
+      "id": "cara-install-lsposed",
+      "title": "Cara Install LSPosed Framework di Xiaomi",
+      "category": "root",
+      "difficulty": "Menengah",
+      "estimated_time": "15 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/lsposed-thumbnail.webp",
+      "views": 7200,
+      "tags": [
+        "module",
+        "lsposed",
+        "xposed",
+        "menengah",
+        "framework"
+      ],
+      "step_count": 4,
+      "updated_at": "2026-02-20"
+    },
+    {
+      "id": "cara-install-dolby-atmos",
+      "title": "Cara Install Dolby Atmos Mod di Custom ROM Xiaomi",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/dolby-thumbnail.webp",
+      "views": 8100,
+      "tags": [
+        "audio",
+        "dolby",
+        "pemula",
+        "mod",
+        "enhancement"
+      ],
+      "step_count": 4,
+      "updated_at": "2026-01-15"
+    },
+    {
+      "id": "cara-flash-recovery-fastboot",
+      "title": "Cara Flash Recovery via Fastboot — TWRP, OrangeFox, PBRP",
+      "category": "recovery",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/flash-recovery-thumbnail.webp",
+      "views": 6500,
+      "tags": [
+        "recovery",
+        "fastboot",
+        "pemula",
+        "flash"
+      ],
+      "step_count": 2,
+      "updated_at": "2026-02-01"
+    },
+    {
+      "id": "cara-verify-integrity",
+      "title": "Cara Pass Play Integrity Check pada HP yang Di-Root",
+      "category": "tips",
+      "difficulty": "Menengah",
+      "estimated_time": "15 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/integrity-thumbnail.webp",
+      "views": 9300,
+      "tags": [
+        "integrity",
+        "banking",
+        "root",
+        "menengah",
+        "essential"
+      ],
+      "step_count": 3,
+      "updated_at": "2026-04-18"
+    },
+    {
+      "id": "cara-pasang-gcam",
+      "title": "Cara Install GCam (Google Camera) di Xiaomi tanpa Root",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/gcam-thumbnail.webp",
+      "views": 11600,
+      "tags": [
+        "camera",
+        "gcam",
+        "pemula",
+        "no-root",
+        "tips"
+      ],
+      "step_count": 3,
+      "updated_at": "2026-03-05"
+    },
+    {
+      "id": "cara-dirty-flash-rom",
+      "title": "Cara Update ROM tanpa Full Wipe — Dirty Flash Aman",
+      "category": "flashing",
+      "difficulty": "Menengah",
+      "estimated_time": "20 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/dirty-flash-thumbnail.webp",
+      "views": 6800,
+      "tags": [
+        "flashing",
+        "dirty-flash",
+        "update",
+        "menengah",
+        "tips"
+      ],
+      "step_count": 4,
+      "updated_at": "2026-03-15"
+    },
+    {
+      "id": "cara-backup-restore-twrp",
+      "title": "Cara Backup & Restore Penuh dengan TWRP/OrangeFox",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "30 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/backup-thumbnail.webp",
+      "views": 7400,
+      "tags": [
+        "backup",
+        "restore",
+        "twrp",
+        "pemula",
+        "essential"
+      ],
+      "step_count": 4,
+      "updated_at": "2026-02-15"
+    },
+    {
+      "id": "cara-enable-dev-options",
+      "title": "Cara Enable Developer Options & USB Debugging di MIUI/HyperOS",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "5 menit",
+      "status": "published",
+      "thumbnail": "/assets/img/tutorials/dev-options-thumbnail.webp",
+      "views": 15200,
+      "tags": [
+        "developer-options",
+        "usb-debugging",
+        "pemula",
+        "first-step",
+        "miui",
+        "hyperos"
+      ],
+      "step_count": 5,
+      "updated_at": "2026-04-01"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "series": [
+    { "id": "redmi", "name": "Redmi", "description": "Seri entry-to-mid range Xiaomi. Fokus harga terjangkau dengan spesifikasi kompetitif.", "device_count": 98, "icon": "📱", "color": "#ff2d6b", "popular_models": ["Redmi Note 13 Pro+", "Redmi Note 12 Pro", "Redmi Note 11 Pro+"] },
+    { "id": "poco", "name": "POCO", "description": "Seri gaming dan performa tinggi. Snapdragon flagship killer dengan harga menengah.", "device_count": 42, "icon": "⚡", "color": "#ffa500", "popular_models": ["POCO F6 Pro", "POCO X6 Pro", "POCO F5 Pro"] },
+    { "id": "xiaomi", "name": "Xiaomi", "description": "Seri flagship utama Xiaomi dengan teknologi terdepan dan kamera premium.", "device_count": 52, "icon": "🏆", "color": "#00ffe0", "popular_models": ["Xiaomi 14", "Xiaomi 13 Pro", "Xiaomi 12 Pro"] },
+    { "id": "mi", "name": "Mi (Legacy)", "description": "Seri lama sebelum rebranding ke Xiaomi. Masih populer untuk modding karena komunitas besar.", "device_count": 15, "icon": "🔖", "color": "#7a99c2", "popular_models": ["Mi 11", "Mi 10", "Mi 9"] }
+  ]
+}

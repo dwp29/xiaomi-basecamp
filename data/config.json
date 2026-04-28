@@ -1,0 +1,48 @@
+{
+  "site": {
+    "name": "Xiaomi Basecamp",
+    "tagline": "Pusat Firmware, ROM & Modding Xiaomi Indonesia",
+    "description": "Database lengkap firmware, custom ROM, root tools, dan tutorial untuk semua device Xiaomi, Redmi, dan POCO.",
+    "url": "https://xiaomi-basecamp.github.io",
+    "locale": "id-ID",
+    "og_image": "/assets/img/ui/og-image.webp",
+    "favicon": "/assets/img/ui/favicon.ico",
+    "language": "id",
+    "author": "Xiaomi Basecamp Team"
+  },
+  "stats": {
+    "total_devices": 207,
+    "total_roms": 24,
+    "total_tools": 30,
+    "total_tutorials": 19,
+    "last_updated": "2026-04-28"
+  },
+  "social": {
+    "telegram": "https://t.me/xiaomi_basecamp",
+    "github": "https://github.com/xiaomi-basecamp/portal",
+    "youtube": null,
+    "twitter": null
+  },
+  "ads": {
+    "enabled": false,
+    "popunder": false,
+    "click_under": false,
+    "banner": false,
+    "native": false
+  },
+  "features": {
+    "compare": true,
+    "bookmarks": true,
+    "search": true,
+    "dark_mode_only": true,
+    "pagination_per_page": 24,
+    "cache_ttl_minutes": 5
+  },
+  "data_paths": {
+    "devices": "/data/xiaomi_devices_fixed.json",
+    "roms": "/data/roms/_index.json",
+    "tools": "/data/tools/_index.json",
+    "tutorials": "/data/tutorials/_index.json",
+    "categories": "/data/categories/"
+  }
+}

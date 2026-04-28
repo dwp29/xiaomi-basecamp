@@ -1,0 +1,302 @@
+/* ============================================================
+   XIAOMI BASECAMP — variables.css
+   Design tokens, CSS custom properties, global visual rules.
+   Import this FIRST in every HTML page.
+   ============================================================ */
+
+/* ── 1. CORE COLOR PALETTE ───────────────────────────────── */
+:root {
+
+  /* Background Scale (dark → darkest) */
+  --ink-0:  #03060f;   /* Deepest background — page base */
+  --ink-1:  #070c1a;   /* Card / panel background */
+  --ink-2:  #0c1428;   /* Elevated surface (dropdown, sidebar) */
+  --ink-3:  #132034;   /* Border-adjacent surface */
+  --ink-4:  #1a2a44;   /* Hover state surface */
+
+  /* Accent Colors — 5 Neon Glow */
+  --acid:   #00ffe0;   /* Neon Cyan   — primary CTA, links */
+  --volt:   #b800ff;   /* Elec. Violet — secondary accent */
+  --blaze:  #ff2d6b;   /* Hot Pink    — danger, warning */
+  --amber:  #ffa500;   /* Warm Amber  — caution, legacy */
+  --lime:   #29ff5a;   /* Neon Green  — success, active */
+
+  /* Text Scale */
+  --t1: #eef4ff;       /* Primary text */
+  --t2: #7a99c2;       /* Secondary / supporting text */
+  --t3: #3d5578;       /* Muted / placeholder */
+  --t4: #1e3050;       /* Disabled */
+
+  /* ── 2. GLASSMORPHISM SYSTEM ──────────────────────────── */
+
+  --glass-fill:    rgba(7, 12, 26, 0.72);
+  --glass-border:  rgba(0, 255, 224, 0.10);
+  --glass-hover:   rgba(0, 255, 224, 0.05);
+  --glass-blur:    blur(20px);
+  --glass-blur-lg: blur(30px);
+
+  /* Glass variants per accent */
+  --glass-acid:    rgba(0, 255, 224, 0.06);
+  --glass-volt:    rgba(184, 0, 255, 0.06);
+  --glass-blaze:   rgba(255, 45, 107, 0.06);
+  --glass-amber:   rgba(255, 165, 0, 0.06);
+  --glass-lime:    rgba(41, 255, 90, 0.06);
+
+  /* ── 3. GLOW / BOX-SHADOW SYSTEM ─────────────────────── */
+
+  --glow-acid:  0 0 32px rgba(0, 255, 224, 0.35);
+  --glow-volt:  0 0 32px rgba(184, 0, 255, 0.35);
+  --glow-blaze: 0 0 32px rgba(255, 45, 107, 0.35);
+  --glow-amber: 0 0 32px rgba(255, 165, 0, 0.35);
+  --glow-lime:  0 0 32px rgba(41, 255, 90, 0.35);
+
+  /* Subtle glow (for borders) */
+  --glow-acid-sm:  0 0 12px rgba(0, 255, 224, 0.25);
+  --glow-volt-sm:  0 0 12px rgba(184, 0, 255, 0.25);
+  --glow-blaze-sm: 0 0 12px rgba(255, 45, 107, 0.25);
+
+  /* Text glow */
+  --text-glow-acid:  0 0 20px rgba(0, 255, 224, 0.5),
+                     0 0 40px rgba(0, 255, 224, 0.25);
+  --text-glow-volt:  0 0 20px rgba(184, 0, 255, 0.5),
+                     0 0 40px rgba(184, 0, 255, 0.25);
+  --text-glow-blaze: 0 0 20px rgba(255, 45, 107, 0.5),
+                     0 0 40px rgba(255, 45, 107, 0.25);
+
+  /* Card shadow */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5),
+                 0 1px 0 rgba(0, 255, 224, 0.05) inset;
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.6),
+                       var(--glow-acid-sm);
+
+  /* ── 4. TYPOGRAPHY ────────────────────────────────────── */
+
+  --f-display: 'Barlow Condensed', sans-serif;
+  --f-ui:      'Syne', sans-serif;
+  --f-mono:    'DM Mono', monospace;
+
+  /* Font size scale */
+  --fs-hero:    clamp(2.5rem, 6vw, 5rem);
+  --fs-section: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-card:    1.25rem;
+  --fs-body:    1rem;
+  --fs-label:   0.875rem;
+  --fs-badge:   0.75rem;
+  --fs-micro:   0.6875rem;
+
+  /* Line heights */
+  --lh-tight:  1.2;
+  --lh-snug:   1.4;
+  --lh-normal: 1.6;
+  --lh-loose:  1.75;
+
+  /* Letter spacing */
+  --ls-tight:  -0.01em;
+  --ls-normal:  0;
+  --ls-wide:    0.05em;
+  --ls-wider:   0.1em;
+  --ls-widest:  0.2em;
+
+  /* ── 5. SPACING SCALE (4px base) ─────────────────────── */
+
+  --s1:  4px;
+  --s2:  8px;
+  --s3:  12px;
+  --s4:  16px;
+  --s5:  20px;
+  --s6:  24px;
+  --s8:  32px;
+  --s10: 40px;
+  --s12: 48px;
+  --s16: 64px;
+  --s20: 80px;
+  --s24: 96px;
+  --s32: 128px;
+
+  /* ── 6. BORDER RADIUS ─────────────────────────────────── */
+
+  --r-xs:   4px;
+  --r-sm:   6px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-2xl:  36px;
+  --r-full: 9999px;
+
+  /* ── 7. LAYOUT ────────────────────────────────────────── */
+
+  --container-sm:   640px;
+  --container-md:   768px;
+  --container-lg:  1024px;
+  --container-xl:  1280px;
+  --container-2xl: 1440px;
+
+  --nav-height: 60px;
+
+  /* ── 8. TRANSITIONS & EASING ─────────────────────────── */
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:     cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-inout:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --dur-fast:   150ms;
+  --dur-base:   250ms;
+  --dur-slow:   400ms;
+  --dur-slower: 600ms;
+
+  /* ── 9. Z-INDEX SCALE ────────────────────────────────── */
+
+  --z-below:   -1;
+  --z-base:     0;
+  --z-raised:  10;
+  --z-sticky:  100;
+  --z-nav:     800;
+  --z-modal:  1000;
+  --z-toast:  1100;
+  --z-cursor: 9999;
+
+  /* ── 10. BORDER COLORS ───────────────────────────────── */
+
+  --border-base:   rgba(0, 255, 224, 0.08);
+  --border-subtle: rgba(0, 255, 224, 0.04);
+  --border-strong: rgba(0, 255, 224, 0.20);
+  --border-accent: rgba(0, 255, 224, 0.40);
+
+  /* ── 11. BADGE BACKGROUND COLORS ────────────────────── */
+
+  --badge-bg-success: rgba(41, 255, 90, 0.12);
+  --badge-bg-warning: rgba(255, 165, 0, 0.12);
+  --badge-bg-danger:  rgba(255, 45, 107, 0.12);
+  --badge-bg-info:    rgba(0, 255, 224, 0.12);
+  --badge-bg-volt:    rgba(184, 0, 255, 0.12);
+  --badge-bg-muted:   rgba(122, 153, 194, 0.10);
+
+  /* ── 12. STAGGER ANIMATION HELPER ────────────────────── */
+  --stagger-delay: 0ms; /* Override per item with calc() */
+}
+
+/* ── CYBERPUNK GRID BACKGROUND ───────────────────────────── */
+/* Applied to body — subtle grid lines across the entire page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-below);
+  background-image:
+    linear-gradient(rgba(0, 255, 224, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 224, 0.022) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: gridShift 20s linear infinite;
+}
+
+/* ── CUSTOM SCROLLBAR ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink-0);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--acid);
+  border-radius: var(--r-full);
+  box-shadow: 0 0 8px var(--acid);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33ffed;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--acid) var(--ink-0);
+}
+
+/* ── TEXT SELECTION ───────────────────────────────────────── */
+::selection {
+  background: rgba(0, 255, 224, 0.18);
+  color: var(--acid);
+}
+::-moz-selection {
+  background: rgba(0, 255, 224, 0.18);
+  color: var(--acid);
+}
+
+/* ── CUSTOM CURSOR (dot + ring) ──────────────────────────── */
+/* Cursor dot */
+#cursor-dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: var(--acid);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px var(--acid);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+  will-change: transform;
+}
+/* Cursor ring */
+#cursor-ring {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid rgba(0, 255, 224, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 1);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out),
+              height 0.3s var(--ease-out),
+              border-color 0.2s;
+  will-change: transform;
+}
+/* Hover state — expanded ring */
+body.cursor-hover #cursor-dot {
+  width: 11px;
+  height: 11px;
+  background: var(--volt);
+  box-shadow: 0 0 14px var(--volt);
+}
+body.cursor-hover #cursor-ring {
+  width: 44px;
+  height: 44px;
+  border-color: rgba(184, 0, 255, 0.4);
+}
+/* Hide default cursor globally */
+body,
+a,
+button,
+[role="button"],
+input,
+select,
+textarea {
+  cursor: none;
+}
+/* Restore cursor on touch devices */
+@media (pointer: coarse) {
+  body,
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    cursor: auto;
+  }
+  #cursor-dot,
+  #cursor-ring {
+    display: none;
+  }
+}
+
+/* ── FOCUS RING (accessibility) ──────────────────────────── */
+/* Visible only for keyboard navigation */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}

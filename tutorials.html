@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Center — Xiaomi Basecamp | Panduan Lengkap Modding Xiaomi</title>
+  <meta name="description" content="20+ tutorial lengkap modding Xiaomi: UBL, TWRP, Root Magisk, KernelSU, Flash ROM, Unbrick, Fix Bootloop. Panduan step-by-step Bahasa Indonesia.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/tutorials.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tutorial Center — Xiaomi Basecamp">
+  <meta property="og:description" content="20+ tutorial modding Xiaomi: UBL, TWRP, Root, Flash ROM, Unbrick. Panduan Bahasa Indonesia.">
+  <meta property="og:image" content="/assets/img/ui/og-image.webp">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    /* Hero */
+    .tut-hero {
+      padding: 60px 0 50px; position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .tut-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,255,224,.06), transparent 70%);
+    }
+    .tut-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .tut-hero-eyebrow {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--acid); margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .tut-hero-eyebrow::before { content: '//'; opacity: .4; }
+    .tut-hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -2px; line-height: .9;
+      color: var(--t1); margin-bottom: 16px;
+    }
+    .tut-hero-sub { font-size: .95rem; color: var(--t3); line-height: 1.7; margin-bottom: 28px; }
+    .tut-hero-stats { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .tut-stat {
+      text-align: center;
+      font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--t3);
+    }
+    .tut-stat strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 900; color: var(--acid); line-height: 1; }
+
+    /* Main */
+    .tut-main { max-width: 1440px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* Filter bar */
+    .tut-filters { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; margin-bottom: 32px; }
+    .filter-group-label {
+      font-family: 'DM Mono', monospace; font-size: .6rem;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--t3);
+      display: block; margin-bottom: 8px;
+    }
+    .filter-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .fchip {
+      padding: 5px 14px; border-radius: 99px;
+      border: 1px solid rgba(0,255,224,.1);
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      color: var(--t3); background: none;
+      transition: all .2s;
+    }
+    .fchip:hover { color: var(--acid); border-color: rgba(0,255,224,.3); }
+    .fchip.active { background: rgba(0,255,224,.08); color: var(--acid); border-color: rgba(0,255,224,.3); }
+    .fchip-pemula.active  { background: rgba(41,255,90,.08);   color: #29ff5a; border-color: rgba(41,255,90,.3);   }
+    .fchip-menengah.active{ background: rgba(255,165,0,.08);  color: #ffa500; border-color: rgba(255,165,0,.3);   }
+    .fchip-mahir.active   { background: rgba(255,45,107,.08); color: #ff2d6b; border-color: rgba(255,45,107,.3);  }
+
+    /* Search */
+    .tut-search {
+      flex: 1; min-width: 240px;
+      display: flex; align-items: center; gap: 10px;
+      height: 44px; padding: 0 14px;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      border-radius: 12px; transition: border-color .2s, box-shadow .2s;
+    }
+    .tut-search:focus-within { border-color: rgba(0,255,224,.4); box-shadow: 0 0 20px rgba(0,255,224,.07); }
+    .tut-search input { flex: 1; background: none; border: none; outline: none; font-family: 'DM Mono', monospace; font-size: .8rem; color: var(--t1); }
+    .tut-search input::placeholder { color: var(--t3); }
+    .s-clear { color: var(--t3); font-size: .75rem; opacity: 0; pointer-events: none; transition: opacity .2s; background: none; border: none; }
+    .s-clear.visible { opacity: 1; pointer-events: all; }
+
+    /* Results bar */
+    .results-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+    .results-count { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--t3); }
+    .results-count strong { color: var(--acid); }
+
+    /* Featured tutorials */
+    .featured-section { margin-bottom: 48px; }
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 20px; padding-bottom: 12px;
+      border-bottom: 1px solid rgba(0,255,224,.06);
+    }
+    .section-title {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--acid);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title::before { content: '//'; opacity: .4; }
+
+    .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .featured-card {
+      position: relative; border-radius: 16px; overflow: hidden;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.08);
+      transition: border-color .25s, box-shadow .25s, transform .25s;
+      text-decoration: none; color: inherit; display: flex; flex-direction: column;
+    }
+    .featured-card:hover {
+      border-color: rgba(0,255,224,.28); transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 20px rgba(0,255,224,.08);
+    }
+    .fc-thumb {
+      aspect-ratio: 16/9; background: var(--ink-2); overflow: hidden; position: relative;
+    }
+    .fc-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .3s, transform .4s; }
+    .featured-card:hover .fc-thumb img { opacity: 1; transform: scale(1.04); }
+    .fc-thumb-placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; background: linear-gradient(135deg, var(--ink-2), var(--ink-3));
+    }
+    .fc-diff-badge {
+      position: absolute; top: 10px; left: 10px;
+      padding: 3px 10px; border-radius: 99px; border: 1px solid;
+      font-family: 'Syne', sans-serif; font-size: .62rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .fc-cat-badge {
+      position: absolute; top: 10px; right: 10px;
+      padding: 3px 10px; border-radius: 99px;
+      background: rgba(3,6,15,.7); border: 1px solid rgba(0,255,224,.15);
+      font-family: 'Syne', sans-serif; font-size: .62rem; color: var(--acid);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .fc-body { padding: 14px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .fc-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--t1); line-height: 1.3;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .fc-meta { display: flex; align-items: center; gap: 12px; font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3); }
+    .fc-footer {
+      padding: 10px 16px 14px; border-top: 1px solid rgba(0,255,224,.05);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .fc-views { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t4); }
+    .fc-btn {
+      padding: 6px 14px; border-radius: 6px;
+      background: var(--acid); color: var(--ink-0);
+      font-family: 'Barlow Condensed', sans-serif; font-size: .75rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; text-decoration: none; border: none;
+      transition: background .2s, box-shadow .2s;
+    }
+    .fc-btn:hover { background: #33ffed; box-shadow: 0 0 16px rgba(0,255,224,.4); }
+
+    /* Tutorial grid */
+    #tut-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .pg-card { opacity: 0; transform: translateY(12px) scale(.98); transition: opacity .4s cubic-bezier(.22,1,.36,1), transform .4s cubic-bezier(.22,1,.36,1); transition-delay: var(--pg-delay,0ms); }
+    .pg-card.pg-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* Load more */
+    .load-wrap { text-align: center; margin-top: 28px; }
+    .load-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
+      border-radius: 12px; background: var(--ink-1); border: 1px solid rgba(0,255,224,.09);
+      font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--t2); transition: all .25s;
+    }
+    .load-btn:hover { border-color: rgba(0,255,224,.3); color: var(--acid); box-shadow: 0 0 24px rgba(0,255,224,.1); }
+
+    /* Difficulty label colors */
+    .diff-pemula   { background: rgba(41,255,90,.1);  color: #29ff5a; border-color: rgba(41,255,90,.25);  }
+    .diff-menengah { background: rgba(255,165,0,.1);  color: #ffa500; border-color: rgba(255,165,0,.25);  }
+    .diff-mahir    { background: rgba(255,45,107,.1); color: #ff2d6b; border-color: rgba(255,45,107,.25); }
+
+    @media (max-width: 1023px) { .featured-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      #tut-grid { grid-template-columns: 1fr; }
+      .tut-hero-stats { gap: 16px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Tutorial Modding Xiaomi",
+    "url": "https://xiaomi-basecamp.github.io/tutorials.html"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <div id="nav-root"></div>
+
+  <!-- Hero -->
+  <header class="tut-hero" role="banner">
+    <div class="tut-hero-inner">
+      <p class="tut-hero-eyebrow">Xiaomi Basecamp</p>
+      <h1 class="tut-hero-title">Tutorial<br>Center</h1>
+      <p class="tut-hero-sub">Panduan modding Xiaomi step-by-step dalam Bahasa Indonesia.<br>Dari pemula hingga advanced — semua ada di sini.</p>
+      <div class="tut-hero-stats">
+        <div class="tut-stat"><strong id="stat-total">20</strong> Tutorial</div>
+        <div class="tut-stat"><strong id="stat-pemula">12</strong> Pemula</div>
+        <div class="tut-stat"><strong id="stat-menengah">6</strong> Menengah</div>
+        <div class="tut-stat"><strong id="stat-mahir">2</strong> Mahir</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="tut-main" id="main-content">
+
+    <!-- Filters -->
+    <div class="tut-filters">
+      <!-- Category filter -->
+      <div>
+        <span class="filter-group-label">Kategori</span>
+        <div class="filter-chips" role="group" aria-label="Filter kategori">
+          <button class="fchip active" data-cat="all">Semua</button>
+          <button class="fchip" data-cat="bootloader">🔓 Bootloader</button>
+          <button class="fchip" data-cat="recovery">🛡 Recovery</button>
+          <button class="fchip" data-cat="root">⚡ Root</button>
+          <button class="fchip" data-cat="flashing">💾 Flashing</button>
+          <button class="fchip" data-cat="tips">💡 Tips</button>
+        </div>
+      </div>
+
+      <!-- Difficulty filter -->
+      <div>
+        <span class="filter-group-label">Difficulty</span>
+        <div class="filter-chips" role="group" aria-label="Filter difficulty">
+          <button class="fchip fchip-pemula"   data-diff="Pemula">Pemula</button>
+          <button class="fchip fchip-menengah" data-diff="Menengah">Menengah</button>
+          <button class="fchip fchip-mahir"    data-diff="Mahir">Mahir</button>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="tut-search" role="search">
+        <span aria-hidden="true">🔍</span>
+        <input type="search" id="search-input" placeholder="Cari tutorial..." aria-label="Cari tutorial">
+        <button class="s-clear" id="btn-clear" aria-label="Hapus">✕</button>
+      </div>
+    </div>
+
+    <!-- Featured Tutorials -->
+    <section class="featured-section" id="featured-section" aria-labelledby="featured-title">
+      <div class="section-header">
+        <h2 class="section-title" id="featured-title">Tutorial Populer</h2>
+        <span style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--t3)">Paling sering dibaca</span>
+      </div>
+      <div class="featured-grid" id="featured-grid" aria-label="Tutorial populer"></div>
+    </section>
+
+    <!-- Results bar -->
+    <div class="results-bar">
+      <span class="results-count" aria-live="polite">
+        Menampilkan <strong id="shown-count">—</strong> dari <strong id="total-count" style="color:var(--t2)">20</strong> tutorial
+      </span>
+    </div>
+
+    <!-- Main grid -->
+    <section aria-labelledby="all-tutorials-title">
+      <div class="section-header" style="margin-bottom:16px">
+        <h2 class="section-title" id="all-tutorials-title">
+          <span id="cat-label">Semua Tutorial</span>
+        </h2>
+      </div>
+      <div id="tut-grid" role="list" aria-label="Daftar tutorial"></div>
+    </section>
+
+    <!-- Load more -->
+    <div class="load-wrap">
+      <button class="load-btn" id="btn-load-more" hidden>
+        <span data-pg-label>Load More</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- AD PLACEHOLDER -->
+  <div class="ad-container" aria-hidden="true" style="text-align:center;padding:16px 0"><!-- Banner ad --></div>
+
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/tutorialCard.js"></script>
+  <script src="/assets/js/pages/tutorials.js"></script>
+
+  <script>
+    (function(){
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return;let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{
+        dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+        rx+=(e.clientX-rx)*.12;ry+=(e.clientY-ry)*.12;
+        ring.style.left=rx+'px';ring.style.top=ry+'px';
+      });
+      document.querySelectorAll('a,button,[role=button]').forEach(el=>{
+        el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+      });
+    })();
+  </script>
+  <!-- AD PLACEHOLDER — CLICK-UNDER: Insert before </body> -->
+</body>
+</html>

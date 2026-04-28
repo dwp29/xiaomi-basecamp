@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#03060f"/>
+  <rect width="1200" height="630" fill="url(#g)" opacity="0.4"/>
+  <defs>
+    <radialGradient id="g" cx="30%" cy="50%">
+      <stop offset="0%" stop-color="#00ffe0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#03060f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Grid lines -->
+  <g stroke="#00ffe0" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70"/><line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/><line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/><line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="490" x2="1200" y2="490"/><line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="70" y1="0" x2="70" y2="630"/><line x1="140" y1="0" x2="140" y2="630"/>
+    <line x1="280" y1="0" x2="280" y2="630"/><line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="560" y1="0" x2="560" y2="630"/><line x1="700" y1="0" x2="700" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="980" y1="0" x2="980" y2="630"/>
+    <line x1="1120" y1="0" x2="1120" y2="630"/>
+  </g>
+  <!-- Logo dot -->
+  <circle cx="100" cy="90" r="8" fill="#00ffe0" filter="url(#glow)"/>
+  <defs><filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <!-- Title -->
+  <text x="100" y="260" font-family="sans-serif" font-weight="900" font-size="96" fill="#eef4ff" letter-spacing="-3">XIAOMI</text>
+  <text x="100" y="360" font-family="sans-serif" font-weight="900" font-size="96" fill="#00ffe0" letter-spacing="-3">BASECAMP</text>
+  <!-- Subtitle -->
+  <text x="100" y="420" font-family="monospace" font-size="22" fill="#3d5578" letter-spacing="4">FIRMWARE · ROM · ROOT · TUTORIAL</text>
+  <!-- Stats -->
+  <text x="100" y="520" font-family="monospace" font-size="18" fill="#1e3050">207+ DEVICES  ·  25+ ROM  ·  30 TOOLS  ·  20 TUTORIAL</text>
+  <!-- URL -->
+  <text x="100" y="580" font-family="monospace" font-size="16" fill="#1e3050">xiaomi-basecamp.github.io</text>
+</svg>

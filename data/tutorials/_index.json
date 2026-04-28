@@ -1,0 +1,1297 @@
+{
+  "type": "tutorials",
+  "total": 20,
+  "generated_at": "2026-04-22",
+  "items": [
+    {
+      "id": "cara-unlock-bootloader",
+      "slug": "cara-unlock-bootloader",
+      "title": "Cara Unlock Bootloader (UBL) Xiaomi 2026 — Panduan Lengkap",
+      "category": "bootloader",
+      "difficulty": "Pemula",
+      "estimated_time": "30 menit + 7 hari tunggu",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "UBL akan MENGHAPUS SEMUA DATA di HP. Lakukan backup lengkap terlebih dahulu!" },
+        { "level": "warning", "text": "Setelah UBL, garansi resmi Xiaomi mungkin hangus. Pertimbangkan dengan matang." },
+        { "level": "info", "text": "Proses menunggu 7 hari (168 jam) adalah syarat dari Xiaomi dan tidak bisa dilewati." }
+      ],
+      "requirements": [
+        "HP Xiaomi dengan baterai minimal 50%",
+        "Kabel USB original atau kabel data berkualitas",
+        "PC/Laptop Windows 10 atau Windows 11",
+        "Mi Account aktif yang sudah di-bind ke device 7+ hari",
+        "Mi Unlock Tool (download di bawah)",
+        "Koneksi internet stabil",
+        "ADB & Fastboot Platform Tools"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Aktifkan Mi Account & Bind ke Device",
+          "content": "Buka Settings > Mi Account, login dengan akun Mi kamu. Pastikan akun sudah terhubung minimal 7 hari ke device ini. Jika belum, tunggu hingga 7 hari berlalu sejak pertama kali bind.",
+          "tip": "Gunakan Mi Account yang sama dengan yang kamu daftarkan di HP. Jangan ganti akun selama masa tunggu.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Aktifkan Developer Options",
+          "content": "Buka Settings > About Phone > MIUI Version / HyperOS Version. Tap 7 kali hingga muncul notifikasi 'You are now a developer'. Setelah itu, Developer Options akan muncul di Settings > Additional Settings.",
+          "tip": "Di beberapa MIUI/HyperOS versi baru, Developer Options ada di Settings > Additional Settings > Developer Options.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Request Unlock Permission via Developer Options",
+          "content": "Buka Settings > Additional Settings > Developer Options. Scroll ke bawah, temukan 'Mi Unlock Status'. Tap dan login dengan Mi Account kamu. Tap 'Add account and device'. HP akan terhubung ke server Xiaomi dan memulai waktu tunggu 7 hari (168 jam).",
+          "tip": "Pastikan koneksi internet aktif saat melakukan langkah ini. Proses binding memerlukan verifikasi online.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Tunggu 7 Hari (168 Jam)",
+          "content": "Setelah request unlock, kamu HARUS menunggu minimal 7 hari (168 jam) sebelum bisa unlock. Waktu ini tidak bisa dipercepat dengan cara apapun. Gunakan HP seperti biasa selama menunggu.",
+          "tip": "Beberapa device baru mungkin memerlukan waktu tunggu lebih lama (30 hari). Cek informasi spesifik device kamu.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Download & Install Mi Unlock Tool",
+          "content": "Download Mi Unlock Tool versi terbaru dari website resmi Xiaomi. Extract file ZIP ke folder. Install driver USB Xiaomi jika belum ada. Jalankan MiFlash Unlock.exe sebagai Administrator.",
+          "tip": "Selalu download Mi Unlock Tool dari sumber resmi Xiaomi untuk menghindari malware.",
+          "download_link": { "label": "Download Mi Unlock Tool", "url": "https://www.miui.com/unlock/download_en.html" }
+        },
+        {
+          "step": 6,
+          "title": "Masuk ke Fastboot Mode",
+          "content": "Matikan HP hingga benar-benar off. Tahan tombol Volume Down + Power bersamaan selama 5-10 detik hingga muncul layar Fastboot (gambar Android dengan tulisan FASTBOOT). Hubungkan HP ke PC via USB.",
+          "tip": "Jika HP langsung nyala normal, coba tahan tombol lebih lama atau pastikan daya sudah habis sepenuhnya sebelum mencoba lagi.",
+          "download_link": null
+        },
+        {
+          "step": 7,
+          "title": "Lakukan Unlock via Mi Unlock Tool",
+          "content": "Buka Mi Unlock Tool, login dengan Mi Account yang sama. Tool akan otomatis mendeteksi device. Klik tombol 'Unlock'. Jika muncul pesan '7 days remaining' berarti waktu tunggu belum habis. Jika berhasil, akan muncul konfirmasi unlock sukses.",
+          "tip": "Jangan cabut kabel USB selama proses berlangsung. Proses unlock biasanya berlangsung 30-60 detik.",
+          "download_link": null
+        },
+        {
+          "step": 8,
+          "title": "Verifikasi Bootloader Unlock",
+          "content": "HP akan restart otomatis dan masuk ke bootloader. Kamu akan melihat peringatan 'Bootloader is unlocked' di layar saat startup. Ini normal. HP akan otomatis boot ke sistem. Semua data sudah terhapus, setup ulang HP.",
+          "tip": "Peringatan bootloader unlock di layar saat startup adalah tanda sukses. Ini tidak berbahaya dan bisa diabaikan.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Apakah UBL menghapus semua data?", "a": "Ya, bootloader unlock akan factory reset HP secara otomatis. Backup semua data sebelum UBL." },
+        { "q": "Berapa lama waktu tunggu unlock?", "a": "Minimal 7 hari (168 jam) untuk kebanyakan device. Device baru mungkin 30 hari." },
+        { "q": "Apakah UBL mempengaruhi garansi?", "a": "Secara teknis ya, Xiaomi bisa menolak klaim garansi jika bootloader sudah di-unlock." },
+        { "q": "Apakah bisa lock bootloader kembali?", "a": "Bisa, dengan perintah fastboot oem lock, tapi data akan terhapus lagi." }
+      ],
+      "related_tutorials": ["cara-install-twrp", "cara-root-magisk-recovery", "cara-install-custom-rom"],
+      "thumbnail": "/assets/img/tutorials/ubl-thumbnail.webp",
+      "views": 18420,
+      "published_at": "2024-01-15",
+      "updated_at": "2026-04-01",
+      "tags": ["bootloader", "ubl", "pemula", "wajib-pertama", "xiaomi", "official"]
+    },
+    {
+      "id": "cara-install-twrp",
+      "slug": "cara-install-twrp",
+      "title": "Cara Install TWRP Recovery via Fastboot — Semua Device Xiaomi",
+      "category": "recovery",
+      "difficulty": "Pemula",
+      "estimated_time": "15 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11", "Linux", "macOS"] },
+      "warnings": [
+        { "level": "danger", "text": "Bootloader HARUS sudah di-unlock sebelum install TWRP!" },
+        { "level": "warning", "text": "Download file TWRP yang sesuai dengan device kamu. TWRP salah = brick!" }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "ADB & Fastboot terinstall di PC",
+        "File TWRP .img untuk device kamu",
+        "Kabel USB berkualitas",
+        "Baterai HP minimal 60%"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download TWRP untuk Device Kamu",
+          "content": "Buka website twrp.me atau Xiaomi Basecamp Tools section. Download file TWRP .img yang sesuai dengan codename device kamu. Contoh: untuk Redmi Note 13 Pro+ (codename: zircon), download twrp-zircon.img.",
+          "tip": "Selalu cek codename device di Settings > About Phone > All Specs > Codename.",
+          "download_link": { "label": "Download TWRP", "url": "https://twrp.me/Devices/Xiaomi/" }
+        },
+        {
+          "step": 2,
+          "title": "Setup ADB & Fastboot",
+          "content": "Pastikan ADB & Fastboot sudah terinstall. Buka Command Prompt / Terminal di folder tempat file TWRP .img disimpan. Test koneksi dengan perintah: adb devices",
+          "code": "adb devices",
+          "tip": "Jika muncul 'unauthorized', aktifkan USB Debugging di HP dan accept permintaan di layar HP.",
+          "download_link": { "label": "Download ADB Fastboot", "url": "https://developer.android.com/tools/releases/platform-tools" }
+        },
+        {
+          "step": 3,
+          "title": "Masuk ke Fastboot Mode",
+          "content": "Ada 2 cara masuk fastboot: (1) Via ADB: ketik perintah 'adb reboot bootloader' saat HP terhubung dan ADB terdeteksi. (2) Manual: matikan HP, tahan Volume Down + Power hingga muncul layar fastboot.",
+          "code": "adb reboot bootloader",
+          "tip": "Pastikan HP terdeteksi di fastboot dengan perintah: fastboot devices",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Flash TWRP via Fastboot",
+          "content": "Di Command Prompt, navigasi ke folder berisi file TWRP .img. Jalankan perintah berikut (ganti 'twrp.img' dengan nama file aktual): fastboot flash recovery twrp.img",
+          "code": "fastboot flash recovery twrp.img",
+          "tip": "Tunggu hingga muncul pesan 'Finished. Total time: Xs'. Jangan cabut kabel selama proses.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Boot ke TWRP",
+          "content": "Setelah flash selesai, jangan langsung restart ke sistem (TWRP bisa tertimpa). Boot langsung ke recovery: fastboot reboot recovery. Atau tahan Volume Up + Power dari fastboot mode.",
+          "code": "fastboot reboot recovery",
+          "tip": "Pertama kali masuk TWRP, geser untuk Allow modification. TWRP akan terpasang permanen setelah ini.",
+          "download_link": null
+        },
+        {
+          "step": 6,
+          "title": "Verifikasi TWRP Berhasil",
+          "content": "Jika muncul tampilan TWRP dengan menu Wipe, Install, Backup, Restore, Mount, Settings, dll — maka TWRP berhasil terinstall. Kamu bisa langsung gunakan untuk flash ROM atau Magisk.",
+          "tip": "Screenshot tampilan TWRP sebagai bukti instalasi berhasil, berguna jika ada masalah nanti.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "TWRP tidak muncul setelah flash, kenapa?", "a": "Kemungkinan file TWRP tidak sesuai device atau boot ke sistem dulu (TWRP tertimpa). Download TWRP yang tepat dan ulangi." },
+        { "q": "Apakah TWRP permanen setelah flash?", "a": "Ya, setelah flash via fastboot dan boot ke TWRP sekali, TWRP akan permanen terpasang di recovery partition." }
+      ],
+      "related_tutorials": ["cara-install-orangefox", "cara-root-magisk-recovery", "cara-install-custom-rom"],
+      "thumbnail": "/assets/img/tutorials/twrp-thumbnail.webp",
+      "views": 12350,
+      "published_at": "2024-02-01",
+      "updated_at": "2026-03-15",
+      "tags": ["recovery", "twrp", "fastboot", "pemula"]
+    },
+    {
+      "id": "cara-install-orangefox",
+      "slug": "cara-install-orangefox",
+      "title": "Cara Install OrangeFox Recovery via Fastboot",
+      "category": "recovery",
+      "difficulty": "Pemula",
+      "estimated_time": "15 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Bootloader HARUS sudah di-unlock. Download OrangeFox yang sesuai device kamu!" }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "ADB & Fastboot terinstall",
+        "File OrangeFox .img untuk device",
+        "Kabel USB berkualitas",
+        "Baterai minimal 60%"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download OrangeFox untuk Device Kamu",
+          "content": "Kunjungi orangefox.download, cari device kamu berdasarkan nama atau codename. Download file OrangeFox recovery .img terbaru. OrangeFox tersedia untuk banyak device Xiaomi populer.",
+          "tip": "Pilih versi stable, bukan beta, untuk penggunaan daily.",
+          "download_link": { "label": "Download OrangeFox", "url": "https://orangefox.download/" }
+        },
+        {
+          "step": 2,
+          "title": "Masuk Fastboot Mode & Flash",
+          "content": "Hubungkan HP ke PC via USB. Masuk fastboot mode dengan: adb reboot bootloader. Lalu flash OrangeFox: fastboot flash recovery orangefox.img",
+          "code": "adb reboot bootloader\nfastboot flash recovery orangefox.img",
+          "tip": "Pastikan nama file sesuai. Bisa rename file menjadi orangefox.img agar lebih mudah.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Boot ke OrangeFox",
+          "content": "Setelah flash berhasil, boot langsung ke recovery: fastboot reboot recovery. Atau tahan Volume Up + Power dari fastboot mode untuk masuk recovery.",
+          "code": "fastboot reboot recovery",
+          "tip": "Jangan boot ke sistem dulu! OrangeFox bisa tertimpa oleh sistem jika boot normal.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Setup OrangeFox Pertama Kali",
+          "content": "OrangeFox akan tampil dengan UI orange yang modern. Pertama kali masuk, swipe untuk allow modifications. OrangeFox memiliki fitur built-in Magisk installer dan OTA update.",
+          "tip": "Explore menu Settings di OrangeFox untuk kustomisasi tema dan fitur tambahan.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "OrangeFox vs TWRP, mana yang lebih baik?", "a": "OrangeFox lebih modern dengan UI yang lebih baik dan support A/B device lebih baik. Untuk device lama, TWRP mungkin lebih stabil." }
+      ],
+      "related_tutorials": ["cara-install-twrp", "cara-root-magisk-recovery"],
+      "thumbnail": "/assets/img/tutorials/orangefox-thumbnail.webp",
+      "views": 9800,
+      "published_at": "2024-02-10",
+      "updated_at": "2026-03-01",
+      "tags": ["recovery", "orangefox", "fastboot", "pemula", "modern"]
+    },
+    {
+      "id": "cara-root-magisk-recovery",
+      "slug": "cara-root-magisk-recovery",
+      "title": "Cara Root Xiaomi dengan Magisk via Recovery (TWRP/OrangeFox)",
+      "category": "root",
+      "difficulty": "Pemula",
+      "estimated_time": "20 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Bootloader HARUS sudah di-unlock dan custom recovery sudah terinstall!" },
+        { "level": "warning", "text": "Root akan menghilangkan kemampuan menjalankan beberapa app banking. Gunakan Shamiko + Play Integrity Fix untuk bypass." }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "TWRP atau OrangeFox sudah terinstall",
+        "File Magisk .apk (rename ke .zip)",
+        "Baterai minimal 60%"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download Magisk APK",
+          "content": "Download Magisk.apk versi terbaru dari GitHub resmi topjohnwu. Setelah download, rename file dari Magisk-v27.0.apk menjadi Magisk-v27.0.zip (hanya ganti ekstensi, isi file tidak berubah).",
+          "tip": "Pastikan download dari GitHub resmi: github.com/topjohnwu/Magisk/releases",
+          "download_link": { "label": "Download Magisk", "url": "https://github.com/topjohnwu/Magisk/releases/latest" }
+        },
+        {
+          "step": 2,
+          "title": "Salin Magisk.zip ke HP",
+          "content": "Salin file Magisk.zip ke internal storage HP. Bisa dilakukan via USB (MTP mode) atau langsung download di HP via browser. Taruh di folder yang mudah dicari, misal di /sdcard/Download/.",
+          "tip": "Jika download langsung di HP, jangan rename filenya. Rename hanya jika transfer dari PC.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Masuk ke Recovery",
+          "content": "Masuk ke TWRP/OrangeFox recovery. Cara: matikan HP, tahan Volume Up + Power bersamaan hingga muncul tampilan recovery. Atau dari fastboot mode: fastboot reboot recovery.",
+          "code": "fastboot reboot recovery",
+          "tip": "Di TWRP, geser 'Swipe to allow modifications' jika diminta.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Install Magisk ZIP",
+          "content": "Di TWRP: tap Install > navigasi ke Magisk.zip > geser untuk konfirmasi flash. Di OrangeFox: tap Install > pilih Magisk.zip > Flash. Tunggu proses selesai (biasanya 30-60 detik).",
+          "tip": "Jangan flash ZIP selain Magisk di langkah ini untuk mencegah konflik.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Reboot & Install Magisk App",
+          "content": "Setelah flash selesai, tap Reboot System (atau Reboot to System). Setelah HP menyala, buka file Magisk.apk (bukan .zip) yang sudah disalin tadi dan install sebagai aplikasi. Buka Magisk app, jika status Root = Installed, maka root berhasil!",
+          "tip": "Jika diminta tambahan setup di Magisk app, ikuti petunjuknya. Biasanya reboot sekali lagi.",
+          "download_link": null
+        },
+        {
+          "step": 6,
+          "title": "Verifikasi Root & Install Module Dasar",
+          "content": "Download Root Checker dari Play Store untuk memverifikasi root. Buka Magisk > Modules > install Shamiko dan Play Integrity Fix agar aplikasi banking tetap bisa digunakan. Selamat, HP kamu sudah di-root!",
+          "tip": "Tambahkan Shamiko dan Play Integrity Fix di DenyList Magisk untuk proteksi maksimal dari deteksi root.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Apakah root menghapus data?", "a": "Tidak, root via Magisk ZIP dari recovery tidak menghapus data. Data tetap aman." },
+        { "q": "Banking app tidak bisa dibuka setelah root, solusinya?", "a": "Install Shamiko + Play Integrity Fix module di Magisk, lalu tambahkan banking app ke DenyList." }
+      ],
+      "related_tutorials": ["cara-root-magisk-patch-boot", "cara-install-kernelsu", "cara-install-lsposed"],
+      "thumbnail": "/assets/img/tutorials/magisk-root-thumbnail.webp",
+      "views": 21500,
+      "published_at": "2024-03-01",
+      "updated_at": "2026-04-10",
+      "tags": ["root", "magisk", "recovery", "pemula", "popular"]
+    },
+    {
+      "id": "cara-root-magisk-patch-boot",
+      "slug": "cara-root-magisk-patch-boot",
+      "title": "Cara Root dengan Magisk — Patch Boot Image (Tanpa Custom Recovery)",
+      "category": "root",
+      "difficulty": "Menengah",
+      "estimated_time": "30 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Gunakan boot.img yang tepat dari firmware version yang SAMA dengan yang terinstall di HP!" },
+        { "level": "warning", "text": "Salah boot.img bisa menyebabkan bootloop atau brick." }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "File firmware/fastboot ROM untuk versi HP kamu",
+        "Magisk APK terinstall di HP",
+        "ADB & Fastboot di PC",
+        "Kabel USB berkualitas"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download Firmware Sesuai Versi MIUI/HyperOS",
+          "content": "Cek versi MIUI/HyperOS di Settings > About Phone. Cari dan download fastboot ROM yang sesuai (format .tgz). Extract file TGZ, cari file boot.img di dalam folder images/.",
+          "tip": "Gunakan MIUI firmware yang 100% sama dengan yang terinstall. Cek versi EXACT di About Phone.",
+          "download_link": { "label": "Download Firmware Xiaomi", "url": "https://xiaomifirmwareupdater.com/" }
+        },
+        {
+          "step": 2,
+          "title": "Salin boot.img ke HP",
+          "content": "Salin file boot.img dari PC ke HP (internal storage). Bisa via USB/MTP atau gunakan adb push: adb push boot.img /sdcard/Download/",
+          "code": "adb push boot.img /sdcard/Download/",
+          "tip": "Pastikan file bernama boot.img, bukan init_boot.img (untuk device Android 13+ dengan Generic Ramdisk).",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Install & Buka Magisk App",
+          "content": "Install Magisk.apk di HP. Buka Magisk app. Tap tombol Install di samping tulisan Magisk. Pilih opsi 'Select and Patch a File'. Navigasi ke boot.img yang sudah disalin tadi.",
+          "tip": "Magisk akan otomatis patch file boot.img dan menyimpan hasilnya sebagai magisk_patched_[hash].img di folder Download.",
+          "download_link": { "label": "Download Magisk APK", "url": "https://github.com/topjohnwu/Magisk/releases/latest" }
+        },
+        {
+          "step": 4,
+          "title": "Salin magisk_patched.img ke PC",
+          "content": "Setelah Magisk selesai patch, salin file magisk_patched_[hash].img dari HP ke PC. Via USB atau: adb pull /sdcard/Download/magisk_patched_[hash].img ./",
+          "code": "adb pull /sdcard/Download/magisk_patched_XXXXX.img ./",
+          "tip": "Rename file menjadi magisk_patched.img agar lebih mudah.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Flash Patched Boot Image",
+          "content": "Masuk ke fastboot mode: adb reboot bootloader. Flash boot image yang sudah dipatch: fastboot flash boot magisk_patched.img. Setelah selesai: fastboot reboot.",
+          "code": "adb reboot bootloader\nfastboot flash boot magisk_patched.img\nfastboot reboot",
+          "tip": "Untuk device A/B (kebanyakan Xiaomi modern), gunakan: fastboot flash boot_a dan boot_b.",
+          "download_link": null
+        },
+        {
+          "step": 6,
+          "title": "Setup Magisk App",
+          "content": "HP akan reboot. Buka Magisk app. Jika diminta additional setup, ikuti petunjuk dan reboot lagi. Setelah setup, status Root di Magisk harus menunjukkan 'Installed' dengan versi Magisk.",
+          "tip": "Verifikasi dengan Root Checker dari Play Store untuk konfirmasi root aktif.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Metode mana yang lebih aman, via recovery atau patch boot?", "a": "Keduanya sama-sama aman. Patch boot lebih fleksibel karena tidak perlu custom recovery." },
+        { "q": "Apa itu init_boot.img?", "a": "Device Android 13+ dengan Generic Ramdisk menggunakan init_boot.img bukan boot.img. Patch init_boot.img untuk device tersebut." }
+      ],
+      "related_tutorials": ["cara-root-magisk-recovery", "cara-install-kernelsu", "cara-verify-integrity"],
+      "thumbnail": "/assets/img/tutorials/magisk-patch-thumbnail.webp",
+      "views": 14200,
+      "published_at": "2024-03-15",
+      "updated_at": "2026-04-05",
+      "tags": ["root", "magisk", "boot-patch", "menengah", "no-recovery"]
+    },
+    {
+      "id": "cara-install-kernelsu",
+      "slug": "cara-install-kernelsu",
+      "title": "Cara Install KernelSU di Xiaomi — Panduan Lengkap 2026",
+      "category": "root",
+      "difficulty": "Menengah",
+      "estimated_time": "25 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Hanya untuk device yang sudah unlock bootloader. Pastikan device kamu support KernelSU (GKI atau ada kernel KSU)." },
+        { "level": "info", "text": "KernelSU membutuhkan kernel yang kompatibel. Cek list di repositori KernelSU." }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "Device dengan GKI kernel (Android 12+) atau custom kernel KSU",
+        "ADB & Fastboot",
+        "KernelSU Manager APK",
+        "File boot.img / AnyKernel3 zip"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Cek Kompatibilitas Device",
+          "content": "KernelSU mendukung device dengan GKI kernel (Android 12+, arm64). Cek versi kernel dengan: adb shell uname -r. Jika versi 5.10 atau lebih baru, kemungkinan besar support GKI. Untuk device non-GKI, diperlukan custom kernel dengan KSU built-in.",
+          "code": "adb shell uname -r",
+          "tip": "Device Xiaomi 2022 ke atas umumnya menggunakan GKI kernel dan kompatibel dengan KernelSU.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Download KernelSU Manager",
+          "content": "Download KernelSU Manager APK dari GitHub resmi. Install di HP. Buka app — jika menampilkan status 'Not Installed' artinya perlu flash kernel KSU.",
+          "tip": "KernelSU Manager juga bisa digunakan untuk cek apakah device sudah kompatibel.",
+          "download_link": { "label": "Download KernelSU", "url": "https://github.com/tiann/KernelSU/releases/latest" }
+        },
+        {
+          "step": 3,
+          "title": "Download AnyKernel3 KSU",
+          "content": "Untuk device GKI: download AnyKernel3 KernelSU zip dari release resmi atau dari maintainer kernel device kamu. Untuk device non-GKI: download custom kernel yang sudah include KSU dari XDA atau Telegram developer.",
+          "tip": "Cari di XDA atau Telegram dengan keyword '[codename device] KernelSU kernel'.",
+          "download_link": { "label": "KernelSU Releases", "url": "https://github.com/tiann/KernelSU/releases" }
+        },
+        {
+          "step": 4,
+          "title": "Flash via Recovery (AnyKernel3)",
+          "content": "Salin AnyKernel3-KSU.zip ke HP. Masuk ke TWRP/OrangeFox. Install AnyKernel3-KSU.zip. Reboot system. Buka KernelSU Manager — status harus 'Working'.",
+          "tip": "Alternatif: flash via fastboot dengan patch boot.img menggunakan KernelSU Manager (mirip Magisk).",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Install Zygisk Next (Opsional)",
+          "content": "KernelSU tidak include Zygisk built-in. Untuk menggunakan modul Magisk/Zygisk (LSPosed, Shamiko, dll), install Zygisk Next module di KernelSU Manager. Download Zygisk Next dari GitHub Dr-TSNG.",
+          "tip": "Zygisk Next wajib jika ingin pakai LSPosed, Shamiko, atau modul Magisk lainnya.",
+          "download_link": { "label": "Zygisk Next", "url": "https://github.com/Dr-TSNG/ZygiskNext/releases" }
+        },
+        {
+          "step": 6,
+          "title": "Verifikasi & Konfigurasi",
+          "content": "Buka KernelSU Manager. Status harus 'Working' dengan versi kernel terbaru. Cek SuperUser grants di App section. Konfigurasi AppProfile untuk kontrol akses root per-app yang lebih granular.",
+          "tip": "KernelSU AppProfile lebih aman dari Magisk DenyList karena beroperasi di kernel level.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "KernelSU vs Magisk, mana yang lebih aman?", "a": "KernelSU beroperasi di kernel level sehingga lebih sulit dideteksi. Magisk lebih mudah diinstall dan punya ekosistem modul lebih besar." },
+        { "q": "Bisakah pakai KernelSU dan Magisk bersamaan?", "a": "Tidak disarankan. Pilih salah satu untuk menghindari konflik." }
+      ],
+      "related_tutorials": ["cara-root-magisk-recovery", "cara-install-lsposed", "cara-verify-integrity"],
+      "thumbnail": "/assets/img/tutorials/kernelsu-thumbnail.webp",
+      "views": 9800,
+      "published_at": "2024-04-01",
+      "updated_at": "2026-04-12",
+      "tags": ["root", "kernelsu", "kernel", "menengah", "advanced"]
+    },
+    {
+      "id": "cara-install-custom-rom",
+      "slug": "cara-install-custom-rom",
+      "title": "Cara Install Custom ROM di Xiaomi via Recovery — Panduan Lengkap",
+      "category": "flashing",
+      "difficulty": "Menengah",
+      "estimated_time": "45 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Full wipe AKAN menghapus semua data! Backup dulu sebelum install ROM baru." },
+        { "level": "warning", "text": "Install ROM yang sesuai dengan device dan codename. ROM salah = brick!" },
+        { "level": "info", "text": "Baca instruksi spesifik ROM yang akan diinstall. Beberapa ROM memerlukan vendor khusus." }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "Custom recovery (TWRP / OrangeFox) terinstall",
+        "File ROM .zip sesuai device",
+        "File GApps (jika diperlukan)",
+        "Baterai minimal 70%",
+        "Storage HP cukup untuk ROM + GApps"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download ROM & GApps",
+          "content": "Download file ROM .zip untuk device kamu dari sumber resmi (XDA, GitHub, SourceForge). Baca README ROM dengan teliti. Cek apakah ROM memerlukan GApps terpisah atau sudah included. Download GApps yang sesuai jika diperlukan (MindTheGapps atau NikGApps).",
+          "tip": "Selalu baca postingan resmi ROM di XDA untuk informasi instalalsi spesifik.",
+          "download_link": { "label": "Cari Custom ROM", "url": "/roms.html" }
+        },
+        {
+          "step": 2,
+          "title": "Backup Data Penting",
+          "content": "Full backup di TWRP: Backup > pilih System + Data + Boot > Swipe to Backup. Atau backup manual via Google Backup sebelum wipe. Salin backup ke PC untuk keamanan extra.",
+          "tip": "Backup ke microSD atau PC lebih aman dari backup internal saja.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Salin ROM & GApps ke HP",
+          "content": "Salin file ROM.zip dan GApps.zip ke internal storage HP atau microSD. Taruh di folder yang mudah ditemukan di file manager TWRP/OrangeFox, misal /sdcard/ROMs/.",
+          "tip": "Jangan ekstrak file ZIP. Flash langsung dalam format ZIP dari recovery.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Full Wipe di Recovery",
+          "content": "Masuk ke TWRP/OrangeFox recovery. Tap Wipe > Format Data (bukan hanya Factory Reset). Ketik 'yes' untuk konfirmasi. Ini akan wipe System, Data, Cache, dan Dalvik. Setelah itu, lakukan juga Wipe > Advanced Wipe > System + Cache + Dalvik/ART Cache.",
+          "tip": "Format Data berbeda dari Factory Reset. Format Data lebih menyeluruh dan wajib untuk ROM baru.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Flash ROM ZIP",
+          "content": "Tap Install (di TWRP) atau Flash (di OrangeFox). Navigasi ke file ROM.zip. Geser untuk konfirmasi flash. Tunggu proses selesai (biasanya 3-10 menit tergantung ukuran ROM).",
+          "tip": "Jangan tap Back atau keluar selama flash berlangsung. Biarkan hingga selesai.",
+          "download_link": null
+        },
+        {
+          "step": 6,
+          "title": "Flash GApps (Jika Diperlukan)",
+          "content": "Jika ROM tidak include GApps, flash GApps SEGERA setelah flash ROM, SEBELUM reboot. Tap Install > pilih GApps.zip > Flash. Jangan reboot diantara flash ROM dan GApps.",
+          "tip": "Flash GApps harus sebelum reboot pertama. Jika lupa, harus format data lagi dan flash ulang.",
+          "download_link": { "label": "Download NikGApps", "url": "https://nikgapps.com/" }
+        },
+        {
+          "step": 7,
+          "title": "Reboot & Setup ROM Baru",
+          "content": "Setelah semua flash selesai, tap Reboot System. Boot pertama biasanya memakan waktu 3-8 menit. Jangan panik jika lama. Setup Android seperti HP baru. Nikmati ROM baru kamu!",
+          "tip": "Jika boot pertama lebih dari 15 menit, kemungkinan ada masalah. Coba masuk recovery dan cek logcat.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Apakah harus full wipe setiap ganti ROM?", "a": "Ya, sangat disarankan full wipe saat ganti ROM yang berbeda. Dirty flash hanya aman untuk update ROM yang sama." },
+        { "q": "ROM tidak boot setelah flash, apa yang salah?", "a": "Kemungkinan: ROM tidak kompatibel dengan device/vendor, wipe tidak lengkap, atau file ROM corrupt. Cek log di recovery." }
+      ],
+      "related_tutorials": ["cara-install-twrp", "cara-flash-firmware-miflash", "cara-fix-bootloop"],
+      "thumbnail": "/assets/img/tutorials/custom-rom-thumbnail.webp",
+      "views": 19800,
+      "published_at": "2024-03-20",
+      "updated_at": "2026-04-08",
+      "tags": ["flashing", "custom-rom", "recovery", "menengah", "popular"]
+    },
+    {
+      "id": "cara-flash-firmware-miflash",
+      "slug": "cara-flash-firmware-miflash",
+      "title": "Cara Flash Firmware Fastboot Xiaomi via MiFlash Tool",
+      "category": "flashing",
+      "difficulty": "Menengah",
+      "estimated_time": "20 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Flash firmware dengan 'Clean All' akan menghapus semua data termasuk data internal!" },
+        { "level": "warning", "text": "Gunakan firmware yang TEPAT untuk model dan region HP. Firmware salah bisa brick!" }
+      ],
+      "requirements": [
+        "MiFlash Tool terinstall di PC",
+        "USB Driver Xiaomi terinstall",
+        "File Fastboot ROM .tgz sesuai device",
+        "Kabel USB berkualitas",
+        "PC Windows 10/11"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download MiFlash Tool & USB Driver",
+          "content": "Download MiFlash Tool dari website resmi Xiaomi atau link di bawah. Install MiFlash Tool di PC. Download dan install USB Driver Xiaomi (sudah include dalam paket MiFlash).",
+          "tip": "Jalankan MiFlash sebagai Administrator untuk menghindari masalah permission.",
+          "download_link": { "label": "Download MiFlash", "url": "https://xiaomiflashtool.com/" }
+        },
+        {
+          "step": 2,
+          "title": "Download Firmware Fastboot ROM",
+          "content": "Download firmware Fastboot ROM (.tgz) yang sesuai dengan model HP, region, dan versi MIUI/HyperOS. Sumber: Xiaomi download center, MIUI firmware updater, atau XDA.",
+          "tip": "Perhatikan region ROM: Global untuk HP versi Global, China untuk versi China. Jangan tukar.",
+          "download_link": { "label": "MIUI Firmware Updater", "url": "https://xiaomifirmwareupdater.com/" }
+        },
+        {
+          "step": 3,
+          "title": "Extract Fastboot ROM",
+          "content": "Extract file .tgz menggunakan 7-Zip atau WinRAR. Akan muncul folder berisi images/, flash_all.bat, flash_all_lock.bat, dll. Catat path folder ini.",
+          "tip": "Jangan pindahkan atau rename file di dalam folder firmware.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Masuk EDL/Fastboot Mode & Hubungkan ke PC",
+          "content": "Masuk ke Fastboot Mode: tahan Volume Down + Power hingga muncul layar Fastboot. Hubungkan ke PC via USB. Buka MiFlash Tool. Klik Browse dan arahkan ke folder firmware yang sudah diekstrak.",
+          "code": "adb reboot bootloader",
+          "tip": "Pastikan device terdeteksi di MiFlash (muncul di bagian bawah interface).",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Pilih Mode Flash & Mulai Flash",
+          "content": "Di MiFlash, pilih mode flash: 'Clean All' (hapus semua data, paling bersih), 'Clean All and Lock' (hapus data + lock bootloader), atau 'Save User Data' (pertahankan data - tidak selalu berhasil). Klik Flash dan tunggu.",
+          "tip": "Untuk unbrick atau masalah besar, gunakan 'Clean All'. Untuk update firmware biasa, bisa coba 'Save User Data'.",
+          "download_link": null
+        },
+        {
+          "step": 6,
+          "title": "Tunggu & Verifikasi",
+          "content": "Proses flash biasanya 5-15 menit. Jangan cabut kabel selama proses. Setelah selesai, MiFlash akan menampilkan 'Flash done'. HP akan reboot otomatis ke sistem baru.",
+          "tip": "Jika gagal di tengah jalan, coba hubungkan ulang dan ulangi. Jangan cabut kabel saat proses berlangsung.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Apa perbedaan Fastboot ROM dan Recovery ROM?", "a": "Fastboot ROM di-flash via MiFlash/Fastboot, memerlukan PC. Recovery ROM di-flash via TWRP/OrangeFox, lebih mudah tapi tidak bisa unbrick." },
+        { "q": "HP tidak terdeteksi di MiFlash, bagaimana?", "a": "Install ulang USB Driver Xiaomi, ganti port USB, atau gunakan kabel yang berbeda." }
+      ],
+      "related_tutorials": ["cara-unbrick-xiaomi", "cara-flash-firmware-recovery", "cara-setup-adb-fastboot"],
+      "thumbnail": "/assets/img/tutorials/miflash-thumbnail.webp",
+      "views": 11200,
+      "published_at": "2024-04-10",
+      "updated_at": "2026-03-20",
+      "tags": ["flashing", "firmware", "miflash", "menengah", "windows"]
+    },
+    {
+      "id": "cara-setup-adb-fastboot",
+      "slug": "cara-setup-adb-fastboot",
+      "title": "Cara Setup ADB & Fastboot di Windows — Panduan Pemula",
+      "category": "flashing",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "info", "text": "ADB & Fastboot adalah tool developer resmi Google, 100% aman diinstall." }
+      ],
+      "requirements": [
+        "PC Windows 10 atau 11",
+        "Koneksi internet untuk download",
+        "USB cable berkualitas"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download Platform Tools",
+          "content": "Download Android SDK Platform Tools dari website resmi Google. Ini berisi adb.exe dan fastboot.exe. Extract ZIP ke folder yang mudah diingat, misal: C:\\platform-tools\\",
+          "tip": "Simpan di lokasi tanpa spasi di path, seperti C:\\platform-tools\\ bukan C:\\Program Files\\platform-tools\\",
+          "download_link": { "label": "Download Platform Tools", "url": "https://developer.android.com/tools/releases/platform-tools" }
+        },
+        {
+          "step": 2,
+          "title": "Tambahkan ke PATH (Opsional tapi Direkomendasikan)",
+          "content": "Buka System Properties > Advanced > Environment Variables. Di System Variables, cari 'Path' > Edit > New. Tambahkan path folder platform-tools (misal C:\\platform-tools). Klik OK di semua window.",
+          "tip": "Dengan PATH, kamu bisa jalankan 'adb' dan 'fastboot' dari folder manapun tanpa harus pindah direktori.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Aktifkan USB Debugging di HP",
+          "content": "Settings > About Phone > MIUI/HyperOS Version > tap 7 kali. Kembali ke Settings > Additional Settings > Developer Options. Aktifkan 'USB Debugging'. Jika ada 'USB Debugging (Security Settings)', aktifkan juga.",
+          "tip": "USB Debugging harus aktif agar ADB bisa mendeteksi device.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Test Koneksi ADB",
+          "content": "Hubungkan HP ke PC via USB. Pilih 'File Transfer' (MTP) di popup di HP. Buka Command Prompt di folder platform-tools (klik kanan > Open in Terminal atau ketik cmd di address bar). Jalankan: adb devices",
+          "code": "adb devices",
+          "tip": "Jika muncul 'unauthorized', accept popup 'Allow USB Debugging' di HP. Centang 'Always allow from this computer'.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Test Fastboot",
+          "content": "Masuk ke fastboot mode: ketik adb reboot bootloader. Setelah muncul layar fastboot, ketik: fastboot devices. Jika muncul serial number device, fastboot bekerja dengan baik.",
+          "code": "adb reboot bootloader\nfastboot devices",
+          "tip": "Untuk keluar dari fastboot, ketik: fastboot reboot",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "ADB tidak mendeteksi device, kenapa?", "a": "Coba: (1) Ganti kabel USB, (2) Aktifkan USB Debugging, (3) Accept popup di HP, (4) Install USB driver Xiaomi." },
+        { "q": "Apa perbedaan ADB dan Fastboot?", "a": "ADB digunakan saat Android berjalan normal. Fastboot digunakan saat device di mode bootloader/fastboot." }
+      ],
+      "related_tutorials": ["cara-unlock-bootloader", "cara-install-twrp", "cara-flash-firmware-miflash"],
+      "thumbnail": "/assets/img/tutorials/adb-thumbnail.webp",
+      "views": 8900,
+      "published_at": "2024-01-20",
+      "updated_at": "2026-02-10",
+      "tags": ["tools", "adb", "fastboot", "pemula", "setup", "windows"]
+    },
+    {
+      "id": "cara-unbrick-xiaomi",
+      "slug": "cara-unbrick-xiaomi",
+      "title": "Cara Unbrick Xiaomi — EDL Mode 9008 & MiFlash",
+      "category": "recovery",
+      "difficulty": "Mahir",
+      "estimated_time": "30-60 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "EDL mode adalah langkah terakhir untuk unbrick. Semua data AKAN terhapus." },
+        { "level": "warning", "text": "Beberapa device memerlukan akses ke EDL via testpoint (jumper hardware). Lakukan dengan hati-hati." }
+      ],
+      "requirements": [
+        "PC Windows 10/11",
+        "MiFlash Tool",
+        "Qualcomm EDL Driver",
+        "Firmware Fastboot ROM untuk device",
+        "Kabel USB berkualitas",
+        "Untuk hard brick: testpoint knowledge"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Identifikasi Jenis Brick",
+          "content": "Soft brick: HP masih bisa masuk fastboot atau recovery, layar menyala tapi tidak bisa boot normal. Hard brick: HP sama sekali tidak merespons, tidak ada tanda kehidupan. Untuk soft brick, coba flash ulang via fastboot. Untuk hard brick, perlu EDL mode.",
+          "tip": "Soft brick bisa diselesaikan dengan flash firmware via fastboot. Hard brick perlu EDL.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Install Qualcomm EDL Driver",
+          "content": "Download dan install Qualcomm HS-USB QDLoader 9008 driver. Buka Device Manager di Windows, cari 'Qualcomm HS-USB QDLoader 9008'. Jika belum ada, install drivernya dulu.",
+          "tip": "Driver EDL kadang perlu diinstall manual melalui Device Manager > Update Driver.",
+          "download_link": { "label": "Qualcomm EDL Driver", "url": "https://qfil.download/qualcomm-hs-usb-qdloader-9008-driver/" }
+        },
+        {
+          "step": 3,
+          "title": "Masuk ke EDL Mode",
+          "content": "Metode 1 (via ADB jika masih bisa): adb reboot edl. Metode 2 (via Fastboot): fastboot oem edl. Metode 3 (Hardware testpoint): Buka back cover, cari testpoint EDL di PCB, hubungkan ke ground saat sambungkan USB ke PC. Device akan muncul sebagai 'Qualcomm 9008'.",
+          "code": "adb reboot edl",
+          "tip": "Metode testpoint berbeda setiap model. Cari tutorial spesifik untuk model HP kamu di XDA.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Flash via MiFlash dengan Clean All",
+          "content": "Buka MiFlash Tool. Browse ke folder firmware yang sudah diekstrak. Pilih 'Clean All' di bagian bawah. Klik Refresh — pastikan device terdeteksi. Klik Flash dan tunggu proses selesai.",
+          "tip": "EDL flash via MiFlash biasanya lebih cepat dari flash biasa karena direct ke hardware.",
+          "download_link": { "label": "Download MiFlash", "url": "https://xiaomiflashtool.com/" }
+        },
+        {
+          "step": 5,
+          "title": "Tunggu Proses & Verifikasi",
+          "content": "Jangan cabut kabel selama flash berlangsung. Setelah MiFlash menampilkan 'Flash Done', lepas kabel. HP akan reboot sendiri. Jika tidak reboot, tahan Power button 10-15 detik.",
+          "tip": "Jika berhasil, HP akan boot ke MIUI/HyperOS standar. Proses setup seperti HP baru.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "HP sama sekali tidak merespons, apakah bisa diselamatkan?", "a": "Dalam banyak kasus bisa dengan EDL testpoint. Namun jika ada kerusakan hardware (misalnya eMMC mati), tidak bisa diperbaiki software." },
+        { "q": "Apakah unbrick bisa dilakukan tanpa PC?", "a": "Tidak. Unbrick via EDL memerlukan PC Windows dengan MiFlash." }
+      ],
+      "related_tutorials": ["cara-fix-bootloop", "cara-flash-firmware-miflash", "cara-setup-adb-fastboot"],
+      "thumbnail": "/assets/img/tutorials/unbrick-thumbnail.webp",
+      "views": 7600,
+      "published_at": "2024-05-01",
+      "updated_at": "2026-03-10",
+      "tags": ["unbrick", "edl", "mahir", "emergency", "miflash"]
+    },
+    {
+      "id": "cara-fix-bootloop",
+      "slug": "cara-fix-bootloop",
+      "title": "Cara Fix Bootloop Xiaomi setelah Flash ROM — Semua Solusi",
+      "category": "recovery",
+      "difficulty": "Menengah",
+      "estimated_time": "20-60 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "warning", "text": "Jangan panik! Bootloop biasanya bisa diperbaiki. Ikuti langkah-langkah di bawah secara berurutan." }
+      ],
+      "requirements": [
+        "Akses ke custom recovery (TWRP/OrangeFox)",
+        "File ROM yang benar untuk device",
+        "PC dengan ADB/Fastboot",
+        "Firmware stock (untuk kasus terparah)"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Tunggu Dulu — Jangan Panik",
+          "content": "Boot pertama setelah flash ROM bisa memakan waktu 5-10 menit. Jangan langsung simpulkan bootloop. Tunggu minimal 10 menit sebelum mengambil tindakan. Jika setelah 15 menit masih loop, baru lanjutkan ke langkah berikut.",
+          "tip": "Biarkan HP terhubung ke charger selama menunggu untuk menghindari habis baterai.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Coba Clear Cache via Recovery",
+          "content": "Masuk ke TWRP/OrangeFox recovery (tahan Volume Up + Power). Tap Wipe > Advanced Wipe > centang Cache dan Dalvik/ART Cache. Geser untuk konfirmasi. Reboot system dan cek apakah berhasil.",
+          "tip": "Ini solusi termudah dan paling sering berhasil untuk bootloop ringan.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Flash ROM Ulang",
+          "content": "Jika clear cache tidak membantu, flash ulang ROM. Masuk recovery > Install > pilih ROM.zip > Flash. Pastikan tidak ada file ROM yang corrupt (redownload jika perlu, cek MD5 hash).",
+          "tip": "Cek MD5/SHA256 hash file ROM untuk memastikan tidak corrupt selama download.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Full Wipe & Flash Ulang",
+          "content": "Jika flash ulang tanpa wipe gagal, lakukan full wipe: Format Data + Wipe System + Cache + Dalvik. Kemudian flash ulang ROM dan GApps dari awal. Ini solusi untuk mayoritas kasus bootloop.",
+          "tip": "Full wipe berarti data hilang. Pastikan sudah backup sebelum ini.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Flash Firmware Stock via MiFlash",
+          "content": "Jika ROM custom bermasalah, kembali ke firmware stock dulu. Download fastboot ROM dari Xiaomi. Flash dengan MiFlash (Clean All). Ini akan mengembalikan HP ke kondisi awal pabrik.",
+          "tip": "Setelah berhasil boot ke firmware stock, kamu bisa mencoba flash ROM custom lagi dengan hati-hati.",
+          "download_link": { "label": "Download Firmware Stock", "url": "https://xiaomifirmwareupdater.com/" }
+        },
+        {
+          "step": 6,
+          "title": "EDL Flash (Langkah Terakhir)",
+          "content": "Jika semua langkah di atas gagal, coba flash via EDL mode. Lihat tutorial Unbrick Xiaomi untuk panduan lengkap EDL mode. Ini adalah langkah terakhir sebelum bawa ke service center.",
+          "tip": "EDL berhasil menyelamatkan >95% kasus brick pada device Qualcomm.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Bootloop setelah flash Magisk, solusi?", "a": "Masuk recovery, flash Magisk lagi atau hapus Magisk dengan Uninstall dari Magisk app. Atau flash ROM bersih tanpa Magisk dulu." },
+        { "q": "Berapa lama boot normal vs bootloop?", "a": "Boot pertama setelah flash: 3-10 menit normal. Lebih dari 15 menit tanpa progress = kemungkinan bootloop." }
+      ],
+      "related_tutorials": ["cara-unbrick-xiaomi", "cara-install-custom-rom", "cara-flash-firmware-miflash"],
+      "thumbnail": "/assets/img/tutorials/bootloop-thumbnail.webp",
+      "views": 13400,
+      "published_at": "2024-04-15",
+      "updated_at": "2026-04-02",
+      "tags": ["fix", "bootloop", "menengah", "troubleshoot", "emergency"]
+    },
+    {
+      "id": "cara-install-lsposed",
+      "slug": "cara-install-lsposed",
+      "title": "Cara Install LSPosed Framework di Xiaomi",
+      "category": "root",
+      "difficulty": "Menengah",
+      "estimated_time": "15 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "danger", "text": "HP harus sudah di-root dengan Magisk (Zygisk mode) atau KernelSU + Zygisk Next!" },
+        { "level": "info", "text": "LSPosed memungkinkan modifikasi system-level yang powerful. Gunakan modul dengan bijak." }
+      ],
+      "requirements": [
+        "Root dengan Magisk (Zygisk enabled) atau KernelSU + Zygisk Next",
+        "Android 8.1 atau lebih baru",
+        "Koneksi internet untuk download"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Pastikan Zygisk Aktif",
+          "content": "Untuk Magisk: buka Magisk app > Settings > aktifkan 'Zygisk'. Reboot jika diminta. Untuk KernelSU: pastikan Zygisk Next sudah terinstall sebagai module. Zygisk harus aktif sebelum install LSPosed.",
+          "tip": "Cek status Zygisk di Magisk app: Settings > Zygisk harus ON (hijau).",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Download LSPosed ZIP",
+          "content": "Download file LSPosed .zip dari GitHub resmi (bukan LSPosed Manager app). Ada 2 versi: Zygisk edition (untuk Magisk Zygisk) dan Riru edition (legacy). Gunakan Zygisk edition.",
+          "tip": "Download file yang berakhiran -zygisk-release.zip, bukan yang -riru-release.zip.",
+          "download_link": { "label": "Download LSPosed", "url": "https://github.com/LSPosed/LSPosed/releases/latest" }
+        },
+        {
+          "step": 3,
+          "title": "Install LSPosed via Magisk Modules",
+          "content": "Buka Magisk app > Modules > tap ikon '+' (install from storage). Pilih file LSPosed .zip yang sudah didownload. Tunggu proses instalasi selesai. Tap Reboot.",
+          "tip": "Alternatiif: install via TWRP/OrangeFox recovery jika tidak bisa via Magisk app.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Buka LSPosed Manager",
+          "content": "Setelah reboot, akan muncul shortcut LSPosed Manager (biasanya berupa parasit/bug icon di notification area) atau bisa dibuka via Magisk module settings. Install modul Xposed yang kamu inginkan dari LSPosed Manager.",
+          "tip": "Aktifkan setiap modul hanya untuk aplikasi yang diperlukan (scope). Ini lebih aman dari aktifkan untuk semua app.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "LSPosed vs Riru, mana yang harus digunakan?", "a": "Gunakan LSPosed Zygisk edition (untuk Magisk modern dengan Zygisk enabled). Riru sudah legacy." },
+        { "q": "Modul LSPosed rekomendasi untuk apa saja?", "a": "GravityBox (customization), QuickSwitch (launcher switcher), AppSystem (system tweaks), DisableFlag (enable hidden features)." }
+      ],
+      "related_tutorials": ["cara-root-magisk-recovery", "cara-install-kernelsu", "cara-verify-integrity"],
+      "thumbnail": "/assets/img/tutorials/lsposed-thumbnail.webp",
+      "views": 7200,
+      "published_at": "2024-06-01",
+      "updated_at": "2026-02-20",
+      "tags": ["module", "lsposed", "xposed", "menengah", "framework"]
+    },
+    {
+      "id": "cara-install-dolby-atmos",
+      "slug": "cara-install-dolby-atmos",
+      "title": "Cara Install Dolby Atmos Mod di Custom ROM Xiaomi",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "warning", "text": "HP harus sudah di-root atau custom recovery terinstall untuk flash Dolby Atmos mod." }
+      ],
+      "requirements": [
+        "Root dengan Magisk ATAU Custom recovery (TWRP/OrangeFox)",
+        "File Dolby Atmos mod .zip",
+        "Baterai minimal 50%"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download Dolby Atmos Mod",
+          "content": "Download file Dolby Atmos mod untuk versi Android kamu. Tersedia dalam format Magisk module (.zip) atau flashable ZIP untuk TWRP. Pilih yang sesuai dengan setup root kamu.",
+          "tip": "Gunakan Dolby Atmos versi terbaru yang kompatibel dengan Android versi HP kamu.",
+          "download_link": { "label": "Download Dolby Atmos Mod", "url": "https://github.com/IamAJ9/Dolby-Atmos/releases" }
+        },
+        {
+          "step": 2,
+          "title": "Install via Magisk Module (Cara Termudah)",
+          "content": "Jika HP sudah di-root dengan Magisk: buka Magisk > Modules > Install from storage > pilih file Dolby Atmos .zip > konfirmasi. Reboot setelah instalasi.",
+          "tip": "Metode Magisk module adalah yang paling mudah dan bisa di-uninstall kapan saja.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Install via TWRP (Alternatif)",
+          "content": "Jika menggunakan TWRP: salin file Dolby .zip ke HP. Masuk TWRP > Install > pilih file > Flash. Reboot system.",
+          "tip": "Pastikan versi Dolby yang diflash kompatibel dengan ROM dan Android version.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Verifikasi & Nikmati",
+          "content": "Setelah reboot, cari 'Dolby Atmos' di Settings atau di Settings > Sound > Dolby Atmos. Aktifkan dan pilih profil audio sesuai kebutuhan: Music, Movie, atau Game. Nikmati audio yang jauh lebih baik!",
+          "tip": "Jika tidak muncul di settings, coba search 'Dolby' di search bar settings HP.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Dolby Atmos vs ViPER4Android, mana yang lebih baik?", "a": "Tergantung preferensi. Dolby lebih mudah digunakan dengan profil preset. ViPER lebih powerful untuk pengaturan manual." }
+      ],
+      "related_tutorials": ["cara-root-magisk-recovery", "cara-pasang-gcam"],
+      "thumbnail": "/assets/img/tutorials/dolby-thumbnail.webp",
+      "views": 8100,
+      "published_at": "2024-06-15",
+      "updated_at": "2026-01-15",
+      "tags": ["audio", "dolby", "pemula", "mod", "enhancement"]
+    },
+    {
+      "id": "cara-flash-recovery-fastboot",
+      "slug": "cara-flash-recovery-fastboot",
+      "title": "Cara Flash Recovery via Fastboot — TWRP, OrangeFox, PBRP",
+      "category": "recovery",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": ["Windows 10", "Windows 11"] },
+      "warnings": [
+        { "level": "danger", "text": "Download recovery yang TEPAT untuk codename device kamu. Recovery salah = brick!" }
+      ],
+      "requirements": [
+        "Bootloader sudah di-unlock",
+        "ADB & Fastboot",
+        "File recovery .img untuk device",
+        "Kabel USB"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Download Recovery .img",
+          "content": "Download file recovery .img (TWRP/OrangeFox/PBRP) untuk codename device kamu. Cek codename di Settings > About Phone. Taruh file di folder yang mudah diakses.",
+          "tip": "Codename biasanya tertera di belakang kemasan HP atau di Settings > About Phone > All Specs.",
+          "download_link": { "label": "Download OrangeFox", "url": "https://orangefox.download/" }
+        },
+        {
+          "step": 2,
+          "title": "Masuk Fastboot & Flash",
+          "content": "Hubungkan HP ke PC. Masuk fastboot mode: adb reboot bootloader. Flash recovery: fastboot flash recovery recovery.img. Boot ke recovery: fastboot reboot recovery.",
+          "code": "adb reboot bootloader\nfastboot flash recovery recovery.img\nfastboot reboot recovery",
+          "tip": "Untuk device A/B, beberapa perlu flash ke kedua slot: fastboot flash recovery_a recovery.img && fastboot flash recovery_b recovery.img",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Apa bedanya flash recovery dengan boot recovery?", "a": "Flash = permanen tersimpan di recovery partition. Boot = temporary, tidak tersimpan." }
+      ],
+      "related_tutorials": ["cara-install-twrp", "cara-install-orangefox"],
+      "thumbnail": "/assets/img/tutorials/flash-recovery-thumbnail.webp",
+      "views": 6500,
+      "published_at": "2024-07-01",
+      "updated_at": "2026-02-01",
+      "tags": ["recovery", "fastboot", "pemula", "flash"]
+    },
+    {
+      "id": "cara-verify-integrity",
+      "slug": "cara-verify-integrity",
+      "title": "Cara Pass Play Integrity Check pada HP yang Di-Root",
+      "category": "tips",
+      "difficulty": "Menengah",
+      "estimated_time": "15 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "info", "text": "Play Integrity Fix membutuhkan update berkala karena Google secara rutin memperbarui sistem deteksinya." }
+      ],
+      "requirements": [
+        "Root dengan Magisk (Zygisk enabled) atau KernelSU + Zygisk Next",
+        "Shamiko module (opsional tapi disarankan)",
+        "Play Integrity Fix module"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Install Play Integrity Fix Module",
+          "content": "Download Play Integrity Fix dari GitHub chiteroman. Install sebagai Magisk/KernelSU module. Setelah install, reboot HP.",
+          "tip": "Versi terbaru Play Integrity Fix selalu ada di GitHub releases.",
+          "download_link": { "label": "Play Integrity Fix", "url": "https://github.com/chiteroman/PlayIntegrityFix/releases" }
+        },
+        {
+          "step": 2,
+          "title": "Install & Konfigurasi Shamiko",
+          "content": "Download dan install Shamiko module. Buka Magisk > DenyList > aktifkan Enforce DenyList. Tambahkan Google Play Services, Play Store, dan banking apps ke DenyList. Reboot.",
+          "download_link": { "label": "Download Shamiko", "url": "https://github.com/LSPosed/LSPosed.github.io/releases" }
+        },
+        {
+          "step": 3,
+          "title": "Clear Data Play Services & Test",
+          "content": "Buka Settings > Apps > Google Play Services > Clear Cache & Data. Restart. Download YASNAC atau Play Integrity API Checker dari Play Store. Test integrity — harus lulus MEETS_DEVICE_INTEGRITY.",
+          "tip": "Jika STRONG integrity gagal, itu normal dan biasanya tidak diperlukan untuk app banking biasa.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Banking app masih tidak bisa setelah install module, kenapa?", "a": "Tambahkan banking app spesifik ke DenyList Magisk. Beberapa app sangat strict dalam deteksi root." }
+      ],
+      "related_tutorials": ["cara-root-magisk-recovery", "cara-install-lsposed"],
+      "thumbnail": "/assets/img/tutorials/integrity-thumbnail.webp",
+      "views": 9300,
+      "published_at": "2024-08-01",
+      "updated_at": "2026-04-18",
+      "tags": ["integrity", "banking", "root", "menengah", "essential"]
+    },
+    {
+      "id": "cara-pasang-gcam",
+      "slug": "cara-pasang-gcam",
+      "title": "Cara Install GCam (Google Camera) di Xiaomi tanpa Root",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "10 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "info", "text": "GCam tidak memerlukan root. Cukup aktifkan Unknown Sources dan install APK." }
+      ],
+      "requirements": [
+        "HP Xiaomi/Redmi/POCO",
+        "File GCam APK yang kompatibel",
+        "Izin Install Unknown Apps aktif"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Cari GCam yang Kompatibel",
+          "content": "Kunjungi GCam Hub (celsoazevedo.com) atau GCam tergantung chipset: BSG untuk Snapdragon, Shamim untuk Dimensity. Download versi yang sesuai dengan Android version dan chipset HP kamu.",
+          "download_link": { "label": "GCam Hub", "url": "https://www.celsoazevedo.com/files/android/google-camera/" }
+        },
+        {
+          "step": 2,
+          "title": "Aktifkan Install dari Unknown Sources",
+          "content": "Buka Settings > Apps > Special App Access > Install Unknown Apps. Aktifkan untuk browser yang kamu gunakan untuk download GCam. Di MIUI/HyperOS, mungkin ada di Settings > Privacy > Special App Access.",
+          "tip": "Matikan kembali setelah install GCam untuk keamanan.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Install & Konfigurasi GCam",
+          "content": "Install file APK GCam. Buka GCam. Pertama kali buka, berikan semua izin (kamera, mikrofon, lokasi, storage). Coba foto dan bandingkan hasilnya dengan kamera bawaan MIUI/HyperOS.",
+          "tip": "Download file config XML dari komunitas pengguna GCam untuk device kamu agar hasil foto optimal.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "GCam crash saat dibuka, kenapa?", "a": "GCam tidak kompatibel dengan device/Android version. Coba versi GCam yang berbeda." }
+      ],
+      "related_tutorials": ["cara-install-dolby-atmos", "cara-enable-dev-options"],
+      "thumbnail": "/assets/img/tutorials/gcam-thumbnail.webp",
+      "views": 11600,
+      "published_at": "2024-07-15",
+      "updated_at": "2026-03-05",
+      "tags": ["camera", "gcam", "pemula", "no-root", "tips"]
+    },
+    {
+      "id": "cara-dirty-flash-rom",
+      "slug": "cara-dirty-flash-rom",
+      "title": "Cara Update ROM tanpa Full Wipe — Dirty Flash Aman",
+      "category": "flashing",
+      "difficulty": "Menengah",
+      "estimated_time": "20 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "warning", "text": "Dirty flash hanya aman untuk update dari versi yang SAMA dari ROM yang SAMA. Jangan dirty flash dari ROM berbeda!" },
+        { "level": "info", "text": "Backup tetap disarankan meskipun dirty flash biasanya aman." }
+      ],
+      "requirements": [
+        "Custom recovery (TWRP/OrangeFox)",
+        "File update ROM .zip (versi lebih baru dari yang terinstall)",
+        "ROM yang sama dengan yang terinstall"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Pastikan Kondisi untuk Dirty Flash",
+          "content": "Dirty flash aman jika: (1) Update dari versi yang SAMA ROM (misalnya crDroid 11.0 ke crDroid 11.1), (2) Tidak ganti ROM ke yang berbeda, (3) ROM mendukung dirty flash (baca changelog ROM). Jika ragu, lakukan clean flash.",
+          "tip": "Baca release notes ROM baru. Biasanya ada keterangan 'dirty flash OK' atau 'clean flash required'.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Backup Magisk (Jika Root)",
+          "content": "Jika HP di-root dengan Magisk, export Magisk config & modules sebelum dirty flash. Beberapa update ROM bisa menghapus Magisk. Di Magisk app: Settings > Backup.",
+          "tip": "Simpan file backup Magisk ke PC atau cloud.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Flash ROM Update via Recovery",
+          "content": "Masuk ke TWRP/OrangeFox recovery. JANGAN wipe data/system. Langsung tap Install > pilih ROM update .zip > Flash. Setelah selesai, reboot system.",
+          "tip": "Untuk dirty flash, cukup wipe Cache dan Dalvik saja, tidak perlu wipe data/system.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Flash Ulang Magisk (Jika Root)",
+          "content": "Jika root hilang setelah dirty flash, flash ulang Magisk zip dari recovery sebelum reboot system. Atau patch boot.img baru dengan Magisk app.",
+          "tip": "Re-flash Magisk harus dilakukan setiap update ROM baru karena boot.img berubah.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Apakah dirty flash berisiko?", "a": "Risiko lebih kecil dari clean flash. Namun tetap ada potensi bug jika ROM tidak dirancang untuk dirty flash." }
+      ],
+      "related_tutorials": ["cara-install-custom-rom", "cara-root-magisk-recovery"],
+      "thumbnail": "/assets/img/tutorials/dirty-flash-thumbnail.webp",
+      "views": 6800,
+      "published_at": "2024-08-10",
+      "updated_at": "2026-03-15",
+      "tags": ["flashing", "dirty-flash", "update", "menengah", "tips"]
+    },
+    {
+      "id": "cara-backup-restore-twrp",
+      "slug": "cara-backup-restore-twrp",
+      "title": "Cara Backup & Restore Penuh dengan TWRP/OrangeFox",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "30 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "info", "text": "Backup TWRP (NANDroid backup) menyimpan seluruh kondisi HP. Lakukan sebelum eksperimen apapun!" }
+      ],
+      "requirements": [
+        "TWRP atau OrangeFox recovery",
+        "Storage kosong minimal 4-8 GB",
+        "MicroSD atau storage eksternal (opsional)"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Masuk Recovery & Pilih Backup",
+          "content": "Masuk ke TWRP/OrangeFox recovery. Tap menu 'Backup'. Pilih partisi yang ingin di-backup: Boot, System, Data (pilih semua untuk backup penuh). Pilih storage destination (internal atau microSD).",
+          "tip": "Backup ke microSD atau salin ke PC setelah selesai untuk keamanan lebih.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Mulai Backup",
+          "content": "Setelah memilih partisi, geser tombol konfirmasi untuk mulai backup. Proses backup biasanya 10-30 menit tergantung ukuran data. Jangan matikan HP selama proses.",
+          "tip": "Nama folder backup biasanya format: [date]-[time]. Catat tanggal backup untuk identifikasi.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Salin Backup ke PC (Recommended)",
+          "content": "Setelah backup selesai, salin folder backup dari HP ke PC via USB. Backup ada di /sdcard/TWRP/BACKUPS/ atau /sdcard/Fox/OFox_Backup/. Simpan di tempat aman.",
+          "tip": "Backup di internal storage saja berisiko jika HP perlu format data.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Cara Restore dari Backup",
+          "content": "Untuk restore: masuk recovery > tap Restore > pilih folder backup yang ingin direstored > pilih partisi (biasanya Boot + System + Data) > geser konfirmasi. HP akan dikembalikan ke kondisi saat backup dibuat.",
+          "tip": "Restore akan menghapus kondisi HP saat ini dan menggantinya dengan kondisi saat backup.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Berapa sering harus backup?", "a": "Sebelum setiap eksperimen besar: ganti ROM, flash modul baru, update Magisk. Minimal 1x sebulan untuk daily user." }
+      ],
+      "related_tutorials": ["cara-install-twrp", "cara-install-custom-rom"],
+      "thumbnail": "/assets/img/tutorials/backup-thumbnail.webp",
+      "views": 7400,
+      "published_at": "2024-09-01",
+      "updated_at": "2026-02-15",
+      "tags": ["backup", "restore", "twrp", "pemula", "essential"]
+    },
+    {
+      "id": "cara-enable-dev-options",
+      "slug": "cara-enable-dev-options",
+      "title": "Cara Enable Developer Options & USB Debugging di MIUI/HyperOS",
+      "category": "tips",
+      "difficulty": "Pemula",
+      "estimated_time": "5 menit",
+      "author": "Xiaomi Basecamp Team",
+      "status": "published",
+      "compatibility": { "devices": ["all-xiaomi"], "os_pc": null },
+      "warnings": [
+        { "level": "info", "text": "Developer Options adalah menu tersembunyi yang berisi pengaturan untuk developer dan advanced users." }
+      ],
+      "requirements": [
+        "HP Xiaomi dengan MIUI atau HyperOS",
+        "Tidak ada syarat khusus"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Temukan Versi MIUI/HyperOS",
+          "content": "Buka Settings > About Phone. Cari tulisan 'MIUI Version', 'HyperOS Version', atau 'OS Version'. Ini yang akan kamu tap berkali-kali.",
+          "tip": "Di beberapa versi, mungkin ada 'HyperOS Version' atau 'Android Version' yang perlu di-tap.",
+          "download_link": null
+        },
+        {
+          "step": 2,
+          "title": "Tap 7 Kali untuk Unlock",
+          "content": "Tap tulisan versi tersebut sebanyak 7 kali berturut-turut dengan cepat. Akan muncul countdown lalu notifikasi 'You are now a developer!' atau 'Developer mode has been enabled'.",
+          "tip": "Jika HP meminta PIN/Password/Pattern, masukkan dulu sebelum bisa mengaktifkan Developer Options.",
+          "download_link": null
+        },
+        {
+          "step": 3,
+          "title": "Temukan Developer Options",
+          "content": "Kembali ke menu Settings utama. Developer Options biasanya ada di: Settings > Additional Settings > Developer Options (MIUI). Atau Settings > Special Features > Developer Options (beberapa HyperOS).",
+          "tip": "Jika tidak ketemu, coba search 'Developer' di search bar Settings.",
+          "download_link": null
+        },
+        {
+          "step": 4,
+          "title": "Aktifkan USB Debugging",
+          "content": "Di dalam Developer Options, temukan 'USB Debugging' dan aktifkan (toggle ke ON). Akan muncul popup konfirmasi, tap OK. Jika ada 'USB Debugging (Security Settings)', aktifkan juga untuk fungsi ADB penuh.",
+          "tip": "USB Debugging wajib untuk menggunakan ADB dari PC. Matikan jika tidak diperlukan untuk keamanan.",
+          "download_link": null
+        },
+        {
+          "step": 5,
+          "title": "Opsi Penting di Developer Options",
+          "content": "Beberapa opsi berguna: OEM Unlocking (untuk UBL), Wireless Debugging (ADB via WiFi Android 11+), USB Configuration (pilih MTP untuk transfer file), Background Process Limit, Animation Scale (kurangi untuk HP lebih responsif).",
+          "tip": "Jangan aktifkan opsi yang tidak kamu mengerti. Beberapa pengaturan bisa mempengaruhi performa atau keamanan HP.",
+          "download_link": null
+        }
+      ],
+      "faq": [
+        { "q": "Developer Options hilang setelah reboot, kenapa?", "a": "Developer Options tidak hilang sendiri. Kemungkinan factory reset atau update MIUI/HyperOS menghapusnya. Aktifkan lagi dengan cara yang sama." },
+        { "q": "Apakah mengaktifkan Developer Options berbahaya?", "a": "Tidak berbahaya selama tidak mengubah pengaturan yang tidak dimengerti. USB Debugging aman digunakan." }
+      ],
+      "related_tutorials": ["cara-setup-adb-fastboot", "cara-unlock-bootloader"],
+      "thumbnail": "/assets/img/tutorials/dev-options-thumbnail.webp",
+      "views": 15200,
+      "published_at": "2024-01-05",
+      "updated_at": "2026-04-01",
+      "tags": ["developer-options", "usb-debugging", "pemula", "first-step", "miui", "hyperos"]
+    }
+  ]
+}

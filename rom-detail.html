@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROM Detail — Xiaomi Basecamp</title>
+  <meta name="description" content="Detail Custom ROM untuk device Xiaomi. Fitur, rating, requirements, dan supported devices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/rom-detail.html">
+  <meta property="og:type" content="product">
+  <meta property="og:title" id="og-title" content="ROM Detail — Xiaomi Basecamp">
+  <meta property="og:description" id="og-desc" content="Custom ROM detail.">
+  <meta property="og:image" content="/assets/img/ui/og-image.webp">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    /* Hero */
+    .rd-hero {
+      position: relative; overflow: hidden; padding: 40px 0 48px;
+    }
+    .rd-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 30% 50%, rgba(184,0,255,.07), transparent 70%);
+    }
+    .rd-hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: auto 1fr; gap: 32px;
+      align-items: start; position: relative; z-index: 1;
+    }
+
+    /* Logo */
+    .rd-logo-wrap {
+      width: 100px; height: 100px; border-radius: 20px;
+      background: var(--ink-2); border: 1px solid rgba(184,0,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .rd-logo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .rd-logo-fallback {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem;
+      font-weight: 900; color: var(--volt); letter-spacing: -2px;
+    }
+
+    /* Meta */
+    .rd-breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3);
+      margin-bottom: 12px;
+    }
+    .rd-breadcrumb a { color: var(--t3); transition: color .2s; }
+    .rd-breadcrumb a:hover { color: var(--volt); }
+    .rd-breadcrumb .sep { opacity: .4; }
+
+    .rd-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -1px; line-height: .95;
+      color: var(--t1); margin-bottom: 12px;
+    }
+
+    .rd-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .rd-badge {
+      padding: 3px 10px; border-radius: 6px; font-family: 'DM Mono', monospace;
+      font-size: .68rem; letter-spacing: .05em; font-weight: 600;
+      border: 1px solid; line-height: 1.4;
+    }
+
+    .rd-feature-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .rd-feature-tag {
+      padding: 3px 10px; border-radius: 99px;
+      background: rgba(184,0,255,.08); border: 1px solid rgba(184,0,255,.2);
+      font-family: 'Syne', sans-serif; font-size: .68rem; color: var(--volt);
+    }
+
+    .rd-downloads { display: flex; flex-wrap: wrap; gap: 10px; }
+    .rd-dl-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 8px; text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      transition: all .2s; border: 1px solid;
+    }
+    .rd-dl-primary { background: var(--volt); color: #fff; border-color: var(--volt); }
+    .rd-dl-primary:hover { background: #cc00ff; box-shadow: 0 0 20px rgba(184,0,255,.4); transform: translateY(-2px); }
+    .rd-dl-ghost { background: transparent; color: var(--volt); border-color: rgba(184,0,255,.35); }
+    .rd-dl-ghost:hover { background: rgba(184,0,255,.08); border-color: var(--volt); transform: translateY(-2px); }
+    .rd-dl-disabled { opacity: .35; pointer-events: none; background: transparent; color: var(--t3); border-color: var(--t4); }
+
+    /* Main */
+    .rd-main { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
+    .rd-section { margin-bottom: 40px; padding-top: 40px; border-top: 1px solid var(--border-subtle); }
+    .rd-section-title {
+      font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--volt); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .rd-section-title::before { content: '//'; opacity: .5; }
+
+    /* Two col layout for desc/pros/cons */
+    .rd-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .rd-desc { font-family: 'Syne', sans-serif; font-size: .9rem; color: var(--t2); line-height: 1.7; margin-bottom: 20px; }
+
+    /* Feature list */
+    .rd-features-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+    .rd-feature-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 14px; border-radius: 8px;
+      background: rgba(184,0,255,.04); border: 1px solid rgba(184,0,255,.1);
+      font-family: 'Syne', sans-serif; font-size: .8rem; color: var(--t1);
+    }
+    .rd-feature-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--volt); box-shadow: 0 0 8px var(--volt); flex-shrink: 0; margin-top: 6px; }
+
+    /* Pros/cons */
+    .rd-pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .rd-pros, .rd-cons {
+      padding: 16px; border-radius: 12px; border: 1px solid;
+    }
+    .rd-pros { background: rgba(41,255,90,.04); border-color: rgba(41,255,90,.15); }
+    .rd-cons { background: rgba(255,45,107,.04); border-color: rgba(255,45,107,.15); }
+    .rd-pros-title, .rd-cons-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: .85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px;
+    }
+    .rd-pros-title { color: var(--lime); }
+    .rd-cons-title { color: var(--blaze); }
+    .rd-pc-item { font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t2); padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; }
+    .rd-pc-item::before { flex-shrink: 0; margin-top: 2px; }
+    .rd-pros .rd-pc-item::before { content: '✓'; color: var(--lime); }
+    .rd-cons .rd-pc-item::before { content: '✗'; color: var(--blaze); }
+
+    /* Rating bars */
+    .rd-ratings { display: flex; flex-direction: column; gap: 12px; }
+    .rd-rating-row { display: grid; grid-template-columns: 120px 1fr 40px; align-items: center; gap: 12px; }
+    .rd-rating-label { font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t2); }
+    .rd-rating-track { height: 6px; background: var(--ink-3); border-radius: 3px; overflow: hidden; }
+    .rd-rating-fill { height: 100%; border-radius: 3px; background: var(--volt); box-shadow: 0 0 8px rgba(184,0,255,.5); transition: width .8s cubic-bezier(.22,1,.36,1); }
+    .rd-rating-val { font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--volt); text-align: right; }
+
+    /* Requirements checklist */
+    .rd-checklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .rd-check-item {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      border-radius: 8px; font-family: 'Syne', sans-serif; font-size: .8rem;
+      background: rgba(7,12,26,.8); border: 1px solid;
+    }
+    .rd-check-item.pass { border-color: rgba(41,255,90,.2); }
+    .rd-check-item.fail { border-color: rgba(255,45,107,.15); }
+    .rd-check-icon { font-size: 1rem; flex-shrink: 0; }
+    .rd-check-text { color: var(--t1); }
+
+    /* Device grid in ROM detail */
+    #rom-devices-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+
+    /* Install guide card */
+    .rd-install-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 20px 24px; border-radius: 14px;
+      background: rgba(7,12,26,.8); border: 1px solid rgba(184,0,255,.15);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .rd-install-card:hover { border-color: rgba(184,0,255,.35); box-shadow: 0 0 20px rgba(184,0,255,.08); }
+    .rd-install-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: var(--t1); }
+    .rd-install-sub { font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t3); margin-top: 4px; }
+
+    /* Not found */
+    .rd-not-found {
+      min-height: 60vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px; text-align: center; padding: 40px;
+    }
+    .rd-loading { min-height: 60vh; display: flex; align-items: center; justify-content: center; }
+
+    @media (max-width: 768px) {
+      .rd-hero-inner { grid-template-columns: 1fr; }
+      .rd-pros-cons { grid-template-columns: 1fr; }
+      .rd-logo-wrap { width: 72px; height: 72px; }
+    }
+    @media (max-width: 640px) {
+      .rd-two-col { grid-template-columns: 1fr; }
+      .rd-rating-row { grid-template-columns: 90px 1fr 32px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="nav-root"></div>
+
+  <!-- Loading -->
+  <div class="rd-loading" id="rd-loading" aria-live="polite"><div class="spinner spinner-lg"></div></div>
+
+  <!-- Content -->
+  <div id="rd-content" hidden>
+
+    <!-- Hero -->
+    <section class="rd-hero" aria-labelledby="rom-name">
+      <div class="rd-hero-inner">
+        <div class="rd-logo-wrap" id="rom-logo-wrap">
+          <span class="rd-logo-fallback" id="rom-logo-fallback" aria-hidden="true"></span>
+        </div>
+        <div>
+          <nav class="rd-breadcrumb" aria-label="Breadcrumb">
+            <a href="/index.html">Home</a><span class="sep">›</span>
+            <a href="/roms.html">Custom ROM</a><span class="sep">›</span>
+            <span id="bc-rom-name" aria-current="page">—</span>
+          </nav>
+          <h1 class="rd-name" id="rom-name">—</h1>
+          <div class="rd-badges" id="rom-badges"></div>
+          <div class="rd-feature-tags" id="rom-feature-tags"></div>
+          <div class="rd-downloads" id="rom-downloads"></div>
+        </div>
+      </div>
+    </section>
+
+    <main class="rd-main" id="main-content">
+
+      <!-- AD PLACEHOLDER -->
+      <div class="ad-container" aria-hidden="true"><!-- Banner ad here --></div>
+
+      <!-- Description & Features -->
+      <section class="rd-section" aria-labelledby="sec-desc">
+        <h2 class="rd-section-title" id="sec-desc">Deskripsi & Fitur</h2>
+        <p class="rd-desc" id="rom-desc"></p>
+        <div class="rd-features-list" id="rom-features-list"></div>
+        <div class="rd-pros-cons" id="rom-pros-cons" style="margin-top:20px"></div>
+      </section>
+
+      <!-- Ratings -->
+      <section class="rd-section" aria-labelledby="sec-ratings">
+        <h2 class="rd-section-title" id="sec-ratings">Rating & Penilaian</h2>
+        <div class="rd-ratings" id="rom-ratings"></div>
+      </section>
+
+      <!-- Requirements -->
+      <section class="rd-section" aria-labelledby="sec-req">
+        <h2 class="rd-section-title" id="sec-req">Requirements</h2>
+        <div class="rd-checklist" id="rom-requirements"></div>
+        <div id="rom-recovery-info" style="margin-top:12px"></div>
+      </section>
+
+      <!-- Supported Devices -->
+      <section class="rd-section" aria-labelledby="sec-devices">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <h2 class="rd-section-title" id="sec-devices" style="margin-bottom:0">
+            Device yang Didukung <span id="device-count-badge" style="color:var(--t3);font-size:.6rem;margin-left:4px"></span>
+          </h2>
+          <a href="/devices.html" class="rd-dl-ghost" style="padding:6px 14px;font-size:.72rem;border-radius:6px;border:1px solid rgba(184,0,255,.25);color:var(--volt);text-decoration:none">
+            Lihat Semua →
+          </a>
+        </div>
+        <div id="rom-devices-grid">
+          <p style="color:var(--t3);font-family:'DM Mono',monospace;font-size:.78rem">Memuat device...</p>
+        </div>
+      </section>
+
+      <!-- Install Guide -->
+      <section class="rd-section" aria-labelledby="sec-install">
+        <h2 class="rd-section-title" id="sec-install">Panduan Instalasi</h2>
+        <a href="/tutorials.html?cat=flashing" class="rd-install-card" style="text-decoration:none">
+          <div>
+            <p class="rd-install-title">📖 Cara Install Custom ROM</p>
+            <p class="rd-install-sub">Panduan lengkap step-by-step flash ROM via TWRP / OrangeFox</p>
+          </div>
+          <span style="color:var(--volt);font-size:1.5rem;flex-shrink:0">→</span>
+        </a>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Not found -->
+  <div id="rd-not-found" hidden>
+    <div class="rd-not-found">
+      <div style="font-size:4rem;opacity:.4">💿</div>
+      <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;color:var(--t2)">ROM Tidak Ditemukan</h1>
+      <p style="color:var(--t3);font-size:.88rem">ROM yang kamu cari tidak ada di database kami.</p>
+      <a href="/roms.html" class="rd-dl-primary" style="margin-top:8px;border-radius:8px">← Kembali ke ROM Database</a>
+    </div>
+  </div>
+
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/deviceCard.js"></script>
+  <script src="/assets/js/pages/romDetail.js"></script>
+
+  <script>
+    (function(){
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return; let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{
+        dot.style.left=e.clientX+'px'; dot.style.top=e.clientY+'px';
+        rx+=(e.clientX-rx)*.12; ry+=(e.clientY-ry)*.12;
+        ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      });
+      document.querySelectorAll('a,button').forEach(el=>{
+        el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+{
+  "total": 30,
+  "items": [
+    {
+      "id": "magisk",
+      "name": "Magisk",
+      "category": "root",
+      "developer": "topjohnwu",
+      "version_stable": "27.0",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/magisk.webp",
+      "tags": [
+        "root",
+        "systemless",
+        "modules",
+        "zygisk",
+        "safetynet",
+        "popular"
+      ],
+      "updated_at": "2026-03-15"
+    },
+    {
+      "id": "kernelsu",
+      "name": "KernelSU",
+      "category": "root",
+      "developer": "tiann",
+      "version_stable": "1.0.1",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/kernelsu.webp",
+      "tags": [
+        "root",
+        "kernel-root",
+        "gki",
+        "secure",
+        "modules"
+      ],
+      "updated_at": "2026-04-10"
+    },
+    {
+      "id": "kernelsu-next",
+      "name": "KernelSU Next",
+      "category": "root",
+      "developer": "rsuntk / KernelSU-Next Team",
+      "version_stable": "1.0.5",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/kernelsu-next.webp",
+      "tags": [
+        "root",
+        "kernel-root",
+        "non-gki",
+        "modules",
+        "fork"
+      ],
+      "updated_at": "2026-04-14"
+    },
+    {
+      "id": "apatch",
+      "name": "APatch",
+      "category": "root",
+      "developer": "bmax121",
+      "version_stable": "10888",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/apatch.webp",
+      "tags": [
+        "root",
+        "kernel-root",
+        "no-custom-kernel",
+        "modern"
+      ],
+      "updated_at": "2026-03-20"
+    },
+    {
+      "id": "kowsu",
+      "name": "KowSU",
+      "category": "root",
+      "developer": "KowSU Team",
+      "version_stable": "0.9.2",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/kowsu.webp",
+      "tags": [
+        "root",
+        "kernel-root",
+        "xiaomi-optimized",
+        "hyperos"
+      ],
+      "updated_at": "2026-02-28"
+    },
+    {
+      "id": "twrp",
+      "name": "TWRP",
+      "category": "recovery",
+      "developer": "Team Win",
+      "version_stable": "3.7.1",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/twrp.webp",
+      "tags": [
+        "recovery",
+        "backup",
+        "flash",
+        "popular",
+        "classic"
+      ],
+      "updated_at": "2025-12-01"
+    },
+    {
+      "id": "orangefox",
+      "name": "OrangeFox Recovery",
+      "category": "recovery",
+      "developer": "OrangeFox Team",
+      "version_stable": "R11.1",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/orangefox.webp",
+      "tags": [
+        "recovery",
+        "modern-ui",
+        "ab-device",
+        "advanced",
+        "recommended"
+      ],
+      "updated_at": "2026-03-10"
+    },
+    {
+      "id": "pbrp",
+      "name": "PBRP (PitchBlack Recovery)",
+      "category": "recovery",
+      "developer": "PitchBlack Team",
+      "version_stable": "4.0",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/pbrp.webp",
+      "tags": [
+        "recovery",
+        "dark-ui",
+        "premium",
+        "stable"
+      ],
+      "updated_at": "2025-11-20"
+    },
+    {
+      "id": "shrp",
+      "name": "SHRP (Skyhawk Recovery)",
+      "category": "recovery",
+      "developer": "SHRP Team",
+      "version_stable": "3.2",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/shrp.webp",
+      "tags": [
+        "recovery",
+        "futuristic-ui",
+        "addons",
+        "unique"
+      ],
+      "updated_at": "2025-09-15"
+    },
+    {
+      "id": "lsposed",
+      "name": "LSPosed Framework",
+      "category": "module",
+      "developer": "LSPosed Team",
+      "version_stable": "1.9.2",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/lsposed.webp",
+      "tags": [
+        "module",
+        "xposed",
+        "zygisk",
+        "framework",
+        "popular"
+      ],
+      "updated_at": "2026-02-20"
+    },
+    {
+      "id": "zygisk-next",
+      "name": "Zygisk Next",
+      "category": "module",
+      "developer": "Dr-TSNG",
+      "version_stable": "4.1.5",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/zygisk-next.webp",
+      "tags": [
+        "module",
+        "zygisk",
+        "kernelsu",
+        "compatibility"
+      ],
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "play-integrity-fix",
+      "name": "Play Integrity Fix",
+      "category": "module",
+      "developer": "chiteroman",
+      "version_stable": "18.8",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/play-integrity-fix.webp",
+      "tags": [
+        "module",
+        "integrity",
+        "banking",
+        "safetynet",
+        "essential"
+      ],
+      "updated_at": "2026-04-18"
+    },
+    {
+      "id": "shamiko",
+      "name": "Shamiko",
+      "category": "module",
+      "developer": "LSPosed Team",
+      "version_stable": "1.2.0",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/shamiko.webp",
+      "tags": [
+        "module",
+        "hide-root",
+        "banking",
+        "zygisk",
+        "essential"
+      ],
+      "updated_at": "2026-03-01"
+    },
+    {
+      "id": "riru",
+      "name": "Riru",
+      "category": "module",
+      "developer": "RikkaApps",
+      "version_stable": "26.1.7",
+      "status": "inactive",
+      "open_source": true,
+      "logo": "/assets/img/tools/riru.webp",
+      "tags": [
+        "module",
+        "legacy",
+        "zygote",
+        "injection",
+        "deprecated"
+      ],
+      "updated_at": "2023-06-01"
+    },
+    {
+      "id": "magisk-delta",
+      "name": "Magisk Delta",
+      "category": "module",
+      "developer": "HuskyDG",
+      "version_stable": "26.4-delta",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/magisk-delta.webp",
+      "tags": [
+        "module",
+        "magisk-fork",
+        "hide-root",
+        "advanced"
+      ],
+      "updated_at": "2025-08-10"
+    },
+    {
+      "id": "shadowstrike-kernel",
+      "name": "ShadowStrike Kernel",
+      "category": "kernel",
+      "developer": "ShadowStrike Team",
+      "version_stable": "v5.15-ss4",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/kernel-generic.webp",
+      "tags": [
+        "kernel",
+        "performance",
+        "snapdragon",
+        "gaming"
+      ],
+      "updated_at": "2026-02-15"
+    },
+    {
+      "id": "sultan-kernel",
+      "name": "Sultan Kernel",
+      "category": "kernel",
+      "developer": "franciscofranco (sultan)",
+      "version_stable": "v5.10-sultan",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/kernel-generic.webp",
+      "tags": [
+        "kernel",
+        "stable",
+        "battery",
+        "upstream"
+      ],
+      "updated_at": "2025-12-20"
+    },
+    {
+      "id": "crdroid-kernel",
+      "name": "crDroid Kernel",
+      "category": "kernel",
+      "developer": "crDroid Team",
+      "version_stable": "v5.15-crdroid",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/crdroid-logo.webp",
+      "tags": [
+        "kernel",
+        "crdroid",
+        "aosp",
+        "stable"
+      ],
+      "updated_at": "2026-03-25"
+    },
+    {
+      "id": "kvm-kernel",
+      "name": "KVM Kernel",
+      "category": "kernel",
+      "developer": "KVM Android Community",
+      "version_stable": "v5.15-kvm",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/kernel-generic.webp",
+      "tags": [
+        "kernel",
+        "virtualization",
+        "kvm",
+        "advanced",
+        "niche"
+      ],
+      "updated_at": "2025-10-01"
+    },
+    {
+      "id": "dolby-atmos",
+      "name": "Dolby Atmos Mod",
+      "category": "audio",
+      "developer": "Dolby Community Port",
+      "version_stable": "v9.5.0.6 (MIUI port)",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/dolby-atmos.webp",
+      "tags": [
+        "audio",
+        "dolby",
+        "surround",
+        "enhancement",
+        "popular"
+      ],
+      "updated_at": "2026-01-15"
+    },
+    {
+      "id": "viper4android",
+      "name": "ViPER4Android FX",
+      "category": "audio",
+      "developer": "vipersaudio",
+      "version_stable": "2.7.2.1",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/viper4android.webp",
+      "tags": [
+        "audio",
+        "equalizer",
+        "surround",
+        "enhancement",
+        "classic"
+      ],
+      "updated_at": "2025-05-01"
+    },
+    {
+      "id": "viper4android-repackaged",
+      "name": "ViPER4Android Repackaged",
+      "category": "audio",
+      "developer": "Chucky2401 / Community",
+      "version_stable": "v4a-A13",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/viper4android.webp",
+      "tags": [
+        "audio",
+        "viper",
+        "repackaged",
+        "modern"
+      ],
+      "updated_at": "2025-08-20"
+    },
+    {
+      "id": "hi-res-audio",
+      "name": "Hi-Res Audio Enabler",
+      "category": "audio",
+      "developer": "XDA Community",
+      "version_stable": "v3.0",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/audio-generic.webp",
+      "tags": [
+        "audio",
+        "hi-res",
+        "quality",
+        "dac",
+        "audiophile"
+      ],
+      "updated_at": "2025-11-10"
+    },
+    {
+      "id": "gcam-hub",
+      "name": "GCam Hub",
+      "category": "camera",
+      "developer": "GCam Hub Team",
+      "version_stable": "9.3 (aggregator)",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/gcam-hub.webp",
+      "tags": [
+        "camera",
+        "gcam",
+        "aggregator",
+        "recommended"
+      ],
+      "updated_at": "2026-04-20"
+    },
+    {
+      "id": "gcam-bsg",
+      "name": "GCam by BSG",
+      "category": "camera",
+      "developer": "BSG (Arnova8G2)",
+      "version_stable": "9.3.043_A9",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/gcam-generic.webp",
+      "tags": [
+        "camera",
+        "gcam",
+        "snapdragon",
+        "popular",
+        "stable"
+      ],
+      "updated_at": "2026-03-30"
+    },
+    {
+      "id": "gcam-shamim",
+      "name": "GCam by Shamim",
+      "category": "camera",
+      "developer": "Shamim Miah",
+      "version_stable": "8.8_A11",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/gcam-generic.webp",
+      "tags": [
+        "camera",
+        "gcam",
+        "mediatek",
+        "dimensity",
+        "redmi",
+        "poco"
+      ],
+      "updated_at": "2026-02-10"
+    },
+    {
+      "id": "miflash",
+      "name": "MiFlash Tool",
+      "category": "utility",
+      "developer": "Xiaomi (Official)",
+      "version_stable": "20240202",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/miflash.webp",
+      "tags": [
+        "utility",
+        "flashing",
+        "official",
+        "windows",
+        "essential"
+      ],
+      "updated_at": "2026-01-20"
+    },
+    {
+      "id": "adb-fastboot",
+      "name": "ADB & Fastboot Platform Tools",
+      "category": "utility",
+      "developer": "Google (Official)",
+      "version_stable": "35.0.2",
+      "status": "active",
+      "open_source": true,
+      "logo": "/assets/img/tools/adb-fastboot.webp",
+      "tags": [
+        "utility",
+        "adb",
+        "fastboot",
+        "official",
+        "essential",
+        "developer"
+      ],
+      "updated_at": "2026-04-01"
+    },
+    {
+      "id": "mi-unlock",
+      "name": "Mi Unlock Tool",
+      "category": "utility",
+      "developer": "Xiaomi (Official)",
+      "version_stable": "7.6.727.43",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/mi-unlock.webp",
+      "tags": [
+        "utility",
+        "unlock",
+        "official",
+        "bootloader",
+        "essential",
+        "first-step"
+      ],
+      "updated_at": "2025-12-10"
+    },
+    {
+      "id": "bugjaeger",
+      "name": "Bugjaeger",
+      "category": "utility",
+      "developer": "MichaelSt",
+      "version_stable": "3.7.0",
+      "status": "active",
+      "open_source": false,
+      "logo": "/assets/img/tools/bugjaeger.webp",
+      "tags": [
+        "utility",
+        "adb",
+        "wireless",
+        "no-pc",
+        "convenient"
+      ],
+      "updated_at": "2026-02-01"
+    }
+  ]
+}

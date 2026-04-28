@@ -1,0 +1,6 @@
+/device/*    /device-detail.html  200
+/rom/*       /rom-detail.html     200
+/tutorial/*  /tutorial-detail.html 200
+/search      /search.html         200
+/compare     /compare.html        200
+/*           /404.html            404

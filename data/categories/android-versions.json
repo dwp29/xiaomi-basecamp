@@ -1,0 +1,9 @@
+{
+  "android_versions": [
+    { "version": 15, "codename": "Vanilla Ice Cream", "released": "2025-09", "miui_equivalent": "HyperOS 2.0", "support_status": "current", "device_count": 28, "color": "#00ffe0" },
+    { "version": 14, "codename": "Upside Down Cake", "released": "2023-10", "miui_equivalent": "MIUI 14 / HyperOS 1.0", "support_status": "active", "device_count": 89, "color": "#29ff5a" },
+    { "version": 13, "codename": "Tiramisu", "released": "2022-08", "miui_equivalent": "MIUI 13 / MIUI 14", "support_status": "active", "device_count": 62, "color": "#ffa500" },
+    { "version": 12, "codename": "Snow Cone", "released": "2021-10", "miui_equivalent": "MIUI 12.5 / MIUI 13", "support_status": "legacy", "device_count": 21, "color": "#ff2d6b" },
+    { "version": 11, "codename": "Red Velvet Cake", "released": "2020-09", "miui_equivalent": "MIUI 12", "support_status": "eol", "device_count": 7, "color": "#3d5578" }
+  ]
+}

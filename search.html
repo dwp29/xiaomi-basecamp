@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — Xiaomi Basecamp</title>
+  <meta name="description" content="Cari device, custom ROM, tools, dan tutorial di Xiaomi Basecamp.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Cari device Xiaomi, Custom ROM, Root tools, dan Tutorial di Xiaomi Basecamp.">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/search.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Syne:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    .sr-hero { padding: 40px 0 0; max-width: 900px; margin: 0 auto; padding: 40px 24px 0; }
+    .sr-kicker { font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--acid); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .sr-kicker::before { content: '//'; opacity: .4; }
+    .sr-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; color: var(--t1); margin-bottom: 20px; }
+
+    /* Search input */
+    .sr-input-wrap {
+      position: relative; display: flex; align-items: center;
+      background: var(--ink-1); border: 1px solid rgba(0,255,224,.12);
+      border-radius: 14px; overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .sr-input-wrap:focus-within { border-color: rgba(0,255,224,.45); box-shadow: 0 0 30px rgba(0,255,224,.1); }
+    .sr-icon { padding: 0 16px; color: var(--acid); font-size: 1.1rem; flex-shrink: 0; }
+    .sr-input {
+      flex: 1; padding: 16px 0; background: none; border: none; outline: none;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .03em; color: var(--t1);
+    }
+    .sr-input::placeholder { color: var(--t4); }
+    .sr-clear { padding: 0 16px; color: var(--t3); font-size: 1rem; background: none; border: none; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .sr-clear.visible { opacity: 1; pointer-events: all; }
+
+    /* Stats bar */
+    .sr-stats { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--t3); margin: 14px 0; min-height: 20px; }
+    .sr-stats strong { color: var(--acid); }
+
+    /* Type filter tabs */
+    .sr-tabs { display: flex; gap: 4px; margin: 16px 0; flex-wrap: wrap; }
+    .sr-tab {
+      padding: 6px 16px; border-radius: 99px; border: 1px solid rgba(0,255,224,.1);
+      font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: .5px; text-transform: uppercase;
+      color: var(--t3); background: none; transition: all .2s;
+    }
+    .sr-tab:hover { color: var(--acid); border-color: rgba(0,255,224,.3); }
+    .sr-tab.active { background: rgba(0,255,224,.08); color: var(--acid); border-color: rgba(0,255,224,.3); }
+    .sr-tab-count { margin-left: 5px; font-size: .6rem; opacity: .7; }
+
+    /* Results */
+    .sr-main { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+    .sr-group { margin-bottom: 36px; }
+    .sr-group-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+      padding-bottom: 10px; border-bottom: 1px solid rgba(0,255,224,.07);
+    }
+    .sr-group-title { font-family: 'DM Mono', monospace; font-size: .62rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--acid); }
+    .sr-group-count { font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--t4); padding: 2px 8px; background: rgba(0,255,224,.07); border-radius: 99px; }
+
+    /* Result card */
+    .sr-card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px; border-radius: 12px;
+      background: rgba(7,12,26,.8); border: 1px solid rgba(255,255,255,.04);
+      text-decoration: none; color: inherit; margin-bottom: 6px;
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .sr-card:hover { border-color: rgba(0,255,224,.2); background: rgba(0,255,224,.03); transform: translateX(4px); }
+    .sr-card-icon { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .sr-card-body { flex: 1; min-width: 0; }
+    .sr-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: var(--t1); line-height: 1.2; }
+    .sr-card-title .se-match { background: rgba(0,255,224,.2); color: var(--acid); border-radius: 2px; padding: 0 2px; }
+    .sr-card-sub { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3); margin-top: 3px; }
+    .sr-card-badge { font-family: 'DM Mono', monospace; font-size: .6rem; padding: 2px 8px; border-radius: 99px; border: 1px solid rgba(0,255,224,.15); color: var(--acid); flex-shrink: 0; }
+    .sr-card-arrow { color: var(--t4); font-size: .8rem; flex-shrink: 0; }
+
+    /* Empty / initial state */
+    .sr-empty { text-align: center; padding: 60px 24px; }
+    .sr-empty-icon { font-size: 4rem; opacity: .3; margin-bottom: 16px; }
+    .sr-empty-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; color: var(--t2); margin-bottom: 8px; }
+    .sr-empty-sub { font-family: 'Syne', sans-serif; font-size: .85rem; color: var(--t3); }
+    .sr-suggestions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+    .sr-suggestion { padding: 6px 14px; border-radius: 99px; background: rgba(0,255,224,.06); border: 1px solid rgba(0,255,224,.15); font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--acid); cursor: pointer; transition: all .2s; }
+    .sr-suggestion:hover { background: rgba(0,255,224,.12); }
+
+    @media (max-width: 640px) {
+      .sr-input { font-size: 1.1rem; }
+      .sr-card { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="nav-root"></div>
+
+  <div class="sr-hero">
+    <p class="sr-kicker">Xiaomi Basecamp</p>
+    <h1 class="sr-title">Cari Semua</h1>
+    <div class="sr-input-wrap" role="search">
+      <span class="sr-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="main-search" class="sr-input" placeholder="Device, ROM, Tools, Tutorial..." aria-label="Cari semua konten" autocomplete="off" spellcheck="false">
+      <button class="sr-clear" id="btn-clear" aria-label="Hapus pencarian">✕</button>
+    </div>
+  </div>
+
+  <div class="sr-main" id="main-content">
+    <div class="sr-stats" id="search-stats"></div>
+    <div class="sr-tabs" id="type-tabs" role="tablist">
+      <button class="sr-tab active" data-type="all">All <span class="sr-tab-count" id="tc-all"></span></button>
+      <button class="sr-tab" data-type="devices">📱 Devices <span class="sr-tab-count" id="tc-devices"></span></button>
+      <button class="sr-tab" data-type="roms">💿 ROM <span class="sr-tab-count" id="tc-roms"></span></button>
+      <button class="sr-tab" data-type="tools">🔧 Tools <span class="sr-tab-count" id="tc-tools"></span></button>
+      <button class="sr-tab" data-type="tutorials">📖 Tutorial <span class="sr-tab-count" id="tc-tutorials"></span></button>
+    </div>
+    <div id="results-container">
+      <!-- Initial empty state -->
+      <div class="sr-empty" id="initial-state">
+        <div class="sr-empty-icon">🔍</div>
+        <h2 class="sr-empty-title">Cari Apapun</h2>
+        <p class="sr-empty-sub">Device Xiaomi, Custom ROM, Root tools, Tutorial modding</p>
+        <div class="sr-suggestions" id="suggestions">
+          <button class="sr-suggestion" data-q="poco x6">POCO X6</button>
+          <button class="sr-suggestion" data-q="evolution x">Evolution X</button>
+          <button class="sr-suggestion" data-q="magisk">Magisk</button>
+          <button class="sr-suggestion" data-q="unlock bootloader">Unlock Bootloader</button>
+          <button class="sr-suggestion" data-q="twrp">TWRP</button>
+          <button class="sr-suggestion" data-q="kernelsu">KernelSU</button>
+          <button class="sr-suggestion" data-q="redmi note 13">Redmi Note 13</button>
+          <button class="sr-suggestion" data-q="dolby atmos">Dolby Atmos</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/pages/search.js"></script>
+  <script>
+    (function(){
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return;let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';rx+=(e.clientX-rx)*.12;ry+=(e.clientY-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';});
+      document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+    })();
+  </script>
+</body>
+</html>

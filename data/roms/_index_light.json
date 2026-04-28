@@ -1,0 +1,449 @@
+{
+  "total": 24,
+  "items": [
+    {
+      "id": "evolution-x",
+      "name": "Evolution X",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/evolution-x-logo.webp",
+      "tags": [
+        "aosp",
+        "pixel",
+        "android-15",
+        "active",
+        "performance",
+        "daily-driver"
+      ],
+      "updated_at": "2026-04-10",
+      "supported_count": 6
+    },
+    {
+      "id": "lineageos-22",
+      "name": "LineageOS 22",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/lineageos-logo.webp",
+      "tags": [
+        "aosp",
+        "stable",
+        "android-15",
+        "active",
+        "security",
+        "privacy"
+      ],
+      "updated_at": "2026-04-15",
+      "supported_count": 6
+    },
+    {
+      "id": "crdroid-11",
+      "name": "crDroid 11",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/crdroid-logo.webp",
+      "tags": [
+        "aosp",
+        "stable",
+        "android-15",
+        "active",
+        "customization"
+      ],
+      "updated_at": "2026-04-08",
+      "supported_count": 6
+    },
+    {
+      "id": "pixel-experience-plus",
+      "name": "Pixel Experience Plus",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/pixel-experience-logo.webp",
+      "tags": [
+        "aosp",
+        "pixel",
+        "android-14",
+        "active",
+        "gapps-included",
+        "beginner-friendly"
+      ],
+      "updated_at": "2026-03-20",
+      "supported_count": 4
+    },
+    {
+      "id": "derpfest",
+      "name": "DerpFest",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/derpfest-logo.webp",
+      "tags": [
+        "aosp",
+        "android-15",
+        "active",
+        "stable",
+        "unique-ui"
+      ],
+      "updated_at": "2026-04-01",
+      "supported_count": 3
+    },
+    {
+      "id": "arrowos-extended",
+      "name": "ArrowOS Extended",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/arrowos-logo.webp",
+      "tags": [
+        "aosp",
+        "android-14",
+        "active",
+        "lightweight",
+        "battery-optimized"
+      ],
+      "updated_at": "2026-02-28",
+      "supported_count": 4
+    },
+    {
+      "id": "project-elixir",
+      "name": "Project Elixir",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/project-elixir-logo.webp",
+      "tags": [
+        "aosp",
+        "android-14",
+        "active",
+        "elegant",
+        "smooth"
+      ],
+      "updated_at": "2026-03-15",
+      "supported_count": 5
+    },
+    {
+      "id": "risingos",
+      "name": "RisingOS",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/risingos-logo.webp",
+      "tags": [
+        "aosp",
+        "android-15",
+        "active",
+        "innovative",
+        "modern-ui"
+      ],
+      "updated_at": "2026-04-12",
+      "supported_count": 4
+    },
+    {
+      "id": "superior-os",
+      "name": "SuperiorOS",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/superior-os-logo.webp",
+      "tags": [
+        "aosp",
+        "android-14",
+        "active",
+        "stable",
+        "battery-optimized"
+      ],
+      "updated_at": "2026-03-05",
+      "supported_count": 3
+    },
+    {
+      "id": "paranoid-android",
+      "name": "Paranoid Android",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/paranoid-android-logo.webp",
+      "tags": [
+        "aosp",
+        "android-14",
+        "active",
+        "iconic",
+        "notifications"
+      ],
+      "updated_at": "2026-02-10",
+      "supported_count": 3
+    },
+    {
+      "id": "nameless-aosp",
+      "name": "Nameless AOSP",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/nameless-aosp-logo.webp",
+      "tags": [
+        "aosp",
+        "android-15",
+        "active",
+        "minimal",
+        "battery-optimized"
+      ],
+      "updated_at": "2026-04-05",
+      "supported_count": 3
+    },
+    {
+      "id": "pixelos",
+      "name": "PixelOS",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/pixelos-logo.webp",
+      "tags": [
+        "aosp",
+        "android-14",
+        "active",
+        "pixel",
+        "gapps-included",
+        "ai-features"
+      ],
+      "updated_at": "2026-03-28",
+      "supported_count": 3
+    },
+    {
+      "id": "nusantara-project",
+      "name": "Nusantara Project",
+      "type": "AOSP",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/nusantara-logo.webp",
+      "tags": [
+        "aosp",
+        "android-14",
+        "active",
+        "indonesia",
+        "community"
+      ],
+      "updated_at": "2026-03-10",
+      "supported_count": 5
+    },
+    {
+      "id": "aosp-extended",
+      "name": "AOSP Extended",
+      "type": "AOSP",
+      "android_version": "13",
+      "status": "inactive",
+      "maintained": false,
+      "logo": "/assets/img/roms/aosp-extended-logo.webp",
+      "tags": [
+        "aosp",
+        "android-13",
+        "inactive",
+        "legacy",
+        "stable"
+      ],
+      "updated_at": "2024-08-01",
+      "supported_count": 3
+    },
+    {
+      "id": "havoc-os",
+      "name": "HavocOS",
+      "type": "AOSP",
+      "android_version": "13",
+      "status": "inactive",
+      "maintained": false,
+      "logo": "/assets/img/roms/havoc-os-logo.webp",
+      "tags": [
+        "aosp",
+        "android-13",
+        "inactive",
+        "legacy",
+        "feature-rich"
+      ],
+      "updated_at": "2024-06-15",
+      "supported_count": 4
+    },
+    {
+      "id": "resurrection-remix",
+      "name": "Resurrection Remix",
+      "type": "AOSP",
+      "android_version": "13",
+      "status": "abandoned",
+      "maintained": false,
+      "logo": "/assets/img/roms/resurrection-remix-logo.webp",
+      "tags": [
+        "aosp",
+        "android-13",
+        "abandoned",
+        "legacy",
+        "historical"
+      ],
+      "updated_at": "2023-12-01",
+      "supported_count": 2
+    },
+    {
+      "id": "miui-eu",
+      "name": "MIUI EU ROM",
+      "type": "MIUI-based",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/miui-eu-logo.webp",
+      "tags": [
+        "miui-based",
+        "android-14",
+        "active",
+        "gms",
+        "no-bloat",
+        "beginner-friendly"
+      ],
+      "updated_at": "2026-04-14",
+      "supported_count": 4
+    },
+    {
+      "id": "miui-taiwan",
+      "name": "MIUI Taiwan",
+      "type": "MIUI-based",
+      "android_version": "13",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/miui-taiwan-logo.webp",
+      "tags": [
+        "miui-based",
+        "android-13",
+        "active",
+        "gms",
+        "stable",
+        "regional"
+      ],
+      "updated_at": "2026-03-20",
+      "supported_count": 3
+    },
+    {
+      "id": "hyperos-eu",
+      "name": "HyperOS EU",
+      "type": "HyperOS-based",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/hyperos-eu-logo.webp",
+      "tags": [
+        "hyperos-based",
+        "android-14",
+        "active",
+        "gms",
+        "hyperos",
+        "ai-features"
+      ],
+      "updated_at": "2026-04-18",
+      "supported_count": 3
+    },
+    {
+      "id": "hyperos-global-beta",
+      "name": "HyperOS Global Beta",
+      "type": "HyperOS-based",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/hyperos-beta-logo.webp",
+      "tags": [
+        "hyperos-based",
+        "android-15",
+        "active",
+        "beta",
+        "ai-features",
+        "latest"
+      ],
+      "updated_at": "2026-04-20",
+      "supported_count": 2
+    },
+    {
+      "id": "xiaomi-eu-weekly",
+      "name": "Xiaomi.eu Weekly",
+      "type": "HyperOS-based",
+      "android_version": "14",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/xiaomi-eu-logo.webp",
+      "tags": [
+        "hyperos-based",
+        "android-14",
+        "active",
+        "weekly",
+        "community",
+        "gms"
+      ],
+      "updated_at": "2026-04-18",
+      "supported_count": 4
+    },
+    {
+      "id": "project-matrixx",
+      "name": "Project Matrixx",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/project-matrixx-logo.webp",
+      "tags": [
+        "aosp",
+        "android-15",
+        "active",
+        "unique-ui",
+        "performance"
+      ],
+      "updated_at": "2026-04-11",
+      "supported_count": 3
+    },
+    {
+      "id": "grapheneos-xiaomi",
+      "name": "GrapheneOS Xiaomi Port",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/grapheneos-logo.webp",
+      "tags": [
+        "aosp",
+        "android-15",
+        "active",
+        "security",
+        "privacy",
+        "enterprise",
+        "niche"
+      ],
+      "updated_at": "2026-04-13",
+      "supported_count": 1
+    },
+    {
+      "id": "lineageos-kernelsu",
+      "name": "LineageOS + KernelSU",
+      "type": "AOSP",
+      "android_version": "15",
+      "status": "active",
+      "maintained": true,
+      "logo": "/assets/img/roms/lineageos-logo.webp",
+      "tags": [
+        "aosp",
+        "android-15",
+        "active",
+        "kernelsu",
+        "root",
+        "security"
+      ],
+      "updated_at": "2026-04-16",
+      "supported_count": 3
+    }
+  ]
+}

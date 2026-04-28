@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom ROM Database — Xiaomi Basecamp | 25+ ROM Terbaik</title>
+  <meta name="description" content="Database 25+ Custom ROM untuk device Xiaomi, Redmi, POCO. Evolution X, LineageOS, crDroid, HyperOS EU, MIUI EU dan banyak lagi.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/roms.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Custom ROM Database — Xiaomi Basecamp">
+  <meta property="og:description" content="25+ Custom ROM untuk Xiaomi, Redmi, POCO. AOSP, HyperOS-based, MIUI-based.">
+  <meta property="og:image" content="/assets/img/ui/og-image.webp">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    /* Page header */
+    .ph {
+      padding: 48px 0 36px; position: relative; overflow: hidden;
+    }
+    .ph::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 100% at 50% 0, rgba(184,0,255,.05), transparent 70%);
+      pointer-events: none;
+    }
+    .ph::after {
+      content: 'ROM'; position: absolute; right: -10px; bottom: -20px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 11rem; font-weight: 900;
+      color: transparent; -webkit-text-stroke: 1px rgba(184,0,255,.04);
+      pointer-events: none; user-select: none; line-height: 1; letter-spacing: -4px;
+    }
+    .ph-inner { max-width: 1440px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .ph-kicker {
+      font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--volt);
+      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+    }
+    .ph-kicker::before { content: '//'; opacity: .4; }
+    .ph-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -1px; line-height: .95;
+      margin-bottom: 10px; color: var(--t1);
+    }
+    .ph-sub { font-size: .88rem; color: var(--t3); max-width: 480px; line-height: 1.6; }
+
+    /* Layout */
+    .layout {
+      max-width: 1440px; margin: 0 auto; padding: 0 24px 80px;
+      display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: start;
+    }
+
+    /* Sidebar */
+    .sidebar { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 10px; }
+    .filter-panel {
+      background: var(--ink-1); border: 1px solid rgba(184,0,255,.09); border-radius: 16px; overflow: hidden;
+    }
+    .fp-head {
+      padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(184,0,255,.07); background: rgba(184,0,255,.02);
+    }
+    .fp-title {
+      font-family: 'DM Mono', monospace; font-size: .66rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--volt); display: flex; align-items: center; gap: 6px;
+    }
+    .fp-reset {
+      font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--t3); padding: 3px 8px; border-radius: 4px;
+      border: 1px solid var(--t4); background: none; transition: color .2s, border-color .2s;
+    }
+    .fp-reset:hover { color: var(--blaze); border-color: rgba(255,45,107,.3); }
+    .fg { border-bottom: 1px solid rgba(255,255,255,.03); }
+    .fg:last-child { border-bottom: none; }
+    .fg-toggle {
+      width: 100%; padding: 11px 16px; display: flex; align-items: center; justify-content: space-between;
+      font-family: 'DM Mono', monospace; font-size: .67rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--t2); background: none; border: none; transition: color .2s;
+    }
+    .fg-toggle:hover { color: var(--t1); }
+    .fg-arrow { font-size: .58rem; transition: transform .25s; color: var(--t3); }
+    .fg-arrow.open { transform: rotate(180deg); }
+    .fg-body { padding: 0 12px; max-height: 0; overflow: hidden; transition: max-height .35s cubic-bezier(.22,1,.36,1), padding .35s; }
+    .fg-body.open { max-height: 300px; padding: 4px 12px 12px; }
+    .fo {
+      display: flex; align-items: center; gap: 9px; padding: 7px 8px; border-radius: 8px;
+      cursor: none; transition: all .18s; border: 1px solid transparent;
+    }
+    .fo:hover { background: rgba(255,255,255,.03); border-color: rgba(255,255,255,.05); }
+    .fo.active { background: rgba(184,0,255,.08); border-color: rgba(184,0,255,.22); }
+    .fo-box {
+      width: 15px; height: 15px; border-radius: 4px; border: 1.5px solid var(--t4);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: all .18s; font-size: .55rem; color: transparent;
+    }
+    .fo.active .fo-box { background: var(--volt); border-color: var(--volt); color: #fff; }
+    .fo-label { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--t2); flex: 1; transition: color .18s; }
+    .fo.active .fo-label { color: var(--volt); }
+    .fo-switch {
+      width: 28px; height: 16px; border-radius: 8px; background: var(--t4);
+      border: none; position: relative; transition: background .2s; flex-shrink: 0;
+    }
+    .fo-switch::after {
+      content: ''; position: absolute; top: 2px; left: 2px;
+      width: 12px; height: 12px; border-radius: 50%; background: var(--t2); transition: transform .2s, background .2s;
+    }
+    .fo.active .fo-switch { background: var(--volt); }
+    .fo.active .fo-switch::after { transform: translateX(12px); background: #fff; }
+
+    /* Tab bar */
+    .tab-bar {
+      display: flex; gap: 2px; margin-bottom: 16px;
+      background: var(--ink-1); border: 1px solid rgba(184,0,255,.09);
+      border-radius: 10px; padding: 3px; width: fit-content;
+    }
+    .tab-btn {
+      padding: 6px 16px; border-radius: 7px; border: none; background: none;
+      font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .5px;
+      text-transform: uppercase; color: var(--t3); transition: all .2s; white-space: nowrap;
+    }
+    .tab-btn.active { background: rgba(184,0,255,.15); color: var(--volt); }
+    .tab-btn:hover:not(.active) { color: var(--t1); }
+
+    /* Toolbar */
+    .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+    .search-box {
+      flex: 1; min-width: 200px; display: flex; align-items: center; gap: 10px;
+      height: 44px; padding: 0 14px; background: var(--ink-1);
+      border: 1px solid rgba(184,0,255,.09); border-radius: 12px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .search-box:focus-within { border-color: rgba(184,0,255,.4); box-shadow: 0 0 20px rgba(184,0,255,.07); }
+    .s-ico { color: var(--t3); font-size: .95rem; flex-shrink: 0; }
+    .search-box input {
+      flex: 1; background: none; border: none; outline: none;
+      font-family: 'DM Mono', monospace; font-size: .8rem; color: var(--t1);
+    }
+    .search-box input::placeholder { color: var(--t3); }
+    .s-clear { color: var(--t3); font-size: .75rem; opacity: 0; pointer-events: none; transition: opacity .2s; background: none; border: none; }
+    .s-clear.visible { opacity: 1; pointer-events: all; }
+
+    /* Sort */
+    .sort-wrap { position: relative; }
+    .sort-btn {
+      height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 7px;
+      background: var(--ink-1); border: 1px solid rgba(184,0,255,.09); border-radius: 12px;
+      font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--t2);
+      transition: all .2s; white-space: nowrap;
+    }
+    .sort-btn:hover { border-color: rgba(184,0,255,.3); color: var(--t1); }
+    .sort-dd {
+      position: absolute; top: calc(100% + 6px); right: 0; width: 180px;
+      background: var(--ink-2); border: 1px solid rgba(184,0,255,.12);
+      border-radius: 12px; overflow: hidden; z-index: 50;
+      opacity: 0; pointer-events: none; transform: translateY(-6px);
+      transition: opacity .2s, transform .2s cubic-bezier(.22,1,.36,1);
+    }
+    .sort-dd.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .sort-opt {
+      width: 100%; padding: 9px 14px; text-align: left;
+      font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--t2);
+      background: none; border: none; display: flex; align-items: center; gap: 8px;
+      transition: all .15s;
+    }
+    .sort-opt:hover { background: rgba(184,0,255,.06); color: var(--t1); }
+    .sort-opt.active { color: var(--volt); }
+    .sort-opt.active::after { content: '✓'; margin-left: auto; font-size: .6rem; }
+
+    /* Active filter chips */
+    .af-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; min-height: 0; }
+    .af-tag {
+      display: flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 99px;
+      background: rgba(184,0,255,.08); border: 1px solid rgba(184,0,255,.22);
+      font-family: 'DM Mono', monospace; font-size: .62rem; color: var(--volt); letter-spacing: .5px;
+      animation: tagPop .2s cubic-bezier(.22,1,.36,1);
+    }
+    @keyframes tagPop { from { transform: scale(.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .af-tag button { color: rgba(184,0,255,.5); font-size: .6rem; line-height: 1; background: none; border: none; transition: color .15s; }
+    .af-tag button:hover { color: var(--blaze); }
+    .af-clear {
+      font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--blaze);
+      padding: 4px 10px; border: 1px solid rgba(255,45,107,.2); border-radius: 99px;
+      background: none; transition: all .2s;
+    }
+    .af-clear:hover { background: rgba(255,45,107,.08); }
+
+    /* Results bar */
+    .results-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 8px; }
+    .results-count { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--t3); }
+    .results-count strong { color: var(--volt); }
+
+    /* ROM grid */
+    #rom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    /* Paginator card entry */
+    .pg-card { opacity: 0; transform: translateY(12px) scale(.98); transition: opacity .4s cubic-bezier(.22,1,.36,1), transform .4s cubic-bezier(.22,1,.36,1); transition-delay: var(--pg-delay,0ms); }
+    .pg-card.pg-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* Load more */
+    .load-wrap { text-align: center; margin-top: 24px; }
+    .load-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
+      border-radius: 12px; background: var(--ink-1); border: 1px solid rgba(184,0,255,.12);
+      font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--t2); transition: all .25s;
+    }
+    .load-btn:hover { border-color: rgba(184,0,255,.35); color: var(--volt); box-shadow: 0 0 24px rgba(184,0,255,.1); }
+
+    /* Mobile filter */
+    .filter-overlay { display: none; position: fixed; inset: 0; background: rgba(3,6,15,.7); z-index: 400; backdrop-filter: blur(4px); }
+    .filter-overlay.open { display: block; }
+    .mobile-filter-btn {
+      display: none; align-items: center; gap: 8px; height: 44px; padding: 0 16px;
+      background: var(--ink-1); border: 1px solid rgba(184,0,255,.09); border-radius: 12px;
+      font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--t2); white-space: nowrap;
+    }
+
+    @media (max-width: 1023px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar {
+        position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+        z-index: 450; background: var(--ink-1);
+        border-right: 1px solid rgba(184,0,255,.12);
+        transform: translateX(-100%); transition: transform .28s cubic-bezier(.22,1,.36,1);
+        overflow-y: auto; padding-top: 16px;
+      }
+      .sidebar.open { transform: translateX(0); }
+      .mobile-filter-btn { display: flex; }
+    }
+    @media (max-width: 640px) {
+      #rom-grid { grid-template-columns: 1fr; }
+      .ph::after { display: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Custom ROM Database Xiaomi",
+    "url": "https://xiaomi-basecamp.github.io/roms.html"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <div id="nav-root"></div>
+
+  <!-- Page header -->
+  <header class="ph" role="banner">
+    <div class="ph-inner">
+      <p class="ph-kicker">Xiaomi Basecamp</p>
+      <h1 class="ph-title">Custom ROM<br>Database</h1>
+      <p class="ph-sub">
+        <strong id="total-rom-count" style="color:var(--volt)">25</strong> Custom ROM tersedia —
+        AOSP, HyperOS-based, dan MIUI-based untuk device Xiaomi, Redmi &amp; POCO.
+      </p>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Filter Sidebar -->
+    <aside class="sidebar" id="filter-sidebar" aria-label="Filter ROM">
+      <div class="filter-panel">
+        <div class="fp-head">
+          <span class="fp-title">💿 Filter</span>
+          <button class="fp-reset" id="btn-reset-filter">Reset</button>
+        </div>
+
+        <!-- ROM Type -->
+        <div class="fg">
+          <button class="fg-toggle" aria-expanded="true" aria-controls="fb-type">
+            ROM Type <span class="fg-arrow open">▾</span>
+          </button>
+          <div class="fg-body open" id="fb-type">
+            <div class="fo" data-filter="type" data-value="AOSP" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">AOSP</span>
+            </div>
+            <div class="fo" data-filter="type" data-value="HyperOS-based" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">HyperOS-based</span>
+            </div>
+            <div class="fo" data-filter="type" data-value="MIUI-based" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">MIUI-based</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android Version -->
+        <div class="fg">
+          <button class="fg-toggle" aria-expanded="true" aria-controls="fb-android">
+            Android Version <span class="fg-arrow open">▾</span>
+          </button>
+          <div class="fg-body open" id="fb-android">
+            <div class="fo" data-filter="android_version" data-value="13" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 13</span>
+            </div>
+            <div class="fo" data-filter="android_version" data-value="14" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 14</span>
+            </div>
+            <div class="fo" data-filter="android_version" data-value="15" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Android 15</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="fg">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-status">
+            Status <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-status">
+            <div class="fo" data-filter="status" data-value="active" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Active</span>
+            </div>
+            <div class="fo" data-filter="status" data-value="inactive" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Inactive</span>
+            </div>
+            <div class="fo" data-filter="status" data-value="abandoned" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Abandoned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maintained toggle -->
+        <div class="fg">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-maintained">
+            Maintained <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-maintained">
+            <div class="fo" data-filter="maintained" data-value="true" data-type="boolean" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-switch"></div><span class="fo-label">Actively Maintained</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="fg">
+          <button class="fg-toggle" aria-expanded="false" aria-controls="fb-tags">
+            Tags <span class="fg-arrow">▾</span>
+          </button>
+          <div class="fg-body" id="fb-tags">
+            <div class="fo" data-filter="tags" data-value="performance" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Performance</span>
+            </div>
+            <div class="fo" data-filter="tags" data-value="battery-optimized" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Battery</span>
+            </div>
+            <div class="fo" data-filter="tags" data-value="gapps-included" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">GApps Included</span>
+            </div>
+            <div class="fo" data-filter="tags" data-value="stable" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Stable</span>
+            </div>
+            <div class="fo" data-filter="tags" data-value="pixel" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Pixel Features</span>
+            </div>
+            <div class="fo" data-filter="tags" data-value="privacy" data-type="multi_any" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="fo-box">✓</div><span class="fo-label">Privacy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content">
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <button class="mobile-filter-btn" id="btn-open-filter" aria-label="Buka filter">
+          ⚙ Filter <span id="filter-badge" style="display:none;color:var(--volt)"></span>
+        </button>
+        <div class="search-box" role="search">
+          <span class="s-ico" aria-hidden="true">🔍</span>
+          <input type="search" id="search-input" placeholder="Cari ROM, fitur, base..." aria-label="Cari ROM">
+          <button class="s-clear" id="btn-clear-search" aria-label="Hapus pencarian">✕</button>
+        </div>
+        <div class="sort-wrap">
+          <button class="sort-btn" id="btn-sort" aria-haspopup="listbox" aria-expanded="false">
+            <span id="sort-label">Rating</span> ▾
+          </button>
+          <div class="sort-dd" id="sort-dd" role="listbox">
+            <button class="sort-opt active" data-sort="rating" role="option">⭐ Rating</button>
+            <button class="sort-opt" data-sort="latest" role="option">📅 Latest</button>
+            <button class="sort-opt" data-sort="name_az" role="option">🔤 Name A–Z</button>
+            <button class="sort-opt" data-sort="android_desc" role="option">🤖 Android Version</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type tab bar -->
+      <div class="tab-bar" role="tablist" aria-label="Filter by ROM type">
+        <button class="tab-btn active" data-tab="all" role="tab" aria-selected="true">All</button>
+        <button class="tab-btn" data-tab="AOSP" role="tab" aria-selected="false">AOSP</button>
+        <button class="tab-btn" data-tab="HyperOS-based" role="tab" aria-selected="false">HyperOS</button>
+        <button class="tab-btn" data-tab="MIUI-based" role="tab" aria-selected="false">MIUI</button>
+      </div>
+
+      <!-- Active filter chips -->
+      <div class="af-row" id="af-row" aria-live="polite"></div>
+
+      <!-- Results bar -->
+      <div class="results-bar">
+        <span class="results-count" aria-live="polite">
+          Menampilkan <strong id="shown-count">—</strong> dari <strong id="total-count-bar" style="color:var(--t2)">25</strong> ROM
+        </span>
+      </div>
+
+      <!-- ROM grid -->
+      <div id="rom-grid" role="list" aria-label="Daftar ROM"></div>
+
+      <!-- Load more -->
+      <div class="load-wrap">
+        <button class="load-btn" id="btn-load-more" hidden>
+          <span data-pg-label>Load More</span>
+        </button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- AD PLACEHOLDER — BANNER BOTTOM -->
+  <div class="ad-container" aria-hidden="true" style="text-align:center;padding:16px 0">
+    <!-- Insert banner ad here -->
+  </div>
+
+  <!-- Mobile overlay -->
+  <div class="filter-overlay" id="filter-overlay" aria-hidden="true"></div>
+
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/romCard.js"></script>
+  <script src="/assets/js/pages/roms.js"></script>
+
+  <script>
+    (function(){
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return; let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{
+        dot.style.left=e.clientX+'px'; dot.style.top=e.clientY+'px';
+        rx+=(e.clientX-rx)*.12; ry+=(e.clientY-ry)*.12;
+        ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      });
+      document.querySelectorAll('a,button,[role=button]').forEach(el=>{
+        el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+      });
+    })();
+  </script>
+  <!-- AD PLACEHOLDER — CLICK-UNDER: Insert script before </body> -->
+</body>
+</html>

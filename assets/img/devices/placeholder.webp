@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <rect width="200" height="260" rx="20" fill="#0c1428"/>
+  <rect x="70" y="12" width="60" height="8" rx="4" fill="#132034"/>
+  <rect x="15" y="35" width="170" height="190" rx="10" fill="#07091a"/>
+  <rect x="75" y="242" width="50" height="8" rx="4" fill="#132034"/>
+  <text x="100" y="135" text-anchor="middle" font-family="monospace" font-size="11" fill="#00ffe0" opacity="0.5">📱</text>
+  <text x="100" y="155" text-anchor="middle" font-family="monospace" font-size="8" fill="#3d5578">NO IMAGE</text>
+</svg>

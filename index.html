@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xiaomi Basecamp — Pusat Firmware, ROM & Modding Xiaomi Indonesia</title>
+  <meta name="description" content="Database 207+ device Xiaomi, 25+ Custom ROM, 30 root tools, dan 20 tutorial modding step-by-step. Gratis, tanpa backend, deploy GitHub Pages.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Xiaomi Basecamp Team">
+  <meta name="keywords" content="xiaomi firmware, custom rom xiaomi, root xiaomi, twrp xiaomi, magisk xiaomi, kernelsu, redmi firmware, poco rom">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/">
+  <link rel="icon" href="/assets/img/ui/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Xiaomi Basecamp — Firmware, ROM & Modding Xiaomi Indonesia">
+  <meta property="og:description" content="Database 207+ device Xiaomi, 25+ Custom ROM, root tools, dan tutorial modding. Gratis tanpa backend.">
+  <meta property="og:image"       content="https://xiaomi-basecamp.github.io/assets/img/ui/og-image.webp">
+  <meta property="og:url"         content="https://xiaomi-basecamp.github.io/">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:site_name"   content="Xiaomi Basecamp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Xiaomi Basecamp — Firmware & ROM Xiaomi">
+  <meta name="twitter:description" content="207+ device, 25+ ROM, root tools, tutorial modding Xiaomi. Gratis.">
+  <meta name="twitter:image"       content="https://xiaomi-basecamp.github.io/assets/img/ui/og-image.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Schema.org WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Xiaomi Basecamp",
+    "description": "Pusat Firmware, ROM & Modding Xiaomi Indonesia",
+    "url": "https://xiaomi-basecamp.github.io",
+    "inLanguage": "id-ID",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": "https://xiaomi-basecamp.github.io/search.html?q={search_term_string}" },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden; padding-top: 60px;
+    }
+    /* Neon gradient background */
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,255,224,.07) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 80% at 80% 20%, rgba(184,0,255,.05) 0%, transparent 50%),
+                  radial-gradient(ellipse 50% 50% at 50% 100%, rgba(255,45,107,.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* Animated glow lines */
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,255,224,.03) 50%, transparent 100%);
+      animation: scanline 8s linear infinite;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1440px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center; width: 100%;
+    }
+
+    /* Hero left */
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace; font-size: .65rem;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--acid);
+      margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    }
+    .hero-eyebrow::before { content: '//'; opacity: .4; }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -2px; line-height: .92;
+      color: var(--t1); margin-bottom: 16px;
+    }
+    .hero-title .glow-word { color: var(--acid); text-shadow: var(--text-glow-acid); animation: glowPulse 3s ease-in-out infinite; }
+
+    .hero-sub { font-family: 'Syne', sans-serif; font-size: .95rem; color: var(--t2); line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
+
+    /* Tag chips */
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+    .hero-tag {
+      padding: 4px 12px; border-radius: 99px;
+      border: 1px solid rgba(0,255,224,.15); background: rgba(0,255,224,.06);
+      font-family: 'DM Mono', monospace; font-size: .62rem;
+      color: var(--acid); cursor: pointer;
+      transition: all .2s;
+    }
+    .hero-tag:hover { background: rgba(0,255,224,.14); border-color: rgba(0,255,224,.4); transform: translateY(-1px); }
+
+    /* Search bar */
+    .hero-search-wrap {
+      display: flex; gap: 0; margin-bottom: 24px;
+      background: rgba(7,12,26,.9); border: 1px solid rgba(0,255,224,.15);
+      border-radius: 12px; overflow: hidden; max-width: 520px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .hero-search-wrap:focus-within { border-color: rgba(0,255,224,.5); box-shadow: 0 0 30px rgba(0,255,224,.12); }
+    .hero-search-icon { padding: 0 16px; color: var(--acid); font-size: 1rem; display: flex; align-items: center; flex-shrink: 0; }
+    .hero-search-input {
+      flex: 1; padding: 14px 0; background: none; border: none; outline: none;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .03em; color: var(--t1);
+    }
+    .hero-search-input::placeholder { color: var(--t4); }
+    .hero-search-btn {
+      padding: 0 20px; background: var(--acid); color: var(--ink-0);
+      font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; border: none;
+      transition: background .2s, box-shadow .2s; flex-shrink: 0;
+    }
+    .hero-search-btn:hover { background: #33ffed; box-shadow: 0 0 20px rgba(0,255,224,.4); }
+
+    /* CTA buttons */
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hbtn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 10px; text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif; font-size: .9rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      transition: all .25s cubic-bezier(.22,1,.36,1); border: 1px solid transparent;
+    }
+    .hbtn-primary { background: var(--acid); color: var(--ink-0); }
+    .hbtn-primary:hover { background: #33ffed; box-shadow: 0 0 24px rgba(0,255,224,.45); transform: translateY(-2px); }
+    .hbtn-ghost { background: transparent; color: var(--t2); border-color: rgba(122,153,194,.25); }
+    .hbtn-ghost:hover { color: var(--acid); border-color: rgba(0,255,224,.4); background: rgba(0,255,224,.06); transform: translateY(-2px); }
+
+    /* Hero right — device visual */
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; min-height: 500px; }
+    .hero-phone-mockup {
+      width: 220px; height: 440px;
+      background: linear-gradient(135deg, #0c1428, #132034);
+      border: 1px solid rgba(0,255,224,.15); border-radius: 32px;
+      position: relative; animation: float 5s ease-in-out infinite;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 40px rgba(0,255,224,.08), 0 0 0 1px rgba(0,255,224,.05) inset;
+    }
+    /* Phone screen glow */
+    .hero-phone-mockup::before {
+      content: ''; position: absolute; inset: 8px; border-radius: 24px;
+      background: linear-gradient(180deg, #070c1a 0%, #0c1428 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-phone-mockup::after {
+      content: 'XIAOMI\ABASECAMP'; position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 900;
+      color: var(--acid); text-align: center; letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(0,255,224,.5); white-space: pre-line; line-height: 1.4;
+    }
+
+    /* Floating info cards */
+    .hero-card {
+      position: absolute; background: rgba(7,12,26,.9);
+      border: 1px solid rgba(0,255,224,.12); border-radius: 12px;
+      padding: 10px 14px; backdrop-filter: blur(10px);
+      font-family: 'DM Mono', monospace; animation: float 4s ease-in-out infinite;
+    }
+    .hc-1 { top: 60px;  left: -60px;  animation-delay: .5s; }
+    .hc-2 { bottom: 80px; right: -50px; animation-delay: 1.2s; }
+    .hc-3 { top: 50%;   right: -70px; animation-delay: .8s; transform: translateY(-50%); }
+    .hc-label { font-size: .55rem; color: var(--t3); letter-spacing: 2px; text-transform: uppercase; }
+    .hc-value { font-size: .85rem; color: var(--acid); font-weight: 500; margin-top: 2px; }
+
+    /* Canvas particles */
+    #hero-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 1;
+    }
+
+    /* Scroll indicator */
+    .scroll-ind {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 2;
+    }
+    .scroll-ind span { font-family: 'DM Mono', monospace; font-size: .58rem; color: var(--t4); letter-spacing: 2px; text-transform: uppercase; }
+    .scroll-arrow { width: 10px; height: 10px; border-right: 2px solid var(--acid); border-bottom: 2px solid var(--acid); transform: rotate(45deg); animation: scrollBounce 1.5s ease-in-out infinite; }
+
+    /* ── STATS SECTION ─────────────────────────────────────── */
+    .stats-section {
+      padding: 48px 0; border-top: 1px solid rgba(0,255,224,.07);
+      border-bottom: 1px solid rgba(0,255,224,.07);
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(0,255,224,.07); }
+    .stat-item {
+      background: var(--ink-0); padding: 32px 24px; text-align: center;
+      transition: background .2s;
+    }
+    .stat-item:hover { background: rgba(0,255,224,.025); }
+    .stat-number {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 900;
+      color: var(--acid); line-height: 1; margin-bottom: 6px;
+      text-shadow: 0 0 30px rgba(0,255,224,.3);
+    }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3); letter-spacing: 2px; text-transform: uppercase; }
+
+    /* ── SECTION SHARED STYLES ──────────────────────────── */
+    .home-section { padding: 64px 0; }
+    .home-section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; }
+    .home-section-eyebrow { font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--acid); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .home-section-eyebrow::before { content: '//'; opacity: .4; }
+    .home-section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.5px; color: var(--t1); }
+    .home-section-link { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--acid); border-bottom: 1px solid rgba(0,255,224,.3); transition: border-color .2s; text-decoration: none; white-space: nowrap; }
+    .home-section-link:hover { border-color: var(--acid); }
+
+    /* ── FEATURE GRID ────────────────────────────────────── */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .feature-card {
+      padding: 24px; border-radius: 14px;
+      background: rgba(7,12,26,.8); border: 1px solid rgba(0,255,224,.07);
+      transition: border-color .2s, transform .2s;
+    }
+    .feature-card:hover { border-color: rgba(0,255,224,.2); transform: translateY(-3px); }
+    .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--acid); margin-bottom: 6px; }
+    .feature-desc { font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t3); line-height: 1.6; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid rgba(0,255,224,.07);
+      padding: 40px 0; background: var(--ink-1);
+    }
+    .footer-inner { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 32px; }
+    .footer-brand { max-width: 280px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: var(--t1); margin-bottom: 8px; }
+    .footer-logo span { color: var(--acid); }
+    .footer-tagline { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3); letter-spacing: 1px; line-height: 1.7; }
+    .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .footer-link { font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--t3); text-decoration: none; letter-spacing: .5px; transition: color .2s; }
+    .footer-link:hover { color: var(--acid); }
+    .footer-bottom { border-top: 1px solid rgba(0,255,224,.05); margin-top: 32px; padding-top: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'DM Mono', monospace; font-size: .62rem; color: var(--t4); }
+
+    /* Responsive */
+    @media (max-width: 1023px) { .hero-inner { grid-template-columns: 1fr; text-align: center; } .hero-visual { display: none; } .hero-sub, .hero-search-wrap, .hero-btns, .hero-tags { max-width: 100%; } .hero-btns, .hero-tags { justify-content: center; } .hero-search-wrap { margin-left: auto; margin-right: auto; } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .hero-title { font-size: 2.8rem; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .home-section-header { flex-direction: column; align-items: flex-start; gap: 8px; } }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!--
+    ╔══════════════════════════════════════╗
+    ║  AD PLACEHOLDER — POP-UNDER         ║
+    ║  Insert pop-under script tag here   ║
+    ╚══════════════════════════════════════╝
+  -->
+
+  <div id="nav-root"></div>
+
+  <main id="main-content">
+
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hero" aria-label="Hero section">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-inner">
+        <!-- Left: content -->
+        <div>
+          <p class="hero-eyebrow animate-in">Xiaomi Basecamp</p>
+          <h1 class="hero-title animate-in stagger-1">
+            Xiaomi<br>
+            <span class="glow-word">Firmware</span><br>
+            Hub
+          </h1>
+          <p class="hero-sub animate-in stagger-2">
+            Pusat database firmware, custom ROM, root tools, dan tutorial modding
+            untuk 207+ device Xiaomi, Redmi &amp; POCO — sepenuhnya gratis.
+          </p>
+
+          <!-- Tag chips -->
+          <div class="hero-tags animate-in stagger-3" role="group" aria-label="Quick filters">
+            <button class="hero-tag" data-type="os"  data-tag="hyperos"   aria-label="HyperOS devices">HyperOS</button>
+            <button class="hero-tag" data-type="os"  data-tag="miui"      aria-label="MIUI devices">MIUI</button>
+            <button class="hero-tag" data-type="tag" data-tag="android-14" aria-label="Android 14 devices">Android 14</button>
+            <button class="hero-tag" data-type="tag" data-tag="android-15" aria-label="Android 15 devices">Android 15</button>
+            <button class="hero-tag" data-type="tag" data-tag="5g"         aria-label="5G devices">5G</button>
+            <button class="hero-tag" data-type="cat" data-tag="root"       aria-label="Root tutorials">Root</button>
+            <button class="hero-tag" data-type="cat" data-tag="recovery"   aria-label="Recovery tools">TWRP</button>
+          </div>
+
+          <!-- Search -->
+          <div class="hero-search-wrap animate-in stagger-3" role="search">
+            <span class="hero-search-icon" aria-hidden="true">🔍</span>
+            <input type="search" class="hero-search-input" id="hero-search"
+                   placeholder="Cari device, ROM, tutorial..."
+                   aria-label="Cari device, ROM, atau tutorial">
+            <button class="hero-search-btn" id="hero-search-btn" aria-label="Cari">Cari →</button>
+          </div>
+
+          <!-- CTA Buttons -->
+          <nav class="hero-btns animate-in stagger-4" aria-label="Main navigation shortcuts">
+            <a href="/devices.html"   class="hbtn hbtn-primary" aria-label="Device Center">📱 Device Center</a>
+            <a href="/roms.html"      class="hbtn hbtn-ghost"   aria-label="Custom ROM">💿 Custom ROM</a>
+            <a href="/tools.html"     class="hbtn hbtn-ghost"   aria-label="Root & Recovery">⚡ Root & Recovery</a>
+            <a href="/tutorials.html" class="hbtn hbtn-ghost"   aria-label="Tutorial">📖 Tutorial</a>
+          </nav>
+        </div>
+
+        <!-- Right: visual -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-phone-mockup"></div>
+          <div class="hero-card hc-1">
+            <div class="hc-label">Devices</div>
+            <div class="hc-value" id="hc-devices">207+</div>
+          </div>
+          <div class="hero-card hc-2">
+            <div class="hc-label">Modding Score</div>
+            <div class="hc-value">100/100</div>
+          </div>
+          <div class="hero-card hc-3">
+            <div class="hc-label">Custom ROM</div>
+            <div class="hc-value" id="hc-roms">25+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-ind" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ── STATS ──────────────────────────────────────── -->
+    <section class="stats-section" aria-label="Site statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number" id="stats-devices">207</div>
+            <div class="stat-label">Device Xiaomi</div>
+          </div>
+          <div class="stat-item reveal stagger-1">
+            <div class="stat-number" id="stats-roms">25</div>
+            <div class="stat-label">Custom ROM</div>
+          </div>
+          <div class="stat-item reveal stagger-2">
+            <div class="stat-number" id="stats-tools">30</div>
+            <div class="stat-label">Root Tools</div>
+          </div>
+          <div class="stat-item reveal stagger-3">
+            <div class="stat-number" id="stats-tutorials">20</div>
+            <div class="stat-label">Tutorial</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AD PLACEHOLDER — BANNER -->
+    <div class="ad-container" aria-hidden="true" style="text-align:center;padding:8px 0"><!-- Banner ad --></div>
+
+    <!-- ── TRENDING DEVICES ───────────────────────────── -->
+    <section class="home-section" aria-labelledby="trending-title">
+      <div class="container">
+        <div class="home-section-header">
+          <div>
+            <p class="home-section-eyebrow">Device Center</p>
+            <h2 class="home-section-title" id="trending-title">Trending Devices</h2>
+          </div>
+          <a href="/devices.html" class="home-section-link">Lihat Semua →</a>
+        </div>
+        <div class="grid-cards" id="trending-grid" aria-label="Trending devices" style="grid-template-columns:repeat(auto-fill,minmax(185px,1fr))"></div>
+      </div>
+    </section>
+
+    <!-- ── LATEST ROM ─────────────────────────────────── -->
+    <section class="home-section" style="background:rgba(184,0,255,.02);border-top:1px solid rgba(184,0,255,.07);border-bottom:1px solid rgba(184,0,255,.07)" aria-labelledby="latest-rom-title">
+      <div class="container">
+        <div class="home-section-header">
+          <div>
+            <p class="home-section-eyebrow" style="color:var(--volt)">Custom ROM</p>
+            <h2 class="home-section-title" id="latest-rom-title">Latest ROM</h2>
+          </div>
+          <a href="/roms.html" class="home-section-link" style="color:var(--volt);border-color:rgba(184,0,255,.3)">Lihat Semua →</a>
+        </div>
+        <div class="grid-cards" id="latest-roms-grid" aria-label="Latest ROMs"></div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ───────────────────────────────────── -->
+    <section class="home-section" aria-labelledby="features-title">
+      <div class="container">
+        <div class="home-section-header">
+          <div>
+            <p class="home-section-eyebrow">Platform</p>
+            <h2 class="home-section-title" id="features-title">Fitur Xiaomi Basecamp</h2>
+          </div>
+        </div>
+        <div class="features-grid">
+          <a href="/devices.html" class="feature-card reveal" style="text-decoration:none">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title">Device Center</h3>
+            <p class="feature-desc">207+ device Xiaomi, Redmi, POCO dengan spesifikasi lengkap, filter, dan search canggih.</p>
+          </a>
+          <a href="/roms.html" class="feature-card reveal stagger-1" style="text-decoration:none">
+            <div class="feature-icon">💿</div>
+            <h3 class="feature-title">Custom ROM</h3>
+            <p class="feature-desc">25+ ROM — AOSP, HyperOS-based, MIUI-based. Rating, fitur, requirements, supported devices.</p>
+          </a>
+          <a href="/tools.html" class="feature-card reveal stagger-2" style="text-decoration:none">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Root & Tools</h3>
+            <p class="feature-desc">Magisk, KernelSU, TWRP, OrangeFox, GCam, Dolby Atmos — semua dengan link download resmi.</p>
+          </a>
+          <a href="/tutorials.html" class="feature-card reveal stagger-3" style="text-decoration:none">
+            <div class="feature-icon">📖</div>
+            <h3 class="feature-title">Tutorial</h3>
+            <p class="feature-desc">20 panduan step-by-step Bahasa Indonesia — UBL, TWRP, Root, Flash ROM, Unbrick, dan lebih.</p>
+          </a>
+          <a href="/compare.html" class="feature-card reveal stagger-4" style="text-decoration:none">
+            <div class="feature-icon">⇄</div>
+            <h3 class="feature-title">Device Compare</h3>
+            <p class="feature-desc">Bandingkan 2 device side-by-side: chipset, kamera, baterai, modding score, dan lebih.</p>
+          </a>
+          <a href="/search.html" class="feature-card reveal stagger-5" style="text-decoration:none">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">Global Search</h3>
+            <p class="feature-desc">Cari device, ROM, tools, dan tutorial sekaligus dalam satu search bar yang cepat.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LATEST TUTORIALS ───────────────────────────── -->
+    <section class="home-section" style="background:rgba(41,255,90,.015);border-top:1px solid rgba(41,255,90,.07);border-bottom:1px solid rgba(41,255,90,.07)" aria-labelledby="latest-tut-title">
+      <div class="container">
+        <div class="home-section-header">
+          <div>
+            <p class="home-section-eyebrow" style="color:var(--lime)">Tutorial Center</p>
+            <h2 class="home-section-title" id="latest-tut-title">Panduan Terbaru</h2>
+          </div>
+          <a href="/tutorials.html" class="home-section-link" style="color:var(--lime);border-color:rgba(41,255,90,.3)">Lihat Semua →</a>
+        </div>
+        <div class="grid-cards" id="latest-tut-grid" aria-label="Latest tutorials"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">BASECAMP<span>XM</span></div>
+          <p class="footer-tagline">Pusat Firmware, ROM & Modding Xiaomi Indonesia. Sepenuhnya statis — tanpa backend, tanpa database, gratis selamanya.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <div class="footer-links">
+            <a href="/devices.html"   class="footer-link">📱 Device Center</a>
+            <a href="/roms.html"      class="footer-link">💿 Custom ROM</a>
+            <a href="/tools.html"     class="footer-link">🔧 Root & Tools</a>
+            <a href="/tutorials.html" class="footer-link">📖 Tutorial</a>
+            <a href="/compare.html"   class="footer-link">⇄ Compare</a>
+            <a href="/search.html"    class="footer-link">🔍 Search</a>
+            <a href="https://github.com/xiaomi-basecamp/portal" target="_blank" rel="noopener" class="footer-link">⌨ GitHub</a>
+            <a href="https://t.me/xiaomi_basecamp" target="_blank" rel="noopener" class="footer-link">📢 Telegram</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xiaomi Basecamp — MIT License</span>
+        <span>Static · No Backend · No Database · 100% Free</span>
+        <span>Deploy: GitHub Pages · Vercel</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AD PLACEHOLDER — BANNER BOTTOM -->
+  <div class="ad-container" aria-hidden="true" style="text-align:center;padding:8px 0"><!-- Banner ad --></div>
+
+  <!-- Vendor JS -->
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <!-- Core JS -->
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <!-- Components -->
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/deviceCard.js"></script>
+  <script src="/assets/js/components/romCard.js"></script>
+  <script src="/assets/js/components/tutorialCard.js"></script>
+  <!-- Page logic -->
+  <script src="/assets/js/pages/home.js"></script>
+
+  <script>
+    'use strict';
+    // Custom cursor
+    (function() {
+      const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+      if(!dot||!ring)return; let rx=0,ry=0;
+      document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';rx+=(e.clientX-rx)*.12;ry+=(e.clientY-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';});
+      document.querySelectorAll('a,button,[role=button]').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+    })();
+
+    // Canvas particles
+    (function(){
+      const canvas=document.getElementById('hero-canvas');if(!canvas)return;
+      const ctx=canvas.getContext('2d');let W,H,pts=[],animId;
+      const COLORS=['#00ffe0','#b800ff','#ff2d6b','#ffa500','#29ff5a'];
+      function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
+      function mkPt(){return{x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.3,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35-.15,a:Math.random()*.5+.2,color:COLORS[Math.floor(Math.random()*5)],life:Math.random()*280+80,age:0};}
+      function init(){resize();pts=Array.from({length:55},mkPt);}
+      function draw(){ctx.clearRect(0,0,W,H);pts.forEach((p,i)=>{p.age++;p.x+=p.vx;p.y+=p.vy;const l=Math.min(p.age/30,1)*Math.max(1-p.age/p.life,0);ctx.globalAlpha=p.a*l;ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();if(p.age>=p.life||p.x<0||p.x>W||p.y<0||p.y>H)pts[i]=mkPt();});ctx.globalAlpha=1;animId=requestAnimationFrame(draw);}
+      init();draw();
+      window.addEventListener('resize',()=>{cancelAnimationFrame(animId);init();draw();});
+      document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(animId);else draw();});
+    })();
+
+    // Hero tag chip clicks
+    document.querySelectorAll('.hero-tag').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const type = chip.dataset.type, tag = chip.dataset.tag;
+        if (type === 'cat') window.location.href = `/tutorials.html?cat=${tag}`;
+        else if (type === 'tag') window.location.href = `/devices.html?tag=${tag}`;
+        else window.location.href = `/devices.html?q=${tag}`;
+      });
+    });
+  </script>
+  <!-- AD PLACEHOLDER — CLICK-UNDER: Insert before </body> -->
+</body>
+</html>

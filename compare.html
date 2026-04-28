@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Devices — Xiaomi Basecamp</title>
+  <meta name="description" content="Bandingkan 2 device Xiaomi secara detail: spesifikasi, modding score, chipset, kamera, baterai, dan lebih banyak lagi.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Bandingkan 2 device Xiaomi secara detail: spesifikasi, modding score, chipset, kamera, baterai.">
+  <link rel="canonical" href="https://xiaomi-basecamp.github.io/compare.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Syne:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    body { cursor: none; }
+    a, button { cursor: none; }
+
+    .cmp-header { padding: 32px 0 0; max-width: 1200px; margin: 0 auto; padding: 32px 24px 0; }
+    .cmp-kicker { font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--acid); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .cmp-kicker::before { content: '//'; opacity: .4; }
+    .cmp-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; color: var(--t1); margin-bottom: 8px; }
+    .cmp-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .cmp-share-btn {
+      display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; border-radius: 8px;
+      background: rgba(0,255,224,.08); border: 1px solid rgba(0,255,224,.25); color: var(--acid);
+      font-family: 'DM Mono', monospace; font-size: .65rem; transition: all .2s;
+    }
+    .cmp-share-btn:hover { background: rgba(0,255,224,.15); }
+
+    /* Main */
+    .cmp-main { max-width: 1200px; margin: 0 auto; padding: 20px 24px 80px; }
+
+    /* Device picker (when no devices selected) */
+    .cmp-picker { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+    .picker-slot {
+      background: var(--ink-1); border: 1px dashed rgba(0,255,224,.2); border-radius: 16px; padding: 24px;
+      display: flex; flex-direction: column; gap: 12px; min-height: 200px; align-items: center; justify-content: center;
+    }
+    .picker-slot.filled { border-style: solid; border-color: rgba(0,255,224,.15); align-items: flex-start; justify-content: flex-start; }
+    .picker-label { font-family: 'DM Mono', monospace; font-size: .62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--t3); }
+    .picker-search-wrap { position: relative; width: 100%; }
+    .picker-search { width: 100%; padding: 10px 14px; background: var(--ink-2); border: 1px solid rgba(0,255,224,.1); border-radius: 8px; font-family: 'DM Mono', monospace; font-size: .78rem; color: var(--t1); outline: none; transition: border-color .2s; }
+    .picker-search::placeholder { color: var(--t3); }
+    .picker-search:focus { border-color: rgba(0,255,224,.4); }
+    .picker-dropdown { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--ink-2); border: 1px solid rgba(0,255,224,.12); border-radius: 10px; max-height: 220px; overflow-y: auto; z-index: 50; display: none; }
+    .picker-dropdown.open { display: block; }
+    .picker-option { padding: 9px 14px; font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t1); cursor: pointer; transition: background .15s; border-bottom: 1px solid rgba(255,255,255,.03); }
+    .picker-option:hover { background: rgba(0,255,224,.07); }
+    .picker-option-sub { font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--t3); margin-top: 2px; }
+    .picker-selected { display: flex; align-items: center; gap: 10px; width: 100%; }
+    .picker-selected-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--acid); }
+    .picker-selected-sub { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3); }
+    .picker-remove { padding: 4px 8px; background: rgba(255,45,107,.1); border: 1px solid rgba(255,45,107,.2); border-radius: 6px; color: var(--blaze); font-size: .7rem; margin-left: auto; flex-shrink: 0; }
+
+    /* Compare table */
+    .cmp-table { border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,255,224,.08); }
+    .cmp-device-header { display: grid; grid-template-columns: 200px 1fr 1fr; background: var(--ink-2); border-bottom: 1px solid rgba(0,255,224,.08); }
+    .cmp-device-header .label-col { padding: 20px; display: flex; align-items: center; }
+    .cmp-device-col { padding: 20px; text-align: center; border-left: 1px solid rgba(255,255,255,.04); }
+    .cmp-device-img { width: 80px; height: 80px; object-fit: contain; margin: 0 auto 10px; display: block; }
+    .cmp-device-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--t1); }
+    .cmp-device-codename { font-family: 'DM Mono', monospace; font-size: .65rem; color: var(--t3); }
+
+    .cmp-section-row { display: grid; grid-template-columns: 200px 1fr 1fr; background: rgba(0,255,224,.03); border-top: 1px solid rgba(0,255,224,.07); }
+    .cmp-section-label { padding: 8px 20px; font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--acid); display: flex; align-items: center; }
+    .cmp-section-label span { grid-column: 1/-1; }
+
+    .cmp-row { display: grid; grid-template-columns: 200px 1fr 1fr; border-top: 1px solid rgba(255,255,255,.03); transition: background .15s; }
+    .cmp-row:hover { background: rgba(0,255,224,.02); }
+    .cmp-row-label { padding: 12px 20px; font-family: 'Syne', sans-serif; font-size: .78rem; color: var(--t3); display: flex; align-items: center; }
+    .cmp-row-val { padding: 12px 16px; font-family: 'DM Mono', monospace; font-size: .78rem; color: var(--t1); text-align: center; border-left: 1px solid rgba(255,255,255,.03); display: flex; align-items: center; justify-content: center; }
+    .cmp-row-val.winner { color: var(--acid); background: rgba(0,255,224,.04); }
+    .cmp-row-val.winner::after { content: ' ★'; font-size: .6rem; color: var(--acid); }
+    .cmp-yes { color: var(--lime); }
+    .cmp-no  { color: var(--blaze); opacity: .6; }
+
+    /* Modding score bar */
+    .cmp-score-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; }
+    .cmp-score-track { width: 80%; height: 6px; background: var(--ink-3); border-radius: 3px; overflow: hidden; }
+    .cmp-score-fill { height: 100%; border-radius: 3px; transition: width .8s cubic-bezier(.22,1,.36,1); }
+    .cmp-score-num { font-family: 'DM Mono', monospace; font-size: .7rem; }
+
+    /* Loading / picker states */
+    .cmp-state { min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; }
+    .cmp-state-icon { font-size: 3rem; opacity: .3; }
+    .cmp-state-text { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; color: var(--t2); }
+
+    @media (max-width: 768px) {
+      .cmp-picker { grid-template-columns: 1fr; }
+      .cmp-device-header, .cmp-section-row, .cmp-row { grid-template-columns: 120px 1fr 1fr; }
+      .cmp-row-label { font-size: .68rem; padding: 10px 12px; }
+    }
+    @media (max-width: 540px) {
+      .cmp-device-header, .cmp-section-row, .cmp-row { grid-template-columns: 90px 1fr 1fr; }
+      .cmp-section-label, .cmp-row-label { font-size: .6rem; padding: 8px; }
+      .cmp-row-val { font-size: .68rem; padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="nav-root"></div>
+
+  <div class="cmp-header">
+    <p class="cmp-kicker">Xiaomi Basecamp</p>
+    <h1 class="cmp-title">Compare Devices</h1>
+    <p style="font-family:'Syne',sans-serif;font-size:.85rem;color:var(--t3)">Bandingkan 2 device Xiaomi secara detail</p>
+    <div class="cmp-actions">
+      <button class="cmp-share-btn" id="btn-share" aria-label="Bagikan hasil compare">🔗 Share Compare</button>
+      <a href="/devices.html" class="cmp-share-btn" style="text-decoration:none">← Device Center</a>
+    </div>
+  </div>
+
+  <div class="cmp-main" id="main-content">
+    <!-- Device picker -->
+    <div class="cmp-picker" id="device-picker">
+      <div class="picker-slot" id="slot-1">
+        <span class="picker-label">Device Pertama</span>
+        <div class="picker-search-wrap">
+          <input type="search" class="picker-search" id="picker-1" placeholder="Cari device..." autocomplete="off" aria-label="Cari device pertama">
+          <div class="picker-dropdown" id="dd-1" role="listbox"></div>
+        </div>
+      </div>
+      <div class="picker-slot" id="slot-2">
+        <span class="picker-label">Device Kedua</span>
+        <div class="picker-search-wrap">
+          <input type="search" class="picker-search" id="picker-2" placeholder="Cari device..." autocomplete="off" aria-label="Cari device kedua">
+          <div class="picker-dropdown" id="dd-2" role="listbox"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compare table (rendered by JS) -->
+    <div id="compare-output">
+      <div class="cmp-state" id="cmp-prompt">
+        <div class="cmp-state-icon">⇄</div>
+        <p class="cmp-state-text">Pilih 2 device untuk membandingkan</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/vendor/filter-engine.js"></script>
+  <script src="/assets/js/vendor/search-engine.js"></script>
+  <script src="/assets/js/vendor/paginator.js"></script>
+  <script src="/assets/js/vendor/modal.js"></script>
+  <script src="/assets/js/core/dataTransformer.js"></script>
+  <script src="/assets/js/core/dataLoader.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/pages/compare.js"></script>
+  <script>
+    (function(){const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');if(!dot||!ring)return;let rx=0,ry=0;document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';rx+=(e.clientX-rx)*.12;ry+=(e.clientY-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';});document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});})();
+  </script>
+</body>
+</html>
